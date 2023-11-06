@@ -5,7 +5,7 @@ function Menu({ isOpen, setIsOpen }) {
   return (
     <div>
       <div>
-        <Hamburger toggled={isOpen} toggle={setIsOpen} rounded color="red" />
+        <Hamburger toggled={isOpen} toggle={setIsOpen} rounded color="white" />
       </div>
     </div>
   );
