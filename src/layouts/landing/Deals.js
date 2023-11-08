@@ -7,7 +7,7 @@ import cw_as from "../../assets/CW-AS.png";
 
 function Deals() {
   return (
-    <div className="border-2 border-red-600 flex flex-col justify-center items-center h-2/3 bg-secondary-50 relative">
+    <div className="border-2 border-red-600 flex flex-col justify-center items-center h-full bg-secondary-50 relative">
       <img
         src={cw_deal}
         alt="Picture"
