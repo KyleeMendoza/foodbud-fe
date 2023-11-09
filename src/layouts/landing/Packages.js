@@ -23,7 +23,7 @@ function Packages() {
       <div className="flex  justify-between px-4 items-center flex-1 border-2 border-red-600 w-[75%]">
         {label.map((label, key) => (
           <div
-            className="border-2 border-green-600 w-[20%] h-[80%] rounded-xl"
+            className="w-[20%] h-[80%] rounded-xl drop-shadow-lg bg-white"
             key={key}
           >
             <img

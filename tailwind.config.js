@@ -8,6 +8,7 @@ module.exports = {
         "primary-500": "#E91E63",
         "secondary-500": "#2196F3",
         "secondary-50": "#8BD7FA",
+        "pink-primary-400": "#E6479F",
       },
     },
   },

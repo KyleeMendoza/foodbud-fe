@@ -13,24 +13,24 @@ function Deals() {
         alt="Picture"
         className="h-full w-full object-cover absolute"
       />
-      <div className="z-10 flex flex-col gap-10 items-center border-4 border-blue-600">
+      <div className="z-10 flex flex-col gap-10 items-center">
         <p className="text-4xl font-bold text-white uppercase">our deals</p>
-        <div className="flex items-center justify-center gap-10 border-2 border-green-600">
-          <div className="w-[17%] h-full">
+        <div className="flex items-center justify-center gap-10 ">
+          <div className="w-[17%] h-full drop-shadow-xl">
             <img
               src={cs_aikp}
               alt="Picture"
               className="rounded-xl border-2 border-white"
             />
           </div>
-          <div className="w-[17%] h-full">
+          <div className="w-[17%] h-full drop-shadow-xl">
             <img
               src={cw_fvs}
               alt="Picture"
               className="rounded-xl border-2 border-white"
             />
           </div>
-          <div className="w-[17%] h-full">
+          <div className="w-[17%] h-full drop-shadow-xl">
             <img
               src={cw_as}
               alt="Picture"
