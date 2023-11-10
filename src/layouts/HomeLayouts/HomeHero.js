@@ -3,12 +3,12 @@ import React from "react";
 import NavBar from "../../components/NavBar";
 import cw_hero from "../../assets/CW-Hero.png";
 
-function Home() {
+function Hero() {
   return (
     <div className="flex flex-col h-3/4 lg:h-screen relative border-2 border-red-600">
-      <div className="z-10 ">
+      {/* <div className="z-10 ">
         <NavBar />
-      </div>
+      </div> */}
       <img
         src={cw_hero}
         alt="Picture"
@@ -43,4 +43,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Hero;

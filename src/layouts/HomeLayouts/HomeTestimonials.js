@@ -1,7 +1,7 @@
 import React from "react";
 import clp_login from "../../assets/clp-login.png";
 
-function Testimonials() {
+function HomeTestimonials() {
   const names = ["juan dela cruz", "cardo dalisay", "pepeng agimat"];
   return (
     <div
@@ -17,15 +17,15 @@ function Testimonials() {
         className="absolute inset-0 z-10 bg-white opacity-90 filter"
         // style={{ zIndex: 1 }}
       ></div>
-      <div className="absolute inset-0 z-20 my-12 flex flex-col justify-center items-center font-['Poppins'] border-4 border-blue-600">
+      <div className="absolute inset-0 z-20 flex flex-col justify-around py-10 items-center font-['Poppins'] border-4 border-blue-600">
         <p className="text-4xl font-bold text-sky-500 uppercase">
           client testimonials
         </p>
-        <div className="flex flex-col gap-10 py-10 justify-center items-center border-2 border-green-600">
+        <div className="flex flex-col gap-5 justify-center items-center border-2 border-green-600">
           {names.map((names, key) => (
             <div
               key={key}
-              className="bg-white w-[70%] p-8 rounded-3xl drop-shadow-lg"
+              className="bg-white w-[70%] p-5 rounded-3xl drop-shadow-lg"
             >
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
@@ -36,7 +36,7 @@ function Testimonials() {
                 </div>
                 <div className="stars">stars</div>
               </div>
-              <div className="flex flex-col gap-8 mt-8">
+              <div className="flex flex-col gap-5 mt-8">
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -61,4 +61,4 @@ function Testimonials() {
   );
 }
 
-export default Testimonials;
+export default HomeTestimonials;

@@ -3,13 +3,29 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
+
+//IMPORT PAGES
+import HomePage from "./pages/HomePage";
+import AboutUsPage from "./pages/AboutUsPage";
+import PackagesPage from "./pages/PackagesPage";
+import GalleryPage from "./pages/GalleryPage";
+import FaqsPage from "./pages/FaqsPage";
+import ContactUsPage from "./pages/ContactUsPage";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="aboutUs" element={<AboutUsPage />} />
+          <Route path="packages" element={<PackagesPage />} />
+          <Route path="gallery" element={<GalleryPage />} />
+          <Route path="faqs" element={<FaqsPage />} />
+          <Route path="contactUs" element={<ContactUsPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

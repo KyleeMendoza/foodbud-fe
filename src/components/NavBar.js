@@ -2,15 +2,36 @@ import React, { useState } from "react";
 import Logo from "../assets/foodBudLogo.png";
 import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 
+import { Container } from "@mui/material";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+//IMPORT PAGES
+import HomePage from "../pages/HomePage";
+import AboutUsPage from "../pages/AboutUsPage";
+import PackagesPage from "../pages/PackagesPage";
+import GalleryPage from "../pages/GalleryPage";
+import FaqsPage from "../pages/FaqsPage";
+import ContactUsPage from "../pages/ContactUsPage";
+
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const navData = [
-    { path: "#home", name: "Home" },
-    { path: "#aboutUs", name: "About Us" },
-    { path: "#packages", name: "Packages" },
-    { path: "#gallery", name: "Gallery" },
-    { path: "#faqs", name: "FAQs" },
-    { path: "#contactUs", name: "Contact Us" },
+    { path: "/home", name: "Home" },
+    { path: "/aboutUs", name: "About Us" },
+    { path: "/packages", name: "Packages" },
+    { path: "/gallery", name: "Gallery" },
+    { path: "/faqs", name: "FAQs" },
+    { path: "/contactUs", name: "Contact Us" },
+  ];
+
+  //NAV LINKS
+  const links = [
+    "/home",
+    "/aboutUs",
+    "/packages",
+    "/gallery",
+    "/faqs",
+    "/contactUs",
   ];
 
   return (
@@ -52,7 +73,7 @@ function NavBar() {
             ))}
             <div className="hidden lg:flex lg:items-center">
               <a
-                download="Mendoza, Kyle Dominic L. - Resume.pdf"
+                // download="Mendoza, Kyle Dominic L. - Resume.pdf"
                 className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
               >
                 Sign in
@@ -60,6 +81,17 @@ function NavBar() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full border-2 border-red-600">
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="home" element={<HomePage />} />
+          <Route path="aboutUs" element={<AboutUsPage />} />
+          <Route path="packages" element={<PackagesPage />} />
+          <Route path="gallery" element={<GalleryPage />} />
+          <Route path="faqs" element={<FaqsPage />} />
+          <Route path="contactUs" element={<ContactUsPage />} />
+        </Routes>
       </div>
     </>
   );

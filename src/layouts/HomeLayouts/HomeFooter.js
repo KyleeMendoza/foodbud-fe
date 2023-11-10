@@ -5,7 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-function FooterPage() {
+function HomeFooter() {
   return (
     <div className="flex flex-col h-full">
       <div
@@ -19,7 +19,7 @@ function FooterPage() {
       >
         <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div>
         <div className="absolute inset-0 z-20 w-full flex justify-center items-center font-['Poppins'] text-white border-2 border-red-600">
-          <div className="w-[70%] flex justify-between ">
+          <div className="w-[85%] flex justify-between ">
             <div>
               <img src={logo} alt="Picture" />
             </div>
@@ -62,4 +62,4 @@ function FooterPage() {
   );
 }
 
-export default FooterPage;
+export default HomeFooter;
