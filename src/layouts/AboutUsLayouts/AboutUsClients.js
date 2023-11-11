@@ -50,8 +50,9 @@ function AboutUsClients() {
             <img src={logo} alt="" className="w-96 h-96" />
           </div>
         </div>
-        <div className="flex flex-col order-2 border-red-600">
-          <div className="flex flex-col gap-10 border-2 border-blue-600">
+        <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center border-2 border-red-600">
+          <p className="font-bold text-2xl">Past &amp; Present Clients</p>
+          <div className="flex flex-col w-full gap-10 border-2 border-blue-600">
             <div className="flex justify-between">
               <ReviewComponent />
               <ReviewComponent />

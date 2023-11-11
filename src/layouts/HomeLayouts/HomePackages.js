@@ -4,7 +4,9 @@ import cw_ebox1 from "../../assets/CW-Ebox1.png";
 import cw_ebox2 from "../../assets/CW-Ebox2.png";
 import cw_ebox3 from "../../assets/CW-Ebox3.png";
 import cw_ebox4 from "../../assets/CW-Ebox4.png";
-import cw_event1 from "../../assets/CW-Event1.png";
+// import cw_event1 from "../../assets/CW-Event1.png";
+
+import Carousel from "../../components/Carousel";
 
 function HomePackages() {
   const picture = [cw_ebox1, cw_ebox2, cw_ebox3, cw_ebox4];
@@ -15,11 +17,12 @@ function HomePackages() {
         Crafting unforgettable moments, one bite at a time.
       </p>
       <div className="border-2 border-red-600 w-[75%] h-[50%]">
-        <img
+        {/* <img
           src={cw_event1}
           alt="Picture"
           className=" border-2 border-green-600 object-cover h-[100%] w-[100%]"
-        />
+        /> */}
+        <Carousel />
       </div>
       <div className="flex  justify-around px-4 items-center border-2 border-red-600 w-[85%]">
         {label.map((label, key) => (

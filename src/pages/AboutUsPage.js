@@ -18,10 +18,7 @@ function AboutUsPage() {
         <div className="h-auto  border-2 border-blue-600">
           <AboutUsClients />
         </div>
-        <div
-          className="flex flex-col h-[40vh] border-2 border-blue-600"
-          // id="footer"
-        >
+        <div className="flex flex-col h-[40vh] border-2 border-blue-600">
           <HomeFooter />
         </div>
       </div>

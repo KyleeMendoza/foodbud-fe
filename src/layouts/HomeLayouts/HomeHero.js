@@ -21,7 +21,7 @@ function Hero() {
           className="hidden lg:block absolute inset-0 w-full h-full object-cover"
         />
         <div className="flex flex-col gap-5 lg:gap-3 absolute w-[90%] lg:w-[80%] border-2 border-red-600">
-          <p className="border-2 border-green-600 text-4xl font-bold text-white text-center lg:text-left">
+          <p className="border-2 border-green-600 text-5xl font-bold text-white text-center lg:text-left">
             Elevate Your Events with us!
           </p>
           <p className="border-2 border-blue-600 text-lg text-white lg:w-[40%] text-center lg:text-left">
