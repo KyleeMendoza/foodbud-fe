@@ -7,14 +7,14 @@ import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 import { Link } from "react-router-dom";
 
 function NavBar() {
-  const [selectedButton, setSelectedButton] = useState("/home");
+  const [selectedButton, setSelectedButton] = useState("/");
 
   const handleButtonClick = (path) => {
     setSelectedButton(path);
   };
 
   const navData = [
-    { path: "/home", name: "Home" },
+    { path: "/", name: "Home" },
     { path: "/aboutUs", name: "About Us" },
     { path: "/packages", name: "Packages" },
     { path: "/gallery", name: "Gallery" },
