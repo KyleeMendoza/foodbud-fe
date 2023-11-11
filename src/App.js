@@ -16,16 +16,14 @@ import NavBar from "./components/NavBar";
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route index element={<HomePage />} />
-          <Route path="home" element={<HomePage />} />
-          <Route path="aboutUs" element={<AboutUsPage />} />
-          <Route path="packages" element={<PackagesPage />} />
-          <Route path="gallery" element={<GalleryPage />} />
-          <Route path="faqs" element={<FaqsPage />} />
-          <Route path="contactUs" element={<ContactUsPage />} />
-        </Route>
+        <Route path="/home" element={<HomePage />} />
+        <Route path="/aboutUs" element={<AboutUsPage />} />
+        <Route path="/packages" element={<PackagesPage />} />
+        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/faqs" element={<FaqsPage />} />
+        <Route path="/contactUs" element={<ContactUsPage />} />
       </Routes>
     </BrowserRouter>
   );

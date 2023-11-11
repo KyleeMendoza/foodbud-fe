@@ -2,19 +2,17 @@ import React, { useState } from "react";
 import Logo from "../assets/foodBudLogo.png";
 import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 
-import { Container } from "@mui/material";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 //IMPORT PAGES
-import HomePage from "../pages/HomePage";
-import AboutUsPage from "../pages/AboutUsPage";
-import PackagesPage from "../pages/PackagesPage";
-import GalleryPage from "../pages/GalleryPage";
-import FaqsPage from "../pages/FaqsPage";
-import ContactUsPage from "../pages/ContactUsPage";
+
+import { Link } from "react-router-dom";
 
 function NavBar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [selectedButton, setSelectedButton] = useState("/home");
+
+  const handleButtonClick = (path) => {
+    setSelectedButton(path);
+  };
+
   const navData = [
     { path: "/home", name: "Home" },
     { path: "/aboutUs", name: "About Us" },
@@ -22,16 +20,6 @@ function NavBar() {
     { path: "/gallery", name: "Gallery" },
     { path: "/faqs", name: "FAQs" },
     { path: "/contactUs", name: "Contact Us" },
-  ];
-
-  //NAV LINKS
-  const links = [
-    "/home",
-    "/aboutUs",
-    "/packages",
-    "/gallery",
-    "/faqs",
-    "/contactUs",
   ];
 
   return (
@@ -63,13 +51,18 @@ function NavBar() {
 
           <div className="hidden items-center gap-14 text-md lg:flex lg:flex-row w-auto py-0 bg-transparent text-black transition-all duration-400">
             {navData.map((item, index) => (
-              <a
-                key={index} // Add a unique "key" prop
-                href={item.path}
-                className="btn-hover font-['DM_Sans'] font-semibold text-secondary-500 hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+              <Link
+                to={item.path}
+                key={index}
+                onClick={() => handleButtonClick(item.path)}
+                className={`btn-hover font-['DM_Sans'] font-semibold ${
+                  item.path === selectedButton
+                    ? "text-primary-500"
+                    : "text-secondary-500"
+                } hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
             <div className="hidden lg:flex lg:items-center">
               <a
@@ -81,17 +74,6 @@ function NavBar() {
             </div>
           </div>
         </div>
-      </div>
-      <div className="w-full border-2 border-red-600">
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="home" element={<HomePage />} />
-          <Route path="aboutUs" element={<AboutUsPage />} />
-          <Route path="packages" element={<PackagesPage />} />
-          <Route path="gallery" element={<GalleryPage />} />
-          <Route path="faqs" element={<FaqsPage />} />
-          <Route path="contactUs" element={<ContactUsPage />} />
-        </Routes>
       </div>
     </>
   );
