@@ -15,34 +15,27 @@ const SimpleSlider = () => {
   };
 
   return (
-    <div className=" h-full">
-      <Slider {...settings} className=" h-full ">
-        <div className="h-full">
+    <div className="h-full">
+      <Slider {...settings} className=" h-full border-2 border-blue-600">
+        <div className="lg:h-[24rem]">
           <img
             src={cw_event1}
             alt="Picture"
-            className="border-2 border-green-600 object-cover h-[29rem] w-full"
+            className="border-2 border-green-600 object-cover h-full w-full"
           />
         </div>
-        <div className="h-full">
+        <div className="lg:h-[24rem]">
           <img
             src={cw_event1}
             alt="Picture"
-            className="border-2 border-green-600 object-cover h-[29rem] w-full"
+            className="border-2 border-green-600 object-cover h-full w-full"
           />
         </div>
-        <div className="h-full">
+        <div className="lg:h-[24rem]">
           <img
             src={cw_event1}
             alt="Picture"
-            className="border-2 border-green-600 object-cover h-[29rem] w-full"
-          />
-        </div>
-        <div className="h-full">
-          <img
-            src={cw_event1}
-            alt="Picture"
-            className="border-2 border-green-600 object-cover h-[29rem] w-full"
+            className="border-2 border-green-600 object-cover h-full w-full"
           />
         </div>
       </Slider>

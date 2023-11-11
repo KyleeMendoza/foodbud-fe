@@ -7,19 +7,16 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 function HomeFooter() {
   return (
-    <div className="flex flex-col h-full">
-      <div
-        className=" border-4 border-green-600 flex-1 relative"
-        style={{
-          backgroundImage: `url(${cw_event1})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover", // Set the background size to cover
-          backgroundPosition: "bottom center", // Center the background image
-        }}
-      >
+    <div className="h-full border-2 border-black">
+      <div className="h-full flex flex-col border-2 border-green-600 flex-1 relative">
+        <img
+          src={cw_event1}
+          alt="Picture"
+          className="h-full w-full object-cover absolute"
+        />
         <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div>
-        <div className="absolute inset-0 z-20 w-full flex justify-center items-center font-['Poppins'] text-white border-2 border-red-600">
-          <div className="w-[85%] flex justify-between ">
+        <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white border-2 border-red-600">
+          <div className="w-[85%] 2xl:w-[70%] flex flex-1 py-10 justify-between border-2 border-green-600">
             <div>
               <img src={logo} alt="Picture" />
             </div>
@@ -51,12 +48,12 @@ function HomeFooter() {
               </div>
             </div>
           </div>
+          <div className="bg-pink-primary-400 flex h-[10%] w-full justify-center items-center">
+            <p className="text-sm text-white">
+              Copyright © 2023 Elysium | All Rights Reserved
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="bg-pink-primary-400 h-[10%] flex justify-center items-center">
-        <p className="text-sm text-white">
-          Copyright © 2023 Elysium | All Rights Reserved
-        </p>
       </div>
     </div>
   );

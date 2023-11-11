@@ -9,44 +9,69 @@ import cw_ebox4 from "../../assets/CW-Ebox4.png";
 import Carousel from "../../components/Carousel";
 
 function HomePackages() {
-  const picture = [cw_ebox1, cw_ebox2, cw_ebox3, cw_ebox4];
-  const label = ["baptismal", "kid's party", "adult party", "corporate"];
   return (
-    <div className="border-2 border-red-600 flex flex-col gap-10 items-center h-full py-20 ">
-      <p className="text-xl capitalize font-['Poppins']  text-sky-400 font-semibold">
-        Crafting unforgettable moments, one bite at a time.
-      </p>
-      <div className="border-2 border-red-600 w-[75%] h-[50%]">
-        {/* <img
+    <div className="border-2 border-black h-full pt-10">
+      <div className="border-2 border-green-600 flex flex-col gap-10 items-center">
+        <p className="text-xl capitalize font-['Poppins']  text-sky-400 font-semibold">
+          Crafting unforgettable moments, one bite at a time.
+        </p>
+        <div className="border-2 border-red-600 w-[70%] h-[25rem]">
+          {/* <img
           src={cw_event1}
           alt="Picture"
           className=" border-2 border-green-600 object-cover h-[100%] w-[100%]"
         /> */}
-        <Carousel />
-      </div>
-      <div className="flex  justify-around px-4 items-center border-2 border-red-600 w-[85%]">
-        {label.map((label, key) => (
-          <div
-            className="w-[20%] h-[100%] rounded-xl drop-shadow-lg bg-white"
-            key={key}
-          >
+          <Carousel />
+        </div>
+        <div className="flex justify-around px-4 items-center border-2 border-red-600 w-[85%] lg:h-[16rem] xl:h-[18rem]">
+          <div className="border-red-600 border-2 w-[22%] h-full text-center rounded-xl drop-shadow-lg bg-white">
             <img
-              src={picture[key]}
-              alt="Picture"
-              className="border-2 border-green-600 object-cover h-[78%] w-[100%] mb-3 rounded-t-xl"
+              src={cw_ebox1}
+              alt=""
+              className="w-full h-[80%] rounded-t-xl"
             />
-            <p className="text-xl capitalize font-['Poppins'] text-center text-sky-400 font-semibold">
-              {label}
+            <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+              baptismal
             </p>
           </div>
-        ))}
+          <div className="border-red-600 border-2 w-[22%] h-full text-center rounded-xl drop-shadow-lg bg-white">
+            <img
+              src={cw_ebox2}
+              alt=""
+              className="w-full h-[80%] rounded-t-xl"
+            />
+            <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+              baptismal
+            </p>
+          </div>
+          <div className="border-red-600 border-2 w-[22%] h-full text-center rounded-xl drop-shadow-lg bg-white">
+            <img
+              src={cw_ebox3}
+              alt=""
+              className="w-full h-[80%] rounded-t-xl"
+            />
+            <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+              baptismal
+            </p>
+          </div>
+          <div className="border-red-600 border-2 w-[22%] h-full text-center rounded-xl drop-shadow-lg bg-white">
+            <img
+              src={cw_ebox4}
+              alt=""
+              className="w-full h-[80%] rounded-t-xl"
+            />
+            <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+              baptismal
+            </p>
+          </div>
+        </div>
+        <Button
+          variant="contained"
+          className="bg-pink-primary-400 text-white text-lg font-semibold font-['Poppins'] capitalize py-3 px-6 rounded-lg"
+        >
+          start planning your event!
+        </Button>
       </div>
-      <Button
-        variant="contained"
-        className="bg-pink-primary-400 text-white text-lg font-semibold font-['Poppins'] capitalize py-3 px-6 rounded-lg"
-      >
-        start planning your event!
-      </Button>
     </div>
   );
 }
