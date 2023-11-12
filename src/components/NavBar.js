@@ -16,7 +16,7 @@ function NavBar() {
 
   // Function to handle navigation to the client page
   const goToClientPage = () => {
-    navigate("/client");
+    navigate("/login");
   };
 
   const navData = [
@@ -79,7 +79,7 @@ function NavBar() {
                 Sign in
               </a> */}
               <Link
-                to="/client"
+                to="/login"
                 className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
               >
                 Sign in

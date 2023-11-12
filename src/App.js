@@ -20,6 +20,13 @@ import ClientEvents from "./pages/Client/ClientNav/ClientEvents";
 import ClientAppointments from "./pages/Client/ClientNav/ClientAppointments";
 import ClientAccounts from "./pages/Client/ClientNav/ClientAccounts";
 
+//LOGIN
+import LoginClientPage from "./pages/Client/LoginPages/LoginClientPage";
+import ChangePasswordPage from "./pages/Client/LoginPages/ChangePasswordPage";
+import PasswordChangedPage from "./pages/Client/LoginPages/PasswordChangedPage";
+import SendResetEmailPage from "./pages/Client/LoginPages/SendResetEmailPage";
+import UserIdentificationPage from "./pages/Client/LoginPages/UserIdentificationPage";
+
 function App() {
   return (
     <BrowserRouter>
@@ -31,6 +38,12 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
+
+        <Route path="/login" element={<LoginClientPage />} />
+        <Route path="/changePassword" element={<ChangePasswordPage />} />
+        <Route path="/passwordChanged" element={<PasswordChangedPage />} />
+        <Route path="/sendEmail" element={<SendResetEmailPage />} />
+        <Route path="/userId" element={<UserIdentificationPage />} />
 
         <Route path="/client" element={<ClientPage />}>
           <Route index element={<ClientHome />} />
