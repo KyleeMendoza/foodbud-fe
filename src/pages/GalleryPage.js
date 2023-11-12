@@ -8,13 +8,16 @@ function GalleryPage() {
   return (
     <>
       <div id="gallery">
-        <div className="h-[40vh]  border-2 border-blue-600">
+        <div className="lg:h-[60vh] xl:h-[60vh] 2xl:h-[50vh]  border-2 border-blue-600">
           <GalleryHero />
         </div>
-        <div className="h-[100vh]  border-2 border-blue-600">
+        <div className="lg:h-[120vh] xl:h-[150vh] 2xl:h-[140vh] border-2 border-blue-600">
           <GalleryCollections />
         </div>
-        <div className="flex flex-col h-[40vh] border-2 border-blue-600">
+        <div
+          className="flex flex-col h-[50vh] 2xl:h-[40vh] border-2 border-blue-600"
+          // id="footer"
+        >
           <HomeFooter />
         </div>
       </div>

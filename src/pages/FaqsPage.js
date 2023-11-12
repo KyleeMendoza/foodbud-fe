@@ -10,19 +10,22 @@ function FaqsPage() {
   return (
     <>
       <div id="faqs">
-        <div className="h-[40vh]  border-2 border-blue-600">
+        <div className="lg:h-[60vh] xl:h-[60vh] 2xl:h-[50vh]  border-2 border-blue-600">
           <FaqsHero />
         </div>
-        <div className="h-[25vh]  border-2 border-blue-600">
+        <div className="lg:h-[30vh] xl:h-[30vh]  border-2 border-blue-600">
           <FaqsDivider />
         </div>
-        <div className="h-[150vh]  border-2 border-blue-600">
+        <div className="lg:h-[190vh] 2xl:h-[130vh] border-2 border-blue-600">
           <FaqsCondition />
         </div>
-        <div className="h-[90vh]  border-2 border-blue-600">
+        <div className="lg:h-[120vh] 2xl:h-[80vh] border-2 border-blue-600">
           <FaqsFaqs />
         </div>
-        <div className="h-[40vh]  border-2 border-blue-600">
+        <div
+          className="flex flex-col h-[50vh] 2xl:h-[40vh] border-2 border-blue-600"
+          // id="footer"
+        >
           <HomeFooter />
         </div>
 

@@ -18,7 +18,7 @@ function AboutUsPage() {
         <div className="h-auto  border-2 border-blue-600">
           <AboutUsClients />
         </div>
-        <div className="flex flex-col h-[40vh] border-2 border-blue-600">
+        <div className="flex flex-col lg:h-[50vh] xl:h-[60vh] 2xl:h-[40vh] border-2 border-blue-600">
           <HomeFooter />
         </div>
       </div>
