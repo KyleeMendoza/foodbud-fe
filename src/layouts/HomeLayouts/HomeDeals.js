@@ -15,7 +15,7 @@ function HomeDeals() {
           className="h-full w-full object-cover absolute"
         />
         <div className="w-full z-10 flex flex-col h-[70%] justify-center items-center border-2 border-red-600">
-          <p className="py-10 2xl:py-5 text-4xl font-bold text-white uppercase">
+          <p className="py-5 2xl:py-5 text-4xl font-bold text-white uppercase">
             our deals
           </p>
           <div className="w-[80%] font-['Poppins'] flex flex-1 justify-center gap-10 border-2 border-red-600">

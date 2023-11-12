@@ -19,8 +19,11 @@ const PackageCarousel = () => {
 
   return (
     <>
-      <Slider {...settings} className=" h-full ">
-        <div className="h-[32rem] ">
+      <Slider
+        {...settings}
+        className=" h-full lg:w-[90%] xl:w-[80%] 2xl:w-[80%] border-2 border-black"
+      >
+        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
@@ -56,7 +59,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem] ">
+        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
@@ -94,7 +97,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem] ">
+        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
@@ -130,7 +133,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem] ">
+        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
@@ -166,7 +169,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem] ">
+        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">

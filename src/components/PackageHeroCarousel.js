@@ -23,7 +23,7 @@ const PackageHeroCarousel = () => {
     <>
       <Slider
         {...settings}
-        className="border-2 border-black lg:w-[70%] xl:w-[60%] 2xl:w-[50%]"
+        className="border-2 border-black lg:w-[70%] xl:w-[60%] 2xl:w-[45%]"
       >
         <div className="border-2 border-green-600 h-[29rem]">
           <img src={cs_aikp} alt="" className="w-full h-full rounded-xl " />

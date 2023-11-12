@@ -5,7 +5,7 @@ import ReviewComponent from "../../components/ReviewComponent";
 function AboutUsClients() {
   return (
     <div className="h-full flex flex-col items-center justify-center border-2 border-black ">
-      <div className="flex flex-col gap-10 w-[85%] my-20 border-2 border-green-600">
+      <div className="flex flex-col gap-10 w-[85%] 2xl:w-[75%] my-20 border-2 border-green-600">
         <div className="flex border-2 border-red-600">
           <div className="flex flex-col flex-1 gap-4 font-['Poppins']">
             <p className="font-bold text-2xl italic">Servicing since 2020</p>

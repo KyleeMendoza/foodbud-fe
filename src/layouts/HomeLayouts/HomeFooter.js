@@ -16,7 +16,7 @@ function HomeFooter() {
         />
         <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div>
         <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white border-2 border-red-600">
-          <div className="flex pt-2 flex-1 w-full justify-around border-2 border-green-600">
+          <div className="flex pt-10 flex-1 w-full justify-around border-2 border-green-600">
             <div>
               <img src={logo} alt="Picture" />
             </div>
