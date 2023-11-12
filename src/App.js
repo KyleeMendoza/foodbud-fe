@@ -13,6 +13,13 @@ import FaqsPage from "./pages/FaqsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import NavBar from "./components/NavBar";
 
+//CLIENT PAGES
+import ClientPage from "./pages/Client/ClientPage";
+import ClientHome from "./pages/Client/ClientNav/ClientHome";
+import ClientEvents from "./pages/Client/ClientNav/ClientEvents";
+import ClientAppointments from "./pages/Client/ClientNav/ClientAppointments";
+import ClientAccounts from "./pages/Client/ClientNav/ClientAccounts";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +31,14 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/faqs" element={<FaqsPage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
+
+        <Route path="/client" element={<ClientPage />}>
+          <Route index element={<ClientHome />} />
+          <Route path="home" element={<ClientHome />} />
+          <Route path="events" element={<ClientEvents />} />
+          <Route path="appointments" element={<ClientAppointments />} />
+          <Route path="accounts" element={<ClientAccounts />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

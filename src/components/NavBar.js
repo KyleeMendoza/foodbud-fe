@@ -4,13 +4,19 @@ import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 
 //IMPORT PAGES
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function NavBar() {
+  const navigate = useNavigate();
   const [selectedButton, setSelectedButton] = useState("/");
 
   const handleButtonClick = (path) => {
     setSelectedButton(path);
+  };
+
+  // Function to handle navigation to the client page
+  const goToClientPage = () => {
+    navigate("/client");
   };
 
   const navData = [
@@ -65,12 +71,19 @@ function NavBar() {
               </Link>
             ))}
             <div className="hidden lg:flex lg:items-center">
-              <a
+              {/* <a
+                onClick={goToClientPage}
                 // download="Mendoza, Kyle Dominic L. - Resume.pdf"
                 className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
               >
                 Sign in
-              </a>
+              </a> */}
+              <Link
+                to="/client"
+                className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
+              >
+                Sign in
+              </Link>
             </div>
           </div>
         </div>
