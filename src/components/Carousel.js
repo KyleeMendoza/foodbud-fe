@@ -17,21 +17,21 @@ const SimpleSlider = () => {
   return (
     <div className="h-full">
       <Slider {...settings} className=" h-full border-2 border-blue-600">
-        <div className="lg:h-[24rem]">
+        <div className="lg:h-[24rem] 2xl:h-[29rem]">
           <img
             src={cw_event1}
             alt="Picture"
             className="border-2 border-green-600 object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[24rem]">
+        <div className="lg:h-[24rem] 2xl:h-[29rem]">
           <img
             src={cw_event1}
             alt="Picture"
             className="border-2 border-green-600 object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[24rem]">
+        <div className="lg:h-[24rem] 2xl:h-[29rem]">
           <img
             src={cw_event1}
             alt="Picture"

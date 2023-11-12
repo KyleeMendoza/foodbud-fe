@@ -25,11 +25,9 @@ const PackageCarousel = () => {
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
                 <p className="text-2xl font-bold">All-In Packages</p>
-                <p className="text-5xl font-bold">Our Packages</p>
+                <p className="text-5xl font-bold capitalize">budget package</p>
                 <p className="text-lg">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere, harum perspiciatis neque quisquam tenetur accusantium
-                  magni alias autem ut porro!
+                  Unleash the celebration without breaking the bank!
                 </p>
               </div>
               <div>
@@ -39,14 +37,14 @@ const PackageCarousel = () => {
                     size="large"
                     style={{ color: "#0249FF", border: "2px solid #0249FF" }}
                   >
-                    Know more
+                    get a quote
                   </Button>
                   <Button
                     variant="contained"
                     size="large"
                     style={{ backgroundColor: "#0249FF" }}
                   >
-                    Get a quote
+                    see photos
                   </Button>
                 </div>
               </div>
@@ -58,16 +56,16 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem]">
+        <div className="h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
                 <p className="text-2xl font-bold">All-In Packages</p>
-                <p className="text-5xl font-bold">Our Packages</p>
+                <p className="text-5xl font-bold capitalize">
+                  Deluxe Debut Package
+                </p>
                 <p className="text-lg">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere, harum perspiciatis neque quisquam tenetur accusantium
-                  magni alias autem ut porro!
+                  Step into the spotlight with a debut that dazzles
                 </p>
               </div>
               <div>
@@ -77,14 +75,14 @@ const PackageCarousel = () => {
                     size="large"
                     style={{ color: "#0249FF", border: "2px solid #0249FF" }}
                   >
-                    Know more
+                    get a quote
                   </Button>
                   <Button
                     variant="contained"
                     size="large"
                     style={{ backgroundColor: "#0249FF" }}
                   >
-                    Get a quote
+                    see photos
                   </Button>
                 </div>
               </div>
@@ -96,16 +94,14 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="h-[32rem]">
+        <div className="h-[32rem] ">
           <div className="flex  items-center border-2 border-green-600 h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
               <div className="flex flex-col gap-8 border-2 border-black">
                 <p className="text-2xl font-bold">All-In Packages</p>
-                <p className="text-5xl font-bold">Our Packages</p>
+                <p className="text-5xl font-bold capitalize">Deluxe Package</p>
                 <p className="text-lg">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Facere, harum perspiciatis neque quisquam tenetur accusantium
-                  magni alias autem ut porro!
+                  Elevate your event with opulence that speaks volumes!
                 </p>
               </div>
               <div>
@@ -115,14 +111,86 @@ const PackageCarousel = () => {
                     size="large"
                     style={{ color: "#0249FF", border: "2px solid #0249FF" }}
                   >
-                    Know more
+                    get a quote
                   </Button>
                   <Button
                     variant="contained"
                     size="large"
                     style={{ backgroundColor: "#0249FF" }}
                   >
-                    Get a quote
+                    see photos
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-1 border-2 border-red-600 h-full">
+              <div>
+                <img src={promo} alt="" className="h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[32rem] ">
+          <div className="flex  items-center border-2 border-green-600 h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
+              <div className="flex flex-col gap-8 border-2 border-black">
+                <p className="text-2xl font-bold">All-In Packages</p>
+                <p className="text-5xl font-bold capitalize">Diamond Package</p>
+                <p className="text-lg">
+                  Crafting unforgettable moments, one exquisite detail at a time
+                </p>
+              </div>
+              <div>
+                <div className="flex gap-5">
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    style={{ color: "#0249FF", border: "2px solid #0249FF" }}
+                  >
+                    get a quote
+                  </Button>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    style={{ backgroundColor: "#0249FF" }}
+                  >
+                    see photos
+                  </Button>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-1 border-2 border-red-600 h-full">
+              <div>
+                <img src={promo} alt="" className="h-full" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="h-[32rem] ">
+          <div className="flex  items-center border-2 border-green-600 h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
+              <div className="flex flex-col gap-8 border-2 border-black">
+                <p className="text-2xl font-bold">All-In Packages</p>
+                <p className="text-5xl font-bold capitalize">Luxury Package</p>
+                <p className="text-lg">
+                  Indulge in a world where luxury meets celebration
+                </p>
+              </div>
+              <div>
+                <div className="flex gap-5">
+                  <Button
+                    variant="outlined"
+                    size="large"
+                    style={{ color: "#0249FF", border: "2px solid #0249FF" }}
+                  >
+                    get a quote
+                  </Button>
+                  <Button
+                    variant="contained"
+                    size="large"
+                    style={{ backgroundColor: "#0249FF" }}
+                  >
+                    see photos
                   </Button>
                 </div>
               </div>

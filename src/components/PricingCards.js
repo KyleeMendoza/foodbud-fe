@@ -5,9 +5,14 @@ const PricingCards = () => {
   const cardData = [
     {
       image: "https://i.imgur.com/Ql4jRdB.png",
-      title: "Budget Package",
-      price: "$149",
-      features: ["500 GB Storage", "1 Granted User", "Send up to 2 GB"],
+      title: "Host-Magician",
+      features: [
+        "Host & 1 Assistant",
+        "Magic show with doves",
+        "Interactive parlor games",
+        "Human puppet show",
+        "Program management from start to end of the program",
+      ],
     },
     {
       image: "https://i.imgur.com/pJNFEHR.png",
@@ -34,17 +39,17 @@ const PricingCards = () => {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className={`w-full shadow-xl flex flex-col justify-center items-center p-4 my-4 rounded-lg hover:scale-105 duration-300`}
+            className={`w-full border-2 border-black shadow-xl flex flex-col justify-center items-center p-4 my-4 rounded-lg hover:scale-105 duration-300`}
           >
-            <img
+            {/* <img
               className="w-20 mx-auto mt-[-3rem] bg-white"
               src={card.image}
               alt="/"
-            />
-            <h2 className="text-2xl font-bold text-center py-8">
+            /> */}
+            <h2 className="text-2xl font-bold text-center pt-8">
               {card.title}
             </h2>
-            <p className="text-center text-4xl font-bold">{card.price}</p>
+            {/* <p className="text-center text-4xl font-bold">{card.price}</p> */}
             <div className="text-center font-medium">
               {card.features.map((feature, index) => (
                 <p

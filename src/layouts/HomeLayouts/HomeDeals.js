@@ -14,26 +14,41 @@ function HomeDeals() {
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
-        <div className="w-full z-10 flex flex-col lg:h-[70%] xl:h-[80%] justify-center items-center border-2 border-red-600">
-          <p className="py-5 text-4xl font-bold text-white uppercase">
+        <div className="w-full z-10 flex flex-col h-[70%] justify-center items-center border-2 border-red-600">
+          <p className="py-10 2xl:py-5 text-4xl font-bold text-white uppercase">
             our deals
           </p>
-          <div className="w-[80%] flex flex-1 justify-around border-2 border-red-600">
-            <img
-              src={cs_aikp}
-              alt="Picture"
-              className="rounded-xl w-[25%] h-full border-2 border-white"
-            />
-            <img
-              src={cs_aikp}
-              alt="Picture"
-              className="rounded-xl w-[25%] h-full border-2 border-white"
-            />
-            <img
-              src={cs_aikp}
-              alt="Picture"
-              className="rounded-xl w-[25%] h-full border-2 border-white"
-            />
+          <div className="w-[80%] font-['Poppins'] flex flex-1 justify-center gap-10 border-2 border-red-600">
+            <div className="w-[25%] h-full rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+              <img
+                src={cs_aikp}
+                alt="Picture"
+                className="rounded-xl w-full h-full blur-[1px]"
+              />
+              <p className="font-semibold text-white text-lg absolute capitalize  w-[50%]">
+                all in party package
+              </p>
+            </div>
+            <div className="w-[25%] h-full rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+              <img
+                src={cw_fvs}
+                alt="Picture"
+                className="rounded-xl w-full h-full  blur-[1px]"
+              />
+              <p className="font-semibold text-white text-lg absolute capitalize w-[50%]">
+                full venue styling
+              </p>
+            </div>
+            <div className="w-[25%] h-full rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+              <img
+                src={cw_as}
+                alt="Picture"
+                className="rounded-xl w-full h-full blur-[1px]"
+              />
+              <p className="font-semibold text-white text-lg absolute capitalize  w-[50%]">
+                additional services
+              </p>
+            </div>
             {/* <div className="w-[23%] h-full drop-shadow-xl">
               <img
                 src={cw_fvs}

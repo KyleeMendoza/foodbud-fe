@@ -52,16 +52,16 @@ function AboutUsClients() {
         </div>
         <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center border-2 border-red-600">
           <p className="font-bold text-2xl">Past &amp; Present Clients</p>
-          <div className="flex flex-col w-full gap-10 border-2 border-blue-600">
-            <div className="flex justify-between">
-              <ReviewComponent />
-              <ReviewComponent />
-              <ReviewComponent />
+          <div className="flex flex-col w-full gap-5 border-2 border-blue-600">
+            <div className="flex justify-center gap-5">
+              <img src={logo} alt="" className="w-80 h-80" />{" "}
+              <img src={logo} alt="" className="w-80 h-80" />{" "}
+              <img src={logo} alt="" className="w-80 h-80" />
             </div>
-            <div className="flex justify-between">
-              <ReviewComponent />
-              <ReviewComponent />
-              <ReviewComponent />
+            <div className="flex justify-center gap-5">
+              <img src={logo} alt="" className="w-80 h-80" />{" "}
+              <img src={logo} alt="" className="w-80 h-80" />{" "}
+              <img src={logo} alt="" className="w-80 h-80" />
             </div>
           </div>
         </div>

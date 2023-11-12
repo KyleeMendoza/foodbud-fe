@@ -18,13 +18,13 @@ function HomePage() {
           <HomeHero />
         </div>
         <div
-          className="flex flex-col lg:h-[70vh] xl:h-[80vh] 2xl:h-[60vh] border-2 border-blue-600"
+          className="flex flex-col h-[60vh] border-2 border-blue-600"
           // id="deals"
         >
           <HomeDeals />
         </div>
         <div
-          className="flex flex-col lg:h-[150vh] xl:h-[170vh] 2xl:h-[120vh] border-2 border-blue-600"
+          className="flex flex-col lg:h-[110vh] xl:h-[120vh] border-2 border-blue-600"
           // id="packages"
         >
           <HomePackages />
@@ -36,13 +36,13 @@ function HomePage() {
           <HomeAboutUs />
         </div>
         <div
-          className="flex flex-col lg:h-[160vh] xl:h-[180vh] 2xl:h-[130vh] border-2 border-orange-600"
+          className="flex flex-col lg:h-[120vh] xl:h-[120vh] 2xl:h-[110vh] border-2 border-orange-600"
           // id="testimonials"
         >
           <HomeTestimonials />
         </div>
         <div
-          className="flex flex-col lg:h-[55vh] xl:h-[65vh] 2xl:h-[45vh] border-2 border-blue-600"
+          className="flex flex-col h-[40vh] border-2 border-blue-600"
           // id="footer"
         >
           <HomeFooter />

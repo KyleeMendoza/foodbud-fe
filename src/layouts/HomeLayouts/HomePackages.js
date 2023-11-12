@@ -15,7 +15,7 @@ function HomePackages() {
         <p className="text-xl capitalize font-['Poppins']  text-sky-400 font-semibold">
           Crafting unforgettable moments, one bite at a time.
         </p>
-        <div className="border-2 border-red-600 w-[70%] h-[25rem]">
+        <div className="border-2 border-red-600 w-[70%] h-[25rem] 2xl:h-[30rem]">
           {/* <img
           src={cw_event1}
           alt="Picture"
@@ -23,7 +23,7 @@ function HomePackages() {
         /> */}
           <Carousel />
         </div>
-        <div className="flex justify-around px-4 items-center border-2 border-red-600 w-[85%] lg:h-[16rem] xl:h-[18rem]">
+        <div className="flex justify-around px-4 items-center border-2 border-red-600 w-[85%] lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem]">
           <div className="border-red-600 border-2 w-[22%] h-full text-center rounded-xl drop-shadow-lg bg-white">
             <img
               src={cw_ebox1}
