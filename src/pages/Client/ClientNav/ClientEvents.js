@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 
 function ClientEvents() {
   return (
-    <div className="border-2 border-black bg-slate-200 py-10">
+    <div className="border-2 border-black h-full py-10">
       <div className="flex gap-5 border-2 border-green-600">
         <div className="flex flex-col w-72 h-72 rounded-2xl">
           <div className="font-['Poppins'] flex justify-start items-start flex-1 pt-5 px-5 bg-sky-500 rounded-t-2xl">

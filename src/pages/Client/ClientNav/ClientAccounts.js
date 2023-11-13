@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 
 function ClientAccounts() {
   return (
-    <div className="border-2 border-black bg-slate-200 py-10">
+    <div className="border-2 border-black h-full py-10">
       <div className="flex flex-col gap-5 border-2 border-green-600">
         <div className="flex justify-between items-center gap-5  border-2 border-blue-600">
           <div className="flex font-['Poppins'] border-2 border-red-600 w-[30rem] h-[4rem] rounded-2xl bg-white">

@@ -31,6 +31,8 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { Link as NavLink } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
+import clientBg from "../../assets/clientBg.png";
+
 //NAV LINK NAMES
 const linkName = ["Home", "My Events", "Appointments", "Accounts"];
 
@@ -126,11 +128,7 @@ export default function ClientPage() {
         {/* BACKGROUND OF THE WHOLE CANVASS */}
         <div className="absolute inset-0 bg-white"></div>
         {/* TOP BAR */}
-        <AppBar
-          position="absolute"
-          open={open}
-          className="border-2 border-black"
-        >
+        <AppBar position="absolute" open={open}>
           <Toolbar
             sx={{
               pr: "24px", // keep right padding when drawer closed
@@ -192,19 +190,21 @@ export default function ClientPage() {
                 ? theme.palette.grey[100]
                 : theme.palette.grey[900],
             flexGrow: 1,
-            height: "100vh",
-            overflow: "auto",
+            // height: "100vh",
             zIndex: 10,
             border: "2px solid green",
           }}
         >
-          <Toolbar />
           {/* CONTAINER FOR EACH NAV */}
           <Container
             maxWidth="full"
             sx={{
               border: "2px solid red",
+              backgroundImage: `url(${clientBg})`, // Set the background image
+              backgroundSize: "cover", // Adjust the background size as needed
+              backgroundRepeat: "no-repeat", // Specify background repeat behavior
             }}
+            className="bg-slate-200"
           >
             <Outlet />
           </Container>
