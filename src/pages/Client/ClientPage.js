@@ -168,7 +168,7 @@ export default function ClientPage() {
         <Drawer
           variant="permanent"
           open={open}
-          className="border-2 border-red-600"
+          // className="border-2 border-red-600"
         >
           <Divider />
           {/* ROUTES GOING TO EACH NAVS */}
@@ -204,20 +204,8 @@ export default function ClientPage() {
             maxWidth="full"
             sx={{
               border: "2px solid red",
-              position: "absolute",
             }}
-            // className="border-2 border-red-600"
           >
-            {/* <Routes>
-              <Route index element={<Dashboard />} />
-              <Route path="dashboard" element={<Dashboard />} />
-              <Route path="accounts" element={<Accounts />} />
-              <Route path="employees" element={<Employees />} />
-              <Route path="myevents" element={<MyEvents />} />
-              <Route path="appointment" element={<Appointment />} />
-              <Route path="orders" element={<Orders />} />
-              <Route path="feedbacks" element={<Feedbacks />} />
-            </Routes> */}
             <Outlet />
           </Container>
         </Box>
