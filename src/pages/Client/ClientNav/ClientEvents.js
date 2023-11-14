@@ -1,7 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@mui/material/Button";
+import { getClientEvents } from "../../../services/getClientEvents";
 
 function ClientEvents() {
+  const clientId = "Sample@gmail.com";
+
+  //GET EVENTS BASED ON CLIENT ID
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getClientEvents(clientId);
+        // const updatedRows = response.map((item) => ({
+        //   date: item.createdAt.slice(0, 10),
+        //   gameId: item.game_id,
+        //   bet: item.bet_data,
+        //   betAmount: item.amount,
+        //   winLose: item.status,
+        //   result: item.status === "Win" ? "+ " + item.amount * 8 : 0,
+        // }));
+        // setRows(updatedRows);
+        // setUserBets(updatedRows); //FOR COLOR INPUTS
+        console.log(response);
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert(
+          "An error occurred while fetching the bet history. Please try again later."
+        );
+      }
+    };
+    fetchData();
+  }, [clientId]);
+
   return (
     <div className="border-2 border-black h-full py-10">
       <div className="flex gap-5 border-2 border-green-600">

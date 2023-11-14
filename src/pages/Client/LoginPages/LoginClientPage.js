@@ -2,16 +2,47 @@ import React, { useState } from "react";
 import H_FoodbudLogo from "../../../assets/H-FoodbudLogo.png";
 import clp_login from "../../../assets/clp-login.png";
 import { Link } from "react-router-dom";
-
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
+import Cookies from "js-cookie";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 function LoginClientPage() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
   }
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const baseUrl = "http://3.27.163.46:9001";
+
+    try {
+      const login = await axios.post(`${baseUrl}/api/user/login`, {
+        username: username,
+        password: password,
+      });
+      if (login.data) {
+        alert("User Login Successfully");
+        // const userToken = login.data.token;
+        // const username = login.data.userDetails.username;
+        // Cookies.set("userToken", userToken);
+        // Cookies.set("username", username);
+        navigate("/client/home");
+      } else {
+        alert("Login failed. Please check your credentials.");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+      alert("Please check your credentials or verify your account");
+    }
+  };
 
   return (
     <div>
@@ -41,6 +72,9 @@ function LoginClientPage() {
                     className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="juandelacruz@gmail.com"
                     required=""
+                    onChange={(e) => {
+                      setUsername(e.target.value);
+                    }}
                   />
                 </div>
                 <div>
@@ -58,6 +92,9 @@ function LoginClientPage() {
                       placeholder="••••••••"
                       className=" bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                       required=""
+                      onChange={(e) => {
+                        setPassword(e.target.value);
+                      }}
                     />
                     <button
                       type="button"
@@ -92,12 +129,19 @@ function LoginClientPage() {
                   Login
                 </button> */}
                 <div>
-                  <Link
+                  {/* <Link
                     to="/client/home"
                     className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
                   >
                     Login
-                  </Link>
+                  </Link> */}
+                  <button
+                    type="submit"
+                    onClick={handleLogin}
+                    className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
+                  >
+                    Login
+                  </button>
                 </div>
                 <div>
                   <a
