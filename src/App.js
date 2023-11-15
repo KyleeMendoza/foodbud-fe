@@ -3,6 +3,9 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Cookies from "js-cookie";
+import { CookiesProvider, useCookies } from "react-cookie";
 
 //IMPORT PAGES
 import HomePage from "./pages/HomePage";
@@ -26,33 +29,34 @@ import ChangePasswordPage from "./pages/Client/LoginPages/ChangePasswordPage";
 import PasswordChangedPage from "./pages/Client/LoginPages/PasswordChangedPage";
 import SendResetEmailPage from "./pages/Client/LoginPages/SendResetEmailPage";
 import UserIdentificationPage from "./pages/Client/LoginPages/UserIdentificationPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
+  const [cookies, setCookie] = useCookies(["username"]);
+
   return (
     <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/aboutUs" element={<AboutUsPage />} />
-        <Route path="/packages" element={<PackagesPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/faqs" element={<FaqsPage />} />
-        <Route path="/contactUs" element={<ContactUsPage />} />
-
-        <Route path="/login" element={<LoginClientPage />} />
-        <Route path="/changePassword" element={<ChangePasswordPage />} />
-        <Route path="/passwordChanged" element={<PasswordChangedPage />} />
-        <Route path="/sendEmail" element={<SendResetEmailPage />} />
-        <Route path="/userId" element={<UserIdentificationPage />} />
-
-        <Route path="/client" element={<ClientPage />}>
-          <Route index element={<ClientHome />} />
-          <Route path="home" element={<ClientHome />} />
-          <Route path="events" element={<ClientEvents />} />
-          <Route path="appointments" element={<ClientAppointments />} />
-          <Route path="accounts" element={<ClientAccounts />} />
-        </Route>
-      </Routes>
+      <CookiesProvider>
+        <div>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/aboutUs" element={<AboutUsPage />} />
+            <Route path="/packages" element={<PackagesPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/faqs" element={<FaqsPage />} />
+            <Route path="/contactUs" element={<ContactUsPage />} />
+            <Route
+              path="/client*"
+              element={<ProtectedRoute cookies={cookies} />}
+            />
+            <Route
+              path="/login"
+              element={<LoginClientPage setCookie={setCookie} />}
+            />
+          </Routes>
+        </div>
+      </CookiesProvider>
     </BrowserRouter>
   );
 }

@@ -15,8 +15,6 @@ export const getClientEvents = async (email) => {
     return response.data;
   } catch (error) {
     console.error(error);
-    throw new Error(
-      "An error occurred while creating a bet. Please try again later."
-    );
+    throw new Error("An error occurred while getting client events.");
   }
 };

@@ -192,14 +192,14 @@ export default function ClientPage() {
             flexGrow: 1,
             // height: "100vh",
             zIndex: 10,
-            border: "2px solid green",
+            border: "4px solid green",
           }}
         >
           {/* CONTAINER FOR EACH NAV */}
           <Container
             maxWidth="full"
             sx={{
-              border: "2px solid red",
+              border: "4px solid red",
               backgroundImage: `url(${clientBg})`, // Set the background image
               backgroundSize: "cover", // Adjust the background size as needed
               backgroundRepeat: "no-repeat", // Specify background repeat behavior

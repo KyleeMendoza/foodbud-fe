@@ -6,10 +6,11 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 
 import Cookies from "js-cookie";
+import { CookiesProvider, useCookies } from "react-cookie";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function LoginClientPage() {
+function LoginClientPage({ setCookie }) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -30,11 +31,15 @@ function LoginClientPage() {
       });
       if (login.data) {
         alert("User Login Successfully");
-        // const userToken = login.data.token;
-        // const username = login.data.userDetails.username;
-        // Cookies.set("userToken", userToken);
-        // Cookies.set("username", username);
-        navigate("/client/home");
+        // console.log(login.data.loginUser.client_email);
+        // Cookies.set("username", login.data.loginUser.client_email, {
+        //   expires: 0,
+        // });
+        setCookie("username", login.data.loginUser.client_email, {
+          expires: 0,
+        });
+        // setIsLoggedIn(true);
+        navigate("/client");
       } else {
         alert("Login failed. Please check your credentials.");
       }
