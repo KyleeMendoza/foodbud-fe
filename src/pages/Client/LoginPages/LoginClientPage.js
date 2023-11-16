@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import H_FoodbudLogo from "../../../assets/H-FoodbudLogo.png";
 import clp_login from "../../../assets/clp-login.png";
 import { Link } from "react-router-dom";
@@ -19,6 +19,11 @@ function LoginClientPage({ setCookie }) {
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
   }
+
+  useEffect(() => {
+    console.log(username);
+    console.log(password);
+  }, [username, password]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

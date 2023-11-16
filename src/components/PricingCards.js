@@ -125,7 +125,7 @@ const PricingCards = () => {
               style={{ backgroundColor: "#0249FF" }}
               className="w-[200px]"
             >
-              Add to Cart
+              Read more
             </Button>
           </div>
         ))}

@@ -2,20 +2,20 @@ import axios from "axios";
 
 const baseUrl = "http://3.27.163.46:9001";
 
-export const postEditEvent = async (eventId) => {
+export const postEditEvent = async (key, formData) => {
   const params = {
-    event_id: eventId,
+    event_id: key,
   };
 
   try {
-    const response = await axios.post(`${baseUrl}/api/edit/event`, {
+    const response = await axios.post(`${baseUrl}/api/edit/event`, formData, {
       params,
     });
     return response.data;
   } catch (error) {
     console.error(error);
     throw new Error(
-      "An error occurred while creating a bet. Please try again later."
+      "An error occurred while editing the event. Please try again later."
     );
   }
 };

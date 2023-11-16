@@ -8,7 +8,7 @@ export const getFetchEvent = async (eventId) => {
   };
 
   try {
-    const response = await axios.get(`${baseUrl}/api/get/events`, {
+    const response = await axios.get(`${baseUrl}/api/get/event`, {
       params,
     });
     // console.log('Response api:', response);

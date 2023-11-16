@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import CardMedia from "@mui/material/CardMedia";
 import cs_aikp from "../../assets/CW-AIKP.png";
@@ -9,6 +9,9 @@ import promo from "../../assets/packageBg.png";
 import PackageHeroCarousel from "../../components/PackageHeroCarousel";
 
 function PackagesHero() {
+  const [pic1, setPic1] = useState(false);
+  const [pic2, setPic2] = useState(false);
+  const [pic3, setPic3] = useState(false);
   return (
     <div className="border-2 border-black h-full">
       <div className="flex flex-col gap-10 h-full py-10 border-2 border-green-600 ">
@@ -30,6 +33,8 @@ function PackagesHero() {
                 variant="contained"
                 size="large"
                 style={{ backgroundColor: "#0249FF" }}
+                onMouseEnter={() => setPic1(true)}
+                onMouseLeave={() => setPic1(false)}
               >
                 All-In Packages
               </Button>
@@ -37,6 +42,8 @@ function PackagesHero() {
                 variant="outlined"
                 size="large"
                 style={{ color: "#0249FF", border: "2px solid #0249FF" }}
+                onMouseEnter={() => setPic2(true)}
+                onMouseLeave={() => setPic2(false)}
               >
                 Full Venue Styling
               </Button>
@@ -44,6 +51,8 @@ function PackagesHero() {
                 variant="outlined"
                 size="large"
                 style={{ color: "#0249FF", border: "2px solid #0249FF" }}
+                onMouseEnter={() => setPic3(true)}
+                onMouseLeave={() => setPic3(false)}
               >
                 Additional Services
               </Button>
@@ -51,7 +60,7 @@ function PackagesHero() {
           </div>
         </div>
         <div className="flex flex-1 justify-center items-center border-2 border-red-600">
-          <PackageHeroCarousel />
+          <PackageHeroCarousel pic1={pic1} pic2={pic2} pic3={pic3} />
         </div>
       </div>
     </div>

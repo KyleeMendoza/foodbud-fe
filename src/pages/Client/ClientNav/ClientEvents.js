@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import { getClientEvents } from "../../../services/getClientEvents";
+import { Link as NavLink } from "react-router-dom";
 
-function ClientEvents() {
-  const clientId = "admin";
+function ClientEvents({ cookies }) {
+  const clientId = cookies.username;
   const [events, setEvents] = useState([]);
 
   //GET EVENTS BASED ON CLIENT ID
@@ -11,6 +12,8 @@ function ClientEvents() {
     const fetchData = async () => {
       try {
         const response = await getClientEvents(clientId);
+        // console.log(clientId);
+        // console.log(response);
 
         // Mapping the response to the state
         const mappedEvents = response.events.map((eventData) => ({
@@ -36,10 +39,15 @@ function ClientEvents() {
   }, [clientId]);
 
   return (
-    <div className="border-2 border-black h-screen py-10 ">
+    <div className="border-2 border-black h-full py-10 ">
       <div className="flex gap-5 border-2 border-green-600">
         {events.map((events, key) => (
-          <div className="flex flex-col w-72 h-72 rounded-2xl" key={key}>
+          <NavLink
+            className="flex flex-col w-72 h-72 rounded-2xl"
+            key={key}
+            to="/client/myEvent"
+            state={{ eventId: events.eventID }}
+          >
             <div className="font-['Poppins'] flex justify-start items-start flex-1 pt-5 px-5 bg-sky-500 rounded-t-2xl">
               <div className="bg-blue-300 px-4 py-3 rounded-3xl">
                 <p className="text-xs capitalize text-white font-semibold">
@@ -63,7 +71,7 @@ function ClientEvents() {
                 </Button>
               </div>
             </div>
-          </div>
+          </NavLink>
         ))}
         {/* <div className="flex flex-col w-72 h-72 rounded-2xl">
           <div className="font-['Poppins'] flex justify-start items-start flex-1 pt-5 px-5 bg-pink-600 rounded-t-2xl">

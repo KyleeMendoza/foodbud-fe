@@ -204,7 +204,7 @@ export default function ClientPage() {
               backgroundSize: "cover", // Adjust the background size as needed
               backgroundRepeat: "no-repeat", // Specify background repeat behavior
             }}
-            className="bg-slate-200"
+            className="bg-slate-200 min-h-[130vh] "
           >
             <Outlet />
           </Container>
