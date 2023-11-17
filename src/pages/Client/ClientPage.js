@@ -22,6 +22,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import Logo from "../../assets/foodBudLogo.png";
 
 //CLIENT NAV ICONS
 import HomeIcon from "@mui/icons-material/Home";
@@ -76,6 +77,8 @@ const AppBar = styled(MuiAppBar, {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
+  // background: `linear-gradient(to right, #03A9F4, #E7238B)`, //GRADIENT TO
+  backgroundColor: "#03A9F4",
   ...(open && {
     marginLeft: drawerWidth,
     width: `calc(100% - ${drawerWidth}px)`,
@@ -137,7 +140,9 @@ export default function ClientPage({ setCookie }) {
         <CssBaseline />
 
         {/* BACKGROUND OF THE WHOLE CANVASS */}
-        <div className="absolute inset-0 bg-white"></div>
+        <div className="absolute inset-0 bg-white">
+          <img src={Logo} alt="logo" className="absolute h-10 top-4 left-12" />
+        </div>
 
         {/* TOP BAR */}
         <AppBar position="absolute" open={open}>
@@ -164,7 +169,7 @@ export default function ClientPage({ setCookie }) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Client Dashboard
+              {/* Dashboard */}
             </Typography>
             <IconButton color="inherit">
               <Badge badgeContent={4} color="secondary">
@@ -188,7 +193,7 @@ export default function ClientPage({ setCookie }) {
           {linkName.map((link, key) => (
             <NavLink to={links[key]} key={key}>
               <ListItemButton>
-                <ListItemIcon>
+                <ListItemIcon style={{ fontSize: "10px" }}>
                   {React.createElement(linkIcons[key])}
                 </ListItemIcon>
                 <ListItemText primary={link} />
@@ -207,14 +212,14 @@ export default function ClientPage({ setCookie }) {
             flexGrow: 1,
             // height: "100vh",
             zIndex: 10,
-            border: "4px solid green",
+            // border: "4px solid green",
           }}
         >
           {/* CONTAINER FOR EACH NAV */}
           <Container
             maxWidth="full"
             sx={{
-              border: "4px solid red",
+              // border: "4px solid red",
               backgroundImage: `url(${clientBg})`, // Set the background image
               backgroundSize: "cover", // Adjust the background size as needed
               backgroundRepeat: "no-repeat", // Specify background repeat behavior

@@ -39,18 +39,26 @@ function ClientEvents({ cookies }) {
   }, [clientId]);
 
   return (
-    <div className="border-2 border-black h-full py-10 ">
-      <div className="flex gap-5 border-2 border-green-600">
+    <div className=" h-full py-10 ">
+      <div className="flex gap-5 ">
         {events.map((events, key) => (
           <NavLink
-            className="flex flex-col w-72 h-72 rounded-2xl"
+            className="flex flex-col w-72 h-72 rounded-2xl drop-shadow-lg"
             key={key}
             to="/client/myEvent"
             state={{ eventId: events.eventID }}
           >
-            <div className="font-['Poppins'] flex justify-start items-start flex-1 pt-5 px-5 bg-sky-500 rounded-t-2xl">
-              <div className="bg-blue-300 px-4 py-3 rounded-3xl">
-                <p className="text-xs capitalize text-white font-semibold">
+            <div
+              className={`font-['Poppins'] flex justify-start items-start flex-1 pt-5 px-5 ${
+                key % 2 === 0 ? "bg-[#03A9F4]" : "bg-pink-500"
+              } rounded-t-2xl`}
+            >
+              <div
+                className={`bg-white px-4 py-3 rounded-3xl ${
+                  key % 2 === 0 ? "text-[#03A9F4]" : "text-pink-500"
+                }`}
+              >
+                <p className="text-xs capitalize font-semibold">
                   {events.package_type}
                 </p>
               </div>

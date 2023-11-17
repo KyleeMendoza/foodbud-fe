@@ -126,13 +126,13 @@ export default function AppointmentTable() {
 
   return (
     <>
-      <div className="flex items-center justify-center border-2 border-red-600 rounded-2xl p-5 bg-white">
+      <div className="flex items-center justify-center rounded-2xl p-5 bg-white">
         <div className="w-full">
           {/* <h1 className=" w-full text-3xl font-semibold text-center uppercase underline">
             transaction history table
           </h1> */}
           <Box sx={{ width: 1 }}>
-            <FormControlLabel
+            {/* <FormControlLabel
               checked={columnVisibilityModel.id !== false}
               onChange={(event) =>
                 setColumnVisibilityModel(() => ({ id: event.target.checked }))
@@ -150,7 +150,7 @@ export default function AppointmentTable() {
               }
               control={<Switch color="primary" size="large" />}
               label="Exclude hidden columns"
-            />
+            /> */}
             <Box sx={{ height: 700 }}>
               <DataGrid
                 columns={columns}

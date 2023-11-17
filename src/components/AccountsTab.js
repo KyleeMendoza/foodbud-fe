@@ -54,10 +54,11 @@ export default function AccountsTab() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
+          className="  w-[32%] p-2 ml-6 "
         >
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Event 1" {...a11yProps(0)} />
+          <Tab label="Event 2" {...a11yProps(1)} />
+          <Tab label="Event 3" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>

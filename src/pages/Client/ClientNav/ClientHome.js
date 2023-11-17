@@ -4,7 +4,7 @@ import { Divider } from "@mui/material";
 import SelectButton from "../../../components/SelectButton";
 import { useEffect } from "react";
 
-function ClientHome({name}) {
+function ClientHome({ name }) {
   // const clientName = cookies.name;
 
   // useEffect(() => {
@@ -12,20 +12,20 @@ function ClientHome({name}) {
   // }, [cookies])
 
   return (
-    <div className="border-2 border-black h-full py-10">
-      <div className="flex flex-col gap-5 border-2 border-green-600 font-['Poppins']">
-        <div className="flex justify-between items-center w-full border-2 border-red-600">
+    <div className="h-full py-10">
+      <div className="flex flex-col gap-5  font-['Poppins']">
+        <div className="flex justify-between items-center w-full ">
           <div className="flex flex-col gap-2 text-white">
             <p className="text-2xl font-bold capitalize ">Welcome back,</p>
-            <p className="text-5xl font-bold capitalize ">{name}</p>
+            <p className="text-5xl font-bold capitalize ">{name}!</p>
           </div>
           <div>
             <SelectButton />
           </div>
         </div>
-        <div className="border-2 border-red-600 flex gap-5 text-white">
-          <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-slate-400">
-            <div className="flex flex-col gap-2 h-[65%] p-10">
+        <div className="flex gap-5 text-white">
+          <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-slate-500">
+            <div className="flex flex-col gap-2 h-[65%] p-10 ">
               <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
               <p className="text-md capitalize ">
                 Zion Kyre, Deluxe Package, 150 pax, Safari
@@ -36,7 +36,7 @@ function ClientHome({name}) {
             </div>
           </div>
           <div className="flex-1 flex gap-5 ">
-            <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-slate-400">
+            <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-pink-500">
               <div className="flex flex-col gap-2 h-[65%] p-10">
                 <p className="text-md capitalize ">Food Tasting</p>
                 <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
@@ -45,7 +45,7 @@ function ClientHome({name}) {
                 <p className="text-xl capitalize ">Completed</p>
               </div>
             </div>
-            <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-slate-400">
+            <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-blue-500">
               <div className="flex flex-col gap-2 h-[65%] p-10">
                 <p className="text-md capitalize ">Online Meeting</p>
                 <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
@@ -56,9 +56,9 @@ function ClientHome({name}) {
             </div>
           </div>
         </div>
-        <div className="border-2 border-red-600 flex gap-5 text-white ">
-          <div className="flex flex-col gap-3 border-2 border-red-600 flex-1 bg-white rounded-xl">
-            <div className="border-2 border-blue-600 flex justify-between items-center mx-5 mt-5">
+        <div className=" flex gap-5 text-white ">
+          <div className="flex flex-col gap-3  flex-1 bg-white rounded-xl">
+            <div className=" flex justify-between items-center mx-5 mt-5">
               <p className="text-2xl text-blue-400 font-bold">Event Details</p>
               <Button variant="contained">view</Button>
             </div>
@@ -72,8 +72,8 @@ function ClientHome({name}) {
               <p>Total Headcount: </p>
             </div>
           </div>
-          <div className="border-2 border-red-600 flex-1 rounded-xl">
-            <div className="flex flex-col justify-between h-full flex-1 rounded-xl  bg-slate-400">
+          <div className=" flex-1 rounded-xl">
+            <div className="flex flex-col justify-between h-full flex-1 rounded-xl  bg-[#3B9BDC]">
               <div className="flex flex-col gap-2 h-[75%] p-5 rounded-t-xl bg-white">
                 <p className="text-2xl text-blue-400 font-bold ">
                   Meeting Details
@@ -97,10 +97,10 @@ function ClientHome({name}) {
             </div>
           </div>
         </div>
-        <div className="border-2 border-red-600 flex gap-5 text-white ">
-          <div className="border-blue-600 border-2 flex-1 flex flex-col gap-4">
+        <div className=" flex gap-5 text-white ">
+          <div className=" flex-1 flex flex-col gap-4">
             <div className="flex gap-4">
-              <div className="flex flex-col gap-2 flex-1 border-red-600 border-2 p-4 rounded-xl bg-white text-black font-bold">
+              <div className="flex flex-col gap-2 flex-1  p-4 rounded-xl bg-white text-black font-bold">
                 <p className="text-2xl text-blue-400 font-bold">
                   Event Details
                 </p>
@@ -117,7 +117,7 @@ function ClientHome({name}) {
                   <Button variant="contained">view</Button>
                 </div>
               </div>
-              <div className="flex flex-col gap-2 flex-1 border-red-600 border-2 p-4 rounded-xl bg-white text-black relative">
+              <div className="flex flex-col gap-2 flex-1  p-4 rounded-xl bg-white text-black relative">
                 <div className="h-[80%] ">
                   <p className="text-2xl text-blue-400 font-bold">Accounts</p>
                   <div className="flex flex-col justify-between h-[80%] font-bold">
@@ -144,7 +144,7 @@ function ClientHome({name}) {
                 </div>
               </div>
             </div>
-            <div className="border-blue-600 border-2 bg-white rounded-xl p-5 relative flex flex-col gap-2 h-[13rem]">
+            <div className=" bg-white rounded-xl p-5 relative flex flex-col gap-2 h-[13rem]">
               <div className="text-2xl text-black font-bold">
                 How was the Event??
               </div>
@@ -153,15 +153,15 @@ function ClientHome({name}) {
                 est sunt quas sint qui cum. Corporis eius eos mollitia
                 reiciendis.
               </div>
-              <div className="bg-blue-400 w-full absolute bottom-0 right-0 p-5">
+              <div className="bg-[#3B9BDC] w-full absolute bottom-0 right-0 p-5 rounded-b-xl">
                 <p className="font-bold text-center text-xl">
                   Submit a Feedback
                 </p>
               </div>
             </div>
           </div>
-          <div className="border-blue-600 border-2 flex-1">
-            <div className="flex flex-col gap-2 h-full flex-1 border-red-600 border-2 p-8 rounded-xl bg-white text-black relative">
+          <div className=" flex-1">
+            <div className="flex flex-col gap-2 h-full flex-1 p-8 rounded-xl bg-white text-black relative">
               <div className="h-[80%] ">
                 <p className="text-2xl text-blue-400 font-bold">Accounts</p>
                 <div className="flex flex-col justify-between h-[80%] font-bold">
@@ -201,7 +201,7 @@ function ClientHome({name}) {
                   </div>
                 </div>
               </div>
-              <div className="w-full bg-white border-t-2 border-black absolute bottom-0 left-0 p-8">
+              <div className="w-full bg-white border-t-2 border-black absolute bottom-0 left-0 p-8 rounded-b-xl">
                 <p className="font-bold text-end text-black">Total: P93,200</p>
               </div>
             </div>
