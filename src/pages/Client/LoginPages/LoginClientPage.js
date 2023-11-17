@@ -20,10 +20,10 @@ function LoginClientPage({ setCookie }) {
     setIsPasswordVisible((prevState) => !prevState);
   }
 
-  useEffect(() => {
-    console.log(username);
-    console.log(password);
-  }, [username, password]);
+  // useEffect(() => {
+  //   console.log(username);
+  //   console.log(password);
+  // }, [username, password]);
 
   const handleLogin = async (e) => {
     e.preventDefault();

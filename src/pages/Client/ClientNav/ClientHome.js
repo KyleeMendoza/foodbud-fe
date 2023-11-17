@@ -91,7 +91,7 @@ function ClientHome() {
           </div>
         </div>
         <div className="border-2 border-red-600 flex gap-5 text-white ">
-          <div className="border-blue-600 border-2 flex-1">
+          <div className="border-blue-600 border-2 flex-1 flex flex-col gap-4">
             <div className="flex gap-4">
               <div className="flex flex-col gap-2 flex-1 border-red-600 border-2 p-4 rounded-xl bg-white text-black font-bold">
                 <p className="text-2xl text-blue-400 font-bold">

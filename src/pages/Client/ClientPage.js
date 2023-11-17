@@ -17,6 +17,7 @@ import Link from "@mui/material/Link";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -28,7 +29,7 @@ import CakeIcon from "@mui/icons-material/Cake";
 import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-import { Link as NavLink } from "react-router-dom";
+import { Link as NavLink, useNavigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 import clientBg from "../../assets/clientBg.png";
@@ -114,10 +115,20 @@ const Drawer = styled(MuiDrawer, {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
-export default function ClientPage() {
+export default function ClientPage({ setCookie }) {
+  const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
+
   const toggleDrawer = () => {
     setOpen(!open);
+  };
+
+  const handleLogout = () => {
+    // Clear user session information (e.g., remove stored username or token)
+    setCookie("username", "", { expires: 0 });
+
+    // Redirect to the login page
+    navigate("/login");
   };
 
   return (
@@ -127,6 +138,7 @@ export default function ClientPage() {
 
         {/* BACKGROUND OF THE WHOLE CANVASS */}
         <div className="absolute inset-0 bg-white"></div>
+
         {/* TOP BAR */}
         <AppBar position="absolute" open={open}>
           <Toolbar
@@ -158,6 +170,9 @@ export default function ClientPage() {
               <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
               </Badge>
+            </IconButton>
+            <IconButton color="inherit" onClick={handleLogout}>
+              <ExitToAppIcon />
             </IconButton>
           </Toolbar>
         </AppBar>

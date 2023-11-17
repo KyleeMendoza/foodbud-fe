@@ -9,12 +9,18 @@ import ClientAppointments from "../pages/Client/ClientNav/ClientAppointments";
 import ClientAccounts from "../pages/Client/ClientNav/ClientAccounts";
 import ClientEventDetails from "../pages/Client/ClientNav/ClientEventDetails";
 
-const ProtectedRoute = ({ cookies }) => {
+const ProtectedRoute = ({ cookies, setCookie }) => {
   return (
     <Routes>
       <Route
         path="/"
-        element={cookies.username ? <ClientPage /> : <Navigate to="/login" />}
+        element={
+          cookies.username ? (
+            <ClientPage setCookie={setCookie} />
+          ) : (
+            <Navigate to="/login" />
+          )
+        }
       >
         <Route index element={<ClientHome />} />
         <Route path="home" element={<ClientHome />} />
