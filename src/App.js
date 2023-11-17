@@ -32,7 +32,7 @@ import UserIdentificationPage from "./pages/Client/LoginPages/UserIdentification
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const [cookies, setCookie] = useCookies(["username"]);
+  const [cookies, setCookie] = useCookies(["username", "name"]);
 
   return (
     <BrowserRouter>
@@ -54,7 +54,7 @@ function App() {
             />
             <Route
               path="/login"
-              element={<LoginClientPage setCookie={setCookie} />}
+              element={<LoginClientPage setCookie={setCookie}  />}
             />
           </Routes>
         </div>

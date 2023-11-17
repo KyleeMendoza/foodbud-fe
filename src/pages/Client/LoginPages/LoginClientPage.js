@@ -43,6 +43,10 @@ function LoginClientPage({ setCookie }) {
         setCookie("username", login.data.loginUser.client_email, {
           expires: 0,
         });
+        setCookie("name", login.data.loginUser.client_name, {
+          expires: 0,
+        });
+        
         // setIsLoggedIn(true);
         navigate("/client");
       } else {

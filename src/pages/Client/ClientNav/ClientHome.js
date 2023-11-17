@@ -2,15 +2,22 @@ import React from "react";
 import Button from "@mui/material/Button";
 import { Divider } from "@mui/material";
 import SelectButton from "../../../components/SelectButton";
+import { useEffect } from "react";
 
-function ClientHome() {
+function ClientHome({name}) {
+  // const clientName = cookies.name;
+
+  // useEffect(() => {
+  //   console.log(cookies);
+  // }, [cookies])
+
   return (
     <div className="border-2 border-black h-full py-10">
       <div className="flex flex-col gap-5 border-2 border-green-600 font-['Poppins']">
         <div className="flex justify-between items-center w-full border-2 border-red-600">
           <div className="flex flex-col gap-2 text-white">
             <p className="text-2xl font-bold capitalize ">Welcome back,</p>
-            <p className="text-5xl font-bold capitalize ">Client Name!</p>
+            <p className="text-5xl font-bold capitalize ">{name}</p>
           </div>
           <div>
             <SelectButton />

@@ -23,12 +23,12 @@ function HomeFooter() {
             <div className="flex flex-col gap-4">
               <p className="font-bold text-3xl capitalize">quick links</p>
               <div className="flex flex-col gap-2 capitalize">
-                <p>home</p>
-                <p>about us</p>
-                <p>packages</p>
-                <p>gallery</p>
-                <p>faqs</p>
-                <p>contactus</p>
+                <a href="/">home</a>
+                <a href="/aboutUs">about us</a>
+                <a href="/packages">packages</a>
+                <a href="/gallery">gallery</a>
+                <a href="/faqs">faqs</a>
+                <a href="/contactUs">contactus</a>
               </div>
             </div>
             <div className="flex flex-col gap-4">

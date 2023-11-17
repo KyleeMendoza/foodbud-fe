@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Logo from "../assets/foodBudLogo.png";
 import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 
@@ -12,6 +12,8 @@ function NavBar() {
 
   const handleButtonClick = (path) => {
     setSelectedButton(path);
+    // Save the selected path to localStorage
+    localStorage.setItem("selectedButton", path);
   };
 
   // Function to handle navigation to the client page
@@ -27,6 +29,14 @@ function NavBar() {
     { path: "/faqs", name: "FAQs" },
     { path: "/contactUs", name: "Contact Us" },
   ];
+
+  useEffect(() => {
+    // Retrieve the selected path from localStorage on component mount
+    const storedSelectedButton = localStorage.getItem("selectedButton");
+    if (storedSelectedButton) {
+      setSelectedButton(storedSelectedButton);
+    }
+  }, []); 
 
   return (
     <>

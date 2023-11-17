@@ -12,7 +12,7 @@ function ClientEvents({ cookies }) {
     const fetchData = async () => {
       try {
         const response = await getClientEvents(clientId);
-        // console.log(clientId);
+        console.log(clientId);
         // console.log(response);
 
         // Mapping the response to the state

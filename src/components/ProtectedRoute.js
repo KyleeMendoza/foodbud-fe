@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React from "react";
+import React, {useEffect} from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import ClientPage from "../pages/Client/ClientPage";
@@ -10,6 +10,12 @@ import ClientAccounts from "../pages/Client/ClientNav/ClientAccounts";
 import ClientEventDetails from "../pages/Client/ClientNav/ClientEventDetails";
 
 const ProtectedRoute = ({ cookies, setCookie }) => {
+
+  const name = cookies.name
+  // useEffect(() => {
+  //   console.log(cookies.name)
+  // }, [cookies])
+
   return (
     <Routes>
       <Route
@@ -22,8 +28,8 @@ const ProtectedRoute = ({ cookies, setCookie }) => {
           )
         }
       >
-        <Route index element={<ClientHome />} />
-        <Route path="home" element={<ClientHome />} />
+        <Route index element={<ClientHome name={name}/>} />
+        <Route path="home" element={<ClientHome name={name}/>} />
         <Route path="events" element={<ClientEvents cookies={cookies} />} />
         <Route path="myEvent" element={<ClientEventDetails />} />
         <Route path="appointments" element={<ClientAppointments />} />
