@@ -36,14 +36,14 @@ function NavBar() {
     if (storedSelectedButton) {
       setSelectedButton(storedSelectedButton);
     }
-  }, []); 
+  }, []);
 
   return (
     <>
       <div className="flex justify-center items-center lg:py-3 ">
         <div className="flex w-full lg:max-w-[80%] justify-between ">
           <div className="w-full lg:w-auto flex justify-between flex-row-reverse items-center ">
-            <div className="flex items-center text-3xl cursor-pointer">
+            <div className="flex items-center text-3xl cursor-pointe">
               <img
                 src={Logo}
                 alt="logo"

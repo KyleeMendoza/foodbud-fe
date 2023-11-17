@@ -5,7 +5,7 @@ import cw_hero from "../../assets/CW-Hero.png";
 
 function Hero() {
   return (
-    <div className="flex flex-col h-3/4 lg:h-screen relative border-2 border-red-600">
+    <div className="flex flex-col h-3/4 lg:h-screen relative ">
       {/* <div className="z-10 ">
         <NavBar />
       </div> */}
@@ -20,11 +20,11 @@ function Hero() {
           alt="Picture"
           className="hidden lg:block absolute inset-0 w-full h-full object-cover"
         />
-        <div className="flex flex-col gap-5 lg:gap-3 absolute w-[90%] lg:w-[80%] border-2 border-red-600">
-          <p className="border-2 border-green-600 text-5xl font-bold text-white text-center lg:text-left">
+        <div className="flex flex-col gap-5 lg:gap-3 absolute w-[90%] lg:w-[80%] ">
+          <p className=" text-5xl font-bold text-white text-center lg:text-left">
             Elevate Your Events with us!
           </p>
-          <p className="border-2 border-blue-600 text-lg text-white lg:w-[40%] text-center lg:text-left">
+          <p className=" text-lg text-white lg:w-[40%] text-center lg:text-left">
             At Elysium, we are more than just a catering company; we're your
             culinary partners in creating unforgettable moments.
           </p>

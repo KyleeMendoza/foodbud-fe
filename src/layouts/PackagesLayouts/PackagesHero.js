@@ -13,10 +13,10 @@ function PackagesHero() {
   const [pic2, setPic2] = useState(false);
   const [pic3, setPic3] = useState(false);
   return (
-    <div className="border-2 border-black h-full">
-      <div className="flex flex-col gap-10 h-full py-10 border-2 border-green-600 ">
-        <div className="flex flex-col gap-10 items-center justify-center border-2 border-red-600">
-          <div className="flex flex-col lg:w-[70%] xl:w-[60%] 2xl:w-[55%] text-center gap-10 justify-center items-center font-['Poppins'] border-2 border-blue-600">
+    <div className=" h-full">
+      <div className="flex flex-col gap-10 h-full py-10  ">
+        <div className="flex flex-col gap-10 items-center justify-center ">
+          <div className="flex flex-col lg:w-[70%] xl:w-[60%] 2xl:w-[55%] text-center gap-10 justify-center items-center font-['Poppins'] ">
             <p className="text-3xl font-bold capitalize">our packages</p>
             <p className="xl:text-6xl lg:text-5xl font-bold capitalize leading-normal">
               Celebrate in Style with Our Range of Event Packages
@@ -28,7 +28,7 @@ function PackagesHero() {
             </p>
           </div>
           <div>
-            <div className="flex gap-10 justify-center items-center border-2 border-red-600">
+            <div className="flex gap-10 justify-center items-center ">
               <Button
                 variant="contained"
                 size="large"
@@ -59,7 +59,7 @@ function PackagesHero() {
             </div>
           </div>
         </div>
-        <div className="flex flex-1 justify-center items-center border-2 border-red-600">
+        <div className="flex flex-1 justify-center items-center ">
           <PackageHeroCarousel pic1={pic1} pic2={pic2} pic3={pic3} />
         </div>
       </div>

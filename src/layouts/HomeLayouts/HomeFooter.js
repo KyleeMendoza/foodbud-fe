@@ -7,16 +7,16 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 
 function HomeFooter() {
   return (
-    <div className="h-full border-2 border-black">
-      <div className="h-full flex flex-col border-2 border-green-600 flex-1 relative">
+    <div className="h-full ">
+      <div className="h-full flex flex-col  flex-1 relative">
         <img
           src={cw_event1}
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
         <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div>
-        <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white border-2 border-red-600">
-          <div className="flex pt-10 flex-1 w-full justify-around border-2 border-green-600">
+        <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white ">
+          <div className="flex pt-10 flex-1 w-full justify-around ">
             <div>
               <img src={logo} alt="Picture" />
             </div>

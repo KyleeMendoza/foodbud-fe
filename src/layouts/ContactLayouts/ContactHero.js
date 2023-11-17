@@ -3,8 +3,8 @@ import Button from "@mui/material/Button";
 
 function ContactHero() {
   return (
-    <div className="flex  justify-center items-start border-2 border-black h-full py-10">
-      <div className="flex flex-col justify-center items-start gap-10 border-2 border-green-600 font-['Poppins'] w-[80%]">
+    <div className="flex  justify-center items-start  h-full py-10">
+      <div className="flex flex-col justify-center items-start gap-10  font-['Poppins'] w-[80%]">
         <p className="text-4xl font-bold uppercase text-primary-500 w-[50%]">
           CONTACT DETAILS AND OFFICE LOCATION
         </p>

@@ -99,7 +99,7 @@ const PricingCards = () => {
   ];
   return (
     <div className="w-full px-4 bg-white">
-      <div className="w-[95%] lg:w-[90%] xl:w-[80%] 2xl:w-[80%] mx-auto grid md:grid-cols-4 gap-5 border-2 border-red-600">
+      <div className="w-[95%] lg:w-[90%] xl:w-[80%] 2xl:w-[80%] mx-auto grid md:grid-cols-4 gap-5 ">
         {cardData.map((card, index) => (
           <div
             key={index}

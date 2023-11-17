@@ -7,18 +7,18 @@ import cw_as from "../../assets/CW-AS.png";
 
 function HomeDeals() {
   return (
-    <div className="border-2 border-black  h-full ">
-      <div className="border-2 border-green-600 h-full flex flex-col justify-center items-center bg-secondary-50 relative">
+    <div className="  h-full ">
+      <div className=" h-full flex flex-col justify-center items-center bg-secondary-50 relative">
         <img
           src={cw_deal}
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
-        <div className="w-full z-10 flex flex-col h-[70%] justify-center items-center border-2 border-red-600">
+        <div className="w-full z-10 flex flex-col h-[70%] justify-center items-center ">
           <p className="py-5 2xl:py-5 text-4xl font-bold text-white uppercase">
             our deals
           </p>
-          <div className="w-[80%] font-['Poppins'] flex flex-1 justify-center gap-10 border-2 border-red-600">
+          <div className="w-[80%] font-['Poppins'] flex flex-1 justify-center gap-10 ">
             <div className="w-[25%] h-full rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cs_aikp}

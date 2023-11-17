@@ -4,9 +4,9 @@ import ReviewComponent from "../../components/ReviewComponent";
 
 function AboutUsClients() {
   return (
-    <div className="h-full flex flex-col items-center justify-center border-2 border-black ">
-      <div className="flex flex-col gap-10 w-[85%] 2xl:w-[75%] my-20 border-2 border-green-600">
-        <div className="flex border-2 border-red-600">
+    <div className="h-full flex flex-col items-center justify-center  ">
+      <div className="flex flex-col gap-10 w-[85%] 2xl:w-[75%] my-20 ">
+        <div className="flex ">
           <div className="flex flex-col flex-1 gap-4 font-['Poppins']">
             <p className="font-bold text-2xl italic">Servicing since 2020</p>
             <p>
@@ -50,9 +50,9 @@ function AboutUsClients() {
             <img src={logo} alt="" className="w-96 h-96" />
           </div>
         </div>
-        <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center border-2 border-red-600">
+        <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center ">
           <p className="font-bold text-2xl">Past &amp; Present Clients</p>
-          <div className="flex flex-col w-full gap-5 border-2 border-blue-600">
+          <div className="flex flex-col w-full gap-5 ">
             <div className="flex justify-center gap-5">
               <img src={logo} alt="" className="w-80 h-80" />{" "}
               <img src={logo} alt="" className="w-80 h-80" />{" "}

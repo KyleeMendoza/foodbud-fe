@@ -46,7 +46,7 @@ function LoginClientPage({ setCookie }) {
         setCookie("name", login.data.loginUser.client_name, {
           expires: 0,
         });
-        
+
         // setIsLoggedIn(true);
         navigate("/client");
       } else {

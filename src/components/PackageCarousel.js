@@ -21,12 +21,12 @@ const PackageCarousel = () => {
     <>
       <Slider
         {...settings}
-        className=" h-full lg:w-[90%] xl:w-[80%] 2xl:w-[80%] border-2 border-black"
+        className=" h-full lg:w-[90%] xl:w-[80%] 2xl:w-[80%] border-2 border-black rounded-2xl"
       >
         <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
-          <div className="flex  items-center border-2 border-green-600 h-full">
-            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
-              <div className="flex flex-col gap-8 border-2 border-black">
+          <div className="flex  items-center  h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
+              <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">All-In Packages</p>
                 <p className="text-5xl font-bold capitalize">budget package</p>
                 <p className="text-lg">
@@ -52,7 +52,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 border-2 border-red-600 h-full">
+            <div className="flex flex-1  h-full">
               <div>
                 <img src={promo} alt="" className="h-full" />
               </div>
@@ -60,9 +60,9 @@ const PackageCarousel = () => {
           </div>
         </div>
         <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
-          <div className="flex  items-center border-2 border-green-600 h-full">
-            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
-              <div className="flex flex-col gap-8 border-2 border-black">
+          <div className="flex  items-center  h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
+              <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">All-In Packages</p>
                 <p className="text-5xl font-bold capitalize">
                   Deluxe Debut Package
@@ -90,7 +90,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 border-2 border-red-600 h-full">
+            <div className="flex flex-1  h-full">
               <div>
                 <img src={promo} alt="" className="h-full" />
               </div>
@@ -98,9 +98,9 @@ const PackageCarousel = () => {
           </div>
         </div>
         <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
-          <div className="flex  items-center border-2 border-green-600 h-full">
-            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
-              <div className="flex flex-col gap-8 border-2 border-black">
+          <div className="flex  items-center  h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
+              <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">All-In Packages</p>
                 <p className="text-5xl font-bold capitalize">Deluxe Package</p>
                 <p className="text-lg">
@@ -126,7 +126,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 border-2 border-red-600 h-full">
+            <div className="flex flex-1  h-full">
               <div>
                 <img src={promo} alt="" className="h-full" />
               </div>
@@ -134,9 +134,9 @@ const PackageCarousel = () => {
           </div>
         </div>
         <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
-          <div className="flex  items-center border-2 border-green-600 h-full">
-            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
-              <div className="flex flex-col gap-8 border-2 border-black">
+          <div className="flex  items-center  h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
+              <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">All-In Packages</p>
                 <p className="text-5xl font-bold capitalize">Diamond Package</p>
                 <p className="text-lg">
@@ -162,7 +162,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 border-2 border-red-600 h-full">
+            <div className="flex flex-1  h-full">
               <div>
                 <img src={promo} alt="" className="h-full" />
               </div>
@@ -170,9 +170,9 @@ const PackageCarousel = () => {
           </div>
         </div>
         <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
-          <div className="flex  items-center border-2 border-green-600 h-full">
-            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 border-2 border-red-600">
-              <div className="flex flex-col gap-8 border-2 border-black">
+          <div className="flex  items-center  h-full">
+            <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
+              <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">All-In Packages</p>
                 <p className="text-5xl font-bold capitalize">Luxury Package</p>
                 <p className="text-lg">
@@ -198,7 +198,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 border-2 border-red-600 h-full">
+            <div className="flex flex-1  h-full">
               <div>
                 <img src={promo} alt="" className="h-full" />
               </div>

@@ -3,10 +3,10 @@ import PricingCards from "../../components/PricingCards";
 
 function PackagesPricing() {
   return (
-    <div className="h-full border-2 border-black">
-      <div className="flex flex-col justify-center items-center font-['Poppins'] border-2 border-green-600">
+    <div className="h-full ">
+      <div className="flex flex-col justify-center items-center font-['Poppins'] ">
         <p className="font-bold text-3xl capitalize">additional services</p>
-        <div className="border-2 border-red-600">
+        <div className="">
           <PricingCards />
         </div>
       </div>

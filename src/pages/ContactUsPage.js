@@ -7,11 +7,11 @@ function ContactUsPage() {
   return (
     <>
       <div id="faqs">
-        <div className="h-[100vh]  border-2 border-blue-600">
+        <div className="h-[100vh]  ">
           <ContactHero />
         </div>
         <div
-          className="flex flex-col h-[50vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] border-2 border-blue-600"
+          className="flex flex-col h-[50vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] "
           // id="footer"
         >
           <HomeFooter />

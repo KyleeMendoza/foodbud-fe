@@ -38,8 +38,8 @@ const PackageHeroCarousel = ({ pic1, pic2, pic3 }) => {
       </Slider> */}
 
       {/* HOVER */}
-      <div className="border-2 border-black lg:w-[60%] xl:w-[60%] 2xl:w-[45%]">
-        <div className="border-2 border-green-600 h-[29rem] transition-opacity duration-500">
+      <div className=" lg:w-[60%] xl:w-[60%] 2xl:w-[45%]">
+        <div className=" h-[29rem] transition-opacity duration-500">
           {pic1 ? (
             <img src={cs_aikp} alt="" className="w-full h-full rounded-xl " />
           ) : pic2 ? (

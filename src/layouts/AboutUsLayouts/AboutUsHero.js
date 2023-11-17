@@ -7,9 +7,9 @@ import custdriven from "../../assets/cwau-custdriven.png";
 
 function AboutUsHero() {
   return (
-    <div className="h-full flex flex-col items-center border-2 border-black">
-      <div className="flex flex-col xl:h-[85%] lg:h-[90%] lg:mt-10 mt-20 2xl:w-[80%] items-center justify-around border-2 border-green-600">
-        <div className="w-[60%] font-['Poppins'] text-center border-2 border-red-600">
+    <div className="h-full flex flex-col items-center ">
+      <div className="flex flex-col xl:h-[85%] lg:h-[90%] lg:mt-10 mt-20 2xl:w-[80%] items-center justify-around ">
+        <div className="w-[60%] font-['Poppins'] text-center ">
           <p className="text-black font-bold text-4xl capitalize">about us</p>
           <p className="text-md">
             This is the part where we will introduce food bud in a short
@@ -17,9 +17,9 @@ function AboutUsHero() {
             therm and convince tthem to book an event with us chucu
           </p>
         </div>
-        <div className="w-[80%] font-['Poppins'] border-2 border-red-600">
+        <div className="w-[80%] font-['Poppins'] ">
           <div className="flex justify-between">
-            <div className="flex w-[45%] p-5 gap-12 border-2 border-black">
+            <div className="flex w-[45%] p-5 gap-12 border-2 border-black rounded-2xl">
               <p className="text-black font-bold text-3xl capitalize">
                 mission
               </p>
@@ -28,7 +28,7 @@ function AboutUsHero() {
                 expectation by giving our hundred percent best in every event.
               </p>
             </div>
-            <div className="flex w-[45%] p-5 gap-12 border-2 border-black">
+            <div className="flex w-[45%] p-5 gap-12 border-2 border-black rounded-2xl">
               <p className="text-black font-bold text-3xl capitalize">
                 vission
               </p>
@@ -40,7 +40,7 @@ function AboutUsHero() {
             </div>
           </div>
         </div>
-        <div className="w-[70%] font-['Poppins'] border-2 border-red-600">
+        <div className="w-[70%] font-['Poppins'] ">
           <div className="flex justify-between text-black font-bold text-xl capitalize ">
             <div className="flex flex-col items-center gap-4 text-center ">
               <img src={teamwork} alt="teamwork" className="w-42 h-40 " />

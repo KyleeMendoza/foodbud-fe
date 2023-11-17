@@ -67,7 +67,7 @@ export default function GalleryViewer() {
   };
 
   return (
-    <Box sx={{ width: "100%" }} className="border-2 border-red-600 h-full">
+    <Box sx={{ width: "100%" }} className=" h-full">
       <Box
         sx={{ borderBottom: 1, borderColor: "divider" }}
         className="flex justify-center items-center"
@@ -87,77 +87,73 @@ export default function GalleryViewer() {
           <Tab label="Others" {...a11yProps(7)} />
         </Tabs>
       </Box>
-      <CustomTabPanel
-        value={value}
-        index={0}
-        className="border-2 border-green-600 "
-      >
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+      <CustomTabPanel value={value} index={0} className="">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
-        <div className="border-2 border-red-600 grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
-            <div key={index} className="border-2 border-black">
+            <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
           ))}
