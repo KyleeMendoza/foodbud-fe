@@ -5,9 +5,10 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import { postEditEvent } from "../services/postEditEvent";
+import { postEditEvent, postEditFoodForm} from "../services/postEditEvent";
 import { useLocation } from "react-router-dom";
-import { getFetchEvent } from "../services/getFetchEvent";
+import { getFetchEvent, getFetchFT } from "../services/getFetchEvent";
+import { getInvoice } from "../services/getInvoice";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,6 +50,8 @@ export default function EventsViewer() {
   // console.log(eventId);
   const [editMode, setEditMode] = React.useState(false);
   const [formData, setFormData] = React.useState({});
+  const [foodFormData, setFoodFormData] = React.useState({})
+  const [invoiceData, setInvoiceData] = React.useState({})
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -65,9 +68,21 @@ export default function EventsViewer() {
     // Handle saving data, e.g., sending it to the server
   };
 
+  const handleSaveFoodForm = () => {
+    setEditMode(false);
+    saveFoodForm();
+  };
+
   const handleModify = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const handleModify2 = (e) => {
+    const { name, value } = e.target;
+    setFoodFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -86,6 +101,15 @@ export default function EventsViewer() {
     }
   };
 
+  const saveFoodForm = async () =>{
+    try {
+      const response = await postEditFoodForm(eventId, foodFormData)
+      console.log(response)
+    } catch (error) {
+      console.error("Error:", error.message);
+    }
+  }
+
   //FETCH EVENT
   React.useEffect(() => {
     const fetchData = async () => {
@@ -93,6 +117,40 @@ export default function EventsViewer() {
         const response = await getFetchEvent(eventId);
         setFormData(response.fetchEvent);
         // console.log(response.fetchEvent);
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert(
+          "An error occurred while fetching the bet history. Please try again later."
+        );
+      }
+    };
+    fetchData();
+  }, [eventId]);
+
+  // FETCH FOOD FORM
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getFetchFT(eventId);
+        setFoodFormData(response.fetchFT);
+        // console.log(response.fetchFT)
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert(
+          "An error occurred while fetching the bet history. Please try again later."
+        );
+      }
+    };
+    fetchData();
+  }, [eventId]);
+
+  // FETCH INVOICE
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getInvoice(eventId);
+        // setFormData(response);
+        setInvoiceData(response.packageRate);
       } catch (error) {
         console.error("Error:", error.message);
         window.alert(
@@ -463,672 +521,233 @@ export default function EventsViewer() {
         <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
           <div className=" flex justify-between font-['Poppins']">
             <p className="text-3xl font-bold text-[#3B9BDC]">Invoice</p>
-            {/* <Button variant="contained" onClick={handleEdit}>
-              {editMode ? "cancel" : "edit"}
-            </Button> */}
+            <Button variant="contained">
+              PRINT
+            </Button>
           </div>
-          {/* <div className=" relative pb-20 ">
-            <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
+          <div className=" relative pb-20 ">
+          
+              <strong><h1 className="text-2xl">{invoiceData.package_name}</h1></strong>
+              <p className="text-lg">Note: This is just an initial overview or estimation of your payment, any changes regarding the payment will inform to you by admin. </p><br></br>
+
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Celebrant Name:</p>
+                <p className="font-bold text-lg">Reservation Fee</p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
                     type="text"
-                    name="celebrant_name"
-                    value={formData.celebrant_name}
-                    onChange={handleModify}
+                    name="fee"
+                    value={5000}
                   />
                 ) : (
-                  <span className="font-normal p-1 ">
-                    {formData.celebrant_name}
+                  <span className="font-normal p-1 text-lg">
+                    ₱ 5000
                   </span>
                 )}
               </label>
-
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Age:</p>
+                <p className="font-bold text-lg">{invoiceData.pax_count} Pax</p>
                 {editMode ? (
                   <input
-                    className="font-normal border-2 p-1"
-                    type="number"
-                    name="celebrant_age"
-                    value={formData.celebrant_age || ""}
-                    onChange={handleModify}
+                    className="font-normal border-2 p-1 "
+                    type="text"
+                    name="fee"
+                    value={invoiceData.rate}
                   />
                 ) : (
-                  <span className="font-normal p-1">
-                    {formData.celebrant_age}
+                  <span className="font-normal p-1 text-lg">
+                    ₱ {invoiceData.rate}
                   </span>
                 )}
               </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Preparation Time:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="prep_time"
-                    value={formData.prep_time || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.prep_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Start Time:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="start_time"
-                    value={formData.start_time || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.start_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Event Type:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="event_type"
-                    value={formData.event_type || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.event_type}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Theme:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="theme"
-                    value={formData.theme || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.theme}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Color Theme:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="color_theme"
-                    value={formData.color_theme || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.color_theme}
-                  </span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Time:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_time"
-                    value={formData.venue_time || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.venue_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Type:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_type"
-                    value={formData.venue_type || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.venue_type}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Floor:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_floor"
-                    value={formData.venue_floor || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_floor}
-                  </span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Address:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_address"
-                    value={formData.venue_address || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_address}
-                  </span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Location:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_location"
-                    value={formData.venue_location || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_location}
-                  </span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dish 1:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dish_1"
-                    value={formData.dish_1 || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dish_1}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dish 2:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dish_2"
-                    value={formData.dish_2 || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dish_2}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Pasta:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="pasta"
-                    value={formData.pasta || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.pasta}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dessert:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dessert"
-                    value={formData.dessert || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dessert}</span>
-                )}
-              </label>
-            </form>
-            <button
-              onClick={handleSave}
-              //   type="submit"
-              className="font-bold text-xl bg-green-500 text-white px-5 py-3 rounded-md absolute bottom-0 right-0"
-            >
-              Submit
-            </button>
-          </div> */}
+          </div>
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
           <div className=" flex justify-between font-['Poppins']">
             <p className="text-3xl font-bold text-[#3B9BDC]">Food Tasting</p>
-            {/* <Button variant="contained" onClick={handleEdit}>
+            <Button variant="contained" onClick={handleEdit}>
               {editMode ? "cancel" : "edit"}
-            </Button> */}
+            </Button>
           </div>
-          {/* <div className=" relative pb-20 ">
+          <div className=" relative pb-20 ">
+            <ul className="list-disc">
+            <li className="ml-8">
+                <strong>
+                  Delivery via Lalamove (delivery fee will be shouldered by the
+                  client)
+                </strong>
+              </li>
+              <li className="ml-8">
+                <strong>FREE food tasting only ( MAX 3 DISH )</strong>
+              </li>
+              <li className="ml-8">
+                <strong>P200 per dish for more than 3 dish</strong>
+              </li>
+            </ul><br></br><br></br>
+
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Celebrant Name:</p>
+                <p>Date: </p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
                     type="text"
-                    name="celebrant_name"
-                    value={formData.celebrant_name}
-                    onChange={handleModify}
+                    name="date"
+                    value={foodFormData.date}
+                    onChange={handleModify2}
                   />
                 ) : (
                   <span className="font-normal p-1 ">
-                    {formData.celebrant_name}
+                    {foodFormData.date}
                   </span>
                 )}
               </label>
-
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Age:</p>
+                <p>Time: </p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
-                    type="number"
-                    name="celebrant_age"
-                    value={formData.celebrant_age || ""}
-                    onChange={handleModify}
+                    type="text"
+                    name="time"
+                    value={foodFormData.time}
+                    onChange={handleModify2}
                   />
                 ) : (
-                  <span className="font-normal p-1">
-                    {formData.celebrant_age}
+                  <span className="font-normal p-1 ">
+                    {foodFormData.time}
+                  </span>
+                )}
+              </label><br></br>
+              <label
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
+              >
+                <p>Recipient Name: </p>
+                {editMode ? (
+                  <input
+                    className="font-normal border-2 p-1"
+                    type="text"
+                    name="name"
+                    value={foodFormData.name}
+                    onChange={handleModify2}
+                  />
+                ) : (
+                  <span className="font-normal p-1 ">
+                    {foodFormData.name}
                   </span>
                 )}
               </label>
-
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Preparation Time:</p>
+                <p>Contact Number: </p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
                     type="text"
-                    name="prep_time"
-                    value={formData.prep_time || ""}
-                    onChange={handleModify}
+                    name="contact"
+                    value={foodFormData.contact}
+                    onChange={handleModify2}
                   />
                 ) : (
-                  <span className="font-normal p-1">{formData.prep_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Start Time:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="start_time"
-                    value={formData.start_time || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.start_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Event Type:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="event_type"
-                    value={formData.event_type || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.event_type}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Theme:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="theme"
-                    value={formData.theme || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.theme}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Color Theme:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="color_theme"
-                    value={formData.color_theme || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.color_theme}
+                  <span className="font-normal p-1 ">
+                    {foodFormData.contact}
                   </span>
                 )}
               </label>
-
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Venue Time:</p>
+                <p>Address: </p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
                     type="text"
-                    name="venue_time"
-                    value={formData.venue_time || ""}
-                    onChange={handleModify}
+                    name="address"
+                    value={foodFormData.address}
+                    onChange={handleModify2}
                   />
                 ) : (
-                  <span className="font-normal p-1">{formData.venue_time}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Type:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_type"
-                    value={formData.venue_type || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.venue_type}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Floor:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_floor"
-                    value={formData.venue_floor || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_floor}
+                  <span className="font-normal p-1 ">
+                    {foodFormData.address}
                   </span>
                 )}
               </label>
+              <label
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
+              >
+                <p>Google Pin Location: </p>
+                {editMode ? (
+                  <input
+                    className="font-normal border-2 p-1"
+                    type="text"
+                    name="google_pin"
+                    value={foodFormData.google_pin}
+                    onChange={handleModify2}
+                  />
+                ) : (
+                  <span className="font-normal p-1 ">
+                    {foodFormData.google_pin}
+                  </span>
+                )}
+              </label><br></br>
 
               <label
                 className={`flex justify-between items-center ${
                   editMode ? "" : "border-b-2"
                 } `}
               >
-                <p>Venue Address:</p>
+                <p>Dishes </p>
                 {editMode ? (
                   <input
                     className="font-normal border-2 p-1"
                     type="text"
-                    name="venue_address"
-                    value={formData.venue_address || ""}
-                    onChange={handleModify}
+                    name="dish"
+                    value={foodFormData.dish}
+                    onChange={handleModify2}
                   />
                 ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_address}
+                  <span className="font-normal p-1 ">
+                    {foodFormData.dish}
                   </span>
                 )}
               </label>
+        
 
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Venue Location:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="venue_location"
-                    value={formData.venue_location || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">
-                    {formData.venue_location}
-                  </span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dish 1:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dish_1"
-                    value={formData.dish_1 || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dish_1}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dish 2:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dish_2"
-                    value={formData.dish_2 || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dish_2}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Pasta:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="pasta"
-                    value={formData.pasta || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.pasta}</span>
-                )}
-              </label>
-
-              <label
-                className={`flex justify-between items-center ${
-                  editMode ? "" : "border-b-2"
-                } `}
-              >
-                <p>Dessert:</p>
-                {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="dessert"
-                    value={formData.dessert || ""}
-                    onChange={handleModify}
-                  />
-                ) : (
-                  <span className="font-normal p-1">{formData.dessert}</span>
-                )}
-              </label>
-            </form>
+              </form>
             <button
-              onClick={handleSave}
-              //   type="submit"
+              onClick={handleSaveFoodForm}
+                type="submit"
               className="font-bold text-xl bg-green-500 text-white px-5 py-3 rounded-md absolute bottom-0 right-0"
             >
               Submit
             </button>
-          </div> */}
+          </div>
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
