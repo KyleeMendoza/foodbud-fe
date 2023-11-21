@@ -14,10 +14,10 @@ function HomeFooter() {
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
-        <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div>
-        <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white ">
-          <div className="flex pt-10 flex-1 w-full justify-around ">
-            <div>
+        <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter border-4 border-yellow-600"></div>
+        <div className="absolute inset-0 z-20 flex flex-col font-['Poppins'] items-center text-white border-4 border-red-600">
+          <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row text-center lg:text-start items-center lg:items-start py-10 lg:pt-10 flex-1 w-full lg:justify-around px-5 lg:px-0 border-4 border-yellow-600">
+            <div className="hidden lg:block">
               <img src={logo} alt="Picture" />
             </div>
             <div className="flex flex-col gap-4">
@@ -33,7 +33,7 @@ function HomeFooter() {
             </div>
             <div className="flex flex-col gap-4">
               <p className="font-bold text-3xl capitalize">contact us</p>
-              <div className="flex flex-col gap-2 capitalize">
+              <div className="flex flex-col items-center lg:items-start gap-2 capitalize">
                 <p>
                   Queensville Subd., Blk 11 Lot 12 Victoria St., Caloocan City
                   PHL
@@ -53,43 +53,6 @@ function HomeFooter() {
               Copyright © 2023 Elysium | All Rights Reserved
             </p>
           </div>
-          {/* <div className="w-[85%] 2xl:w-[70%] flex flex-1 py-10 justify-between border-2 border-green-600">
-            <div>
-              <img src={logo} alt="Picture" />
-            </div>
-            <div className="flex flex-col gap-4">
-              <p className="font-bold text-3xl capitalize">quick links</p>
-              <div className="flex flex-col gap-2 capitalize">
-                <p>home</p>
-                <p>about us</p>
-                <p>packages</p>
-                <p>gallery</p>
-                <p>faqs</p>
-                <p>contactus</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-4">
-              <p className="font-bold text-3xl capitalize">contact us</p>
-              <div className="flex flex-col gap-2 capitalize">
-                <p>
-                  Queensville Subd., Blk 11 Lot 12 Victoria St., Caloocan City
-                  PHL
-                </p>
-                <p>foodbudevents@gmail.com</p>
-                <p>0915 175 8015</p>
-                <div className="flex gap-4">
-                  {<FacebookIcon />}
-                  {<InstagramIcon />}
-                  {<TwitterIcon />}
-                </div>
-              </div>
-            </div>
-          </div> */}
-          {/* <div className="bg-pink-primary-400 flex h-[10%] w-full justify-center items-center">
-            <p className="text-sm text-white">
-              Copyright © 2023 Elysium | All Rights Reserved
-            </p>
-          </div> */}
         </div>
       </div>
     </div>

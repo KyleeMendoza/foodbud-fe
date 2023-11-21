@@ -40,7 +40,7 @@ function NavBar() {
 
   return (
     <>
-      <div className="flex justify-center items-center lg:py-3 ">
+      <div className="flex justify-center items-center py-5 px-4 lg:py-3 bg-primary-400 lg:bg-white">
         <div className="flex w-full lg:max-w-[80%] justify-between ">
           <div className="w-full lg:w-auto flex justify-between flex-row-reverse items-center ">
             <div className="flex items-center text-3xl cursor-pointe">
@@ -49,11 +49,11 @@ function NavBar() {
                 alt="logo"
                 className="hidden lg:block w-full h-10"
               />
-              <div className="z-20 flex lg:hidden lg:items-center mt-6 mr-4">
+              <div className="z-20 flex lg:hidden lg:items-center">
                 <a
                   href="http://www.facebook.com"
                   download="Mendoza, Kyle Dominic L. - Resume.pdf"
-                  className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-sm font-semibold  text-white shadow-middle rounded-md border-2 border-white"
+                  className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-sm font-semibold  text-primary-500 shadow-middle rounded-md bg-white"
                 >
                   Sign in
                 </a>

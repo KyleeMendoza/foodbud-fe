@@ -15,23 +15,25 @@ function HomeTestimonials() {
           className="absolute inset-0 z-10 bg-white opacity-90 filter"
           // style={{ zIndex: 1 }}
         ></div>
-        <div className="absolute flex justify-center items-center inset-0 z-20 ">
+        <div className="absolute flex justify-center items-center inset-0 z-20 px-7 lg:px-0">
           <div className=" flex flex-col justify-around items-center font-['Poppins']">
-            <p className="text-4xl font-bold text-sky-500 uppercase">
+            <p className="text-3xl lg:text-4xl font-bold text-sky-500 uppercase">
               client testimonials
             </p>
-            <div className="flex flex-col flex-1 my-6 gap-5 justify-center items-center ">
-              <div className="bg-white w-[70%] p-5 rounded-3xl drop-shadow-lg">
+            <div className="flex flex-col flex-1 my-6 gap-10 lg:gap-5 justify-center items-center border-2 border-red-600">
+              <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg">
                 <div className="flex justify-between ">
                   <div className="flex flex-col gap-2 ">
-                    <p className="text-2xl font-bold text-sky-600 capitalize">
+                    <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400">September 2023</p>
+                    <p className="text-slate-400 text-sm lg:text-md">
+                      September 2023
+                    </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8">
+                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -46,17 +48,19 @@ function HomeTestimonials() {
                   </p>
                 </div>
               </div>
-              <div className="bg-white w-[70%] p-5 rounded-3xl drop-shadow-lg">
+              <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg">
                 <div className="flex justify-between ">
                   <div className="flex flex-col gap-2 ">
-                    <p className="text-2xl font-bold text-sky-600 capitalize">
+                    <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400">September 2023</p>
+                    <p className="text-slate-400 text-sm lg:text-md">
+                      September 2023
+                    </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8">
+                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -71,17 +75,19 @@ function HomeTestimonials() {
                   </p>
                 </div>
               </div>
-              <div className="bg-white w-[70%] p-5 rounded-3xl drop-shadow-lg">
+              <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg">
                 <div className="flex justify-between ">
                   <div className="flex flex-col gap-2 ">
-                    <p className="text-2xl font-bold text-sky-600 capitalize">
+                    <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400">September 2023</p>
+                    <p className="text-slate-400 text-sm lg:text-md">
+                      September 2023
+                    </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8">
+                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi

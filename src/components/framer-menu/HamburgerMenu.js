@@ -52,7 +52,7 @@ export const HamburgerMenu = () => {
       <div className="">
         <Navigation setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
-      <div className="mt-5 px-5 flex justify-start  ">
+      <div className="mt-3 px-5 flex justify-start  ">
         <Menu isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
     </motion.nav>
