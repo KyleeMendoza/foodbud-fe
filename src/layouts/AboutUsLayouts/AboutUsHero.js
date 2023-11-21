@@ -30,7 +30,7 @@ function AboutUsHero() {
             </div>
             <div className="flex w-[45%] p-5 gap-12 border-2 border-black rounded-2xl">
               <p className="text-black font-bold text-3xl capitalize">
-                vission
+                vision
               </p>
               <p className="text-md">
                 To be one of Metro Manila's best known for event and party

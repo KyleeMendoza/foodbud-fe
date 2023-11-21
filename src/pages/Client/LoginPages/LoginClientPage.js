@@ -77,7 +77,7 @@ function LoginClientPage({ setCookie }) {
                     for="email"
                     className="block mb-2 text-sm font-medium text-black"
                   >
-                    Email
+                    Username
                   </label>
                   <input
                     type="email"
@@ -159,7 +159,7 @@ function LoginClientPage({ setCookie }) {
                 </div>
                 <div>
                   <a
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/foodbudevents"
                     className="text-sm font-medium text-primary-600 hover:underline dark:text-black"
                   >
                     No account yet?{" "}
