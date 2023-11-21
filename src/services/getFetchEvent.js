@@ -27,7 +27,7 @@ export const getFetchFT = async (eventId) => {
   };
 
   try {
-    const response = await axios.get(`${baseUrl}:9001/api/get/FT`, {
+    const response = await axios.get(`${baseUrl}/api/get/FT`, {
       params,
     });
     // console.log('Response api:', response);
