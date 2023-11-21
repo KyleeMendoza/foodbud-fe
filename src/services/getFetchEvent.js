@@ -40,4 +40,23 @@ export const getFetchFT = async (eventId) => {
   }
 };
 
+export const getFetchMeeting = async (eventId) => {
+  const params = {
+    event_id: eventId,
+  };
+
+  try {
+    const response = await axios.get(`${baseUrl}/api/online/meeting`, {
+      params,
+    });
+    // console.log('Response api:', response);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(
+      "An error occurred while creating a bet. Please try again later."
+    );
+  }
+};
+
 

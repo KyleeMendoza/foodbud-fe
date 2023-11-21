@@ -38,5 +38,23 @@ export const postEditFoodForm = async (key, foodFormData) => {
   }
 };
 
+export const postEditMeetingForm = async (key, meetingData) => {
+  const params = {
+    event_id: key,
+  };
+
+  try {
+    const response = await axios.post(`${baseUrl}/api/edit/meeting`, meetingData, {
+      params,
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error(
+      "An error occurred while editing the event. Please try again later."
+    );
+  }
+};
+
 
 
