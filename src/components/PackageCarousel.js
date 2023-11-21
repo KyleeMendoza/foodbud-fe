@@ -23,7 +23,7 @@ const PackageCarousel = () => {
         {...settings}
         className=" h-full lg:w-[90%] xl:w-[80%] 2xl:w-[80%] border-2 border-black rounded-2xl"
       >
-        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
+        <div className="lg:h-[24.5rem] xl:h-[25.3rem] min-[1528px]:h-[25.3rem] 2xl:h-[24.2rem] ">
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
@@ -59,7 +59,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
+        <div className="lg:h-[24.5rem] xl:h-[25.3rem] min-[1528px]:h-[25.3rem] 2xl:h-[24.2rem] ">
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
@@ -97,7 +97,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
+        <div className="lg:h-[24.5rem] xl:h-[25.3rem] min-[1528px]:h-[25.3rem] 2xl:h-[24.2rem] ">
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
@@ -133,7 +133,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
+        <div className="lg:h-[24.5rem] xl:h-[25.3rem] min-[1528px]:h-[25.3rem] 2xl:h-[24.2rem] ">
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
@@ -169,7 +169,7 @@ const PackageCarousel = () => {
             </div>
           </div>
         </div>
-        <div className="lg:h-[25rem] xl:h-[28rem] 2xl:h-[32rem] ">
+        <div className="lg:h-[24.5rem] xl:h-[25.3rem] min-[1528px]:h-[25.3rem] 2xl:h-[24.2rem] ">
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">

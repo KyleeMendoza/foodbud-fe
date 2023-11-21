@@ -11,7 +11,7 @@ function GalleryPage() {
         <div className="lg:h-[50vh] xl:h-[40vh] 2xl:h-[40vh]  ">
           <GalleryHero />
         </div>
-        <div className="lg:h-[120vh] xl:h-[90vh] 2xl:h-[105vh] min-[1528px]:h-[120vh] ">
+        <div className="lg:h-[120vh] xl:h-[110vh] 2xl:h-[105vh] min-[1528px]:h-[120vh] ">
           <GalleryCollections />
         </div>
         <div

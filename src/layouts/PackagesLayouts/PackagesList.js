@@ -7,10 +7,10 @@ import PackageCarousel from "../../components/PackageCarousel";
 function PackagesList() {
   return (
     <>
-      <div className=" h-1/2 flex justify-center items-center p-10">
+      <div className=" h-1/2 flex justify-center items-center p-10 ">
         <PackageCarousel />
       </div>
-      <div className=" flex justify-center items-center h-1/2 p-10">
+      <div className=" flex justify-center items-center h-1/2 p-10 ">
         <div className="flex lg:w-[90%] xl:w-[80%] 2xl:w-[80%] items-center border-2 border-black rounded-2xl h-full">
           <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
             <div className="flex flex-col gap-8 ">
