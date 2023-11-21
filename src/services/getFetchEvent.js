@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "http://3.27.163.46:9001";
+const baseUrl = "https://3.27.163.46";
 
 export const getFetchEvent = async (eventId) => {
   const params = {

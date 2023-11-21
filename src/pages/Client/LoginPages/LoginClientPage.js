@@ -27,7 +27,7 @@ function LoginClientPage({ setCookie }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const baseUrl = "http://3.27.163.46:9001";
+    const baseUrl = "https://3.27.163.46";
 
     try {
       const login = await axios.post(`${baseUrl}/api/user/login`, {
