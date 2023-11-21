@@ -12,7 +12,7 @@ function PackagesPage() {
         <div className="lg:h-[160vh] xl:h-[150vh] 2xl:h-[120vh] min-[1528px]:h-[150vh] ">
           <PackagesHero />
         </div>
-        <div className="lg:h-[160vh] xl:h-[120vh] 2xl:h-[130vh] min-[1528px]:h-[150vh] ">
+        <div className="lg:h-[135vh] xl:h-[135vh] 2xl:h-[130vh] min-[1528px]:h-[135vh] ">
           <PackagesList />
         </div>
         <div className="h-[175vh] xl:h-[150vh] 2xl:h-[120vh] min-[1528px]:h-[160vh] ">

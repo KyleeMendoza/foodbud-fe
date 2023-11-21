@@ -27,7 +27,7 @@ function LoginClientPage({ setCookie }) {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const baseUrl = "http://3.27.163.46:9001";
+    const baseUrl = "https://3.27.163.46";
 
     try {
       const login = await axios.post(`${baseUrl}/api/user/login`, {
@@ -171,7 +171,7 @@ function LoginClientPage({ setCookie }) {
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Are you an admin?{" "}
                   <a
-                    href="#"
+                    href="https://foodbud-admin.vercel.app/"
                     className="font-medium text-primary-600 hover:underline text-secondary-500"
                   >
                     Login Here
