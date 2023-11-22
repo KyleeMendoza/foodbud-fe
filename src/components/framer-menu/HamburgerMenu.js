@@ -13,7 +13,7 @@ const sidebar = {
       stiffness: 20,
       restDelta: 2,
     },
-    background: "#0F172A",
+    background: "#ED4B82",
     transitionDelay: ".45s",
 
     // zIndex: 1,
