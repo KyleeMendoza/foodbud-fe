@@ -14,12 +14,12 @@ function HomeDeals() {
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
-        <div className="w-full z-10 flex flex-col h-full py-10 lg:p-0 lg:h-[70%] justify-center items-center border-2 border-red-600">
+        <div className="w-full z-10 flex flex-col h-full py-10 lg:p-0 lg:h-[70%] justify-center items-center ">
           <p className="py-5 2xl:py-5 text-3xl lg:text-4xl font-bold text-white uppercase">
             our deals
           </p>
-          <div className="lg:w-[80%] font-['Poppins'] flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10 border-2 border-green-600">
-            <div className="lg:w-[25%] lg:h-full w-[20rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+          <div className="lg:w-[80%] font-['Poppins'] flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10 ">
+            <div className="lg:w-[25%] lg:h-full w-[19rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cs_aikp}
                 alt="Picture"
@@ -29,7 +29,7 @@ function HomeDeals() {
                 all in party package
               </p>
             </div>
-            <div className="lg:w-[25%] lg:h-full w-[20rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+            <div className="lg:w-[25%] lg:h-full w-[19rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cw_fvs}
                 alt="Picture"
@@ -39,7 +39,7 @@ function HomeDeals() {
                 full venue styling
               </p>
             </div>
-            <div className="lg:w-[25%] lg:h-full w-[20rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+            <div className="lg:w-[25%] lg:h-full w-[19rem] h-[15rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cw_as}
                 alt="Picture"

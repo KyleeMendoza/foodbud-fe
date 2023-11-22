@@ -17,10 +17,10 @@ function HomeTestimonials() {
         ></div>
         <div className="absolute flex justify-center items-center inset-0 z-20 px-7 lg:px-0">
           <div className=" flex flex-col justify-around items-center font-['Poppins']">
-            <p className="text-3xl lg:text-4xl font-bold text-sky-500 uppercase">
+            <p className="text-2xl lg:text-4xl font-bold text-sky-500 uppercase">
               client testimonials
             </p>
-            <div className="flex flex-col flex-1 my-6 gap-10 lg:gap-5 justify-center items-center border-2 border-red-600">
+            <div className="flex flex-col flex-1 my-6 gap-10 lg:gap-5 justify-center items-center ">
               <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg">
                 <div className="flex justify-between ">
                   <div className="flex flex-col gap-2 ">
