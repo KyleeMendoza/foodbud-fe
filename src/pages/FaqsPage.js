@@ -19,7 +19,7 @@ function FaqsPage() {
         <div className="lg:h-[190vh] 2xl:h-[120vh] min-[1528px]:h-[160vh] ">
           <FaqsCondition />
         </div>
-        <div className="lg:h-[120vh] 2xl:h-[75vh] min-[1528px]:h-[90vh] ">
+        <div className="lg:h-[120vh] 2xl:h-[75vh] min-[1528px]:h-[140vh] ">
           <FaqsFaqs />
         </div>
         <div

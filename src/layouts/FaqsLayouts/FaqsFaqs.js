@@ -1,4 +1,5 @@
 import React from "react";
+import AccordionFaqs from "../../components/AccordionFaqs";
 
 function FaqsFaqs() {
   return (
@@ -7,7 +8,7 @@ function FaqsFaqs() {
         <p className="text-4xl font-bold text-primary-500">
           Frequently Asked Questions
         </p>
-        <div className=" grid grid-cols-2 gap-10">
+        {/* <div className=" grid grid-cols-2 gap-10">
           <div className="flex flex-col gap-8 ">
             <p className="text-xl font-bold text-primary-500">
               m generators on the Internet tend to repeat?
@@ -74,6 +75,9 @@ function FaqsFaqs() {
               handful of m
             </p>
           </div>
+        </div> */}
+        <div className="">
+          <AccordionFaqs />
         </div>
       </div>
     </div>
