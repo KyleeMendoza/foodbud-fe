@@ -24,7 +24,7 @@ function HomePage() {
           <HomeDeals />
         </div>
         <div
-          className="flex flex-col h-[190vh] lg:h-[150vh] xl:h-[135vh] 2xl:h-[120vh] min-[1528px]:h-[140vh] "
+          className="flex flex-col h-[110vh] lg:h-[150vh] xl:h-[135vh] 2xl:h-[120vh] min-[1528px]:h-[140vh] "
           // id="packages"
         >
           <HomePackages />
