@@ -28,10 +28,10 @@ export const Navigation = ({ setIsOpen, isOpen }) => (
 const itemIds = [0, 1, 2, 3, 4];
 
 const navData = [
-  { path: "#home", name: "Home" },
-  { path: "#aboutUs", name: "About Us" },
-  { path: "#packages", name: "Packages" },
-  { path: "#gallery", name: "Gallery" },
-  { path: "#faqs", name: "FAQs" },
-  { path: "#contactUs", name: "Contact Us" },
+  { path: "/", name: "Home" },
+  { path: "/aboutUs", name: "About Us" },
+  { path: "/packages", name: "Packages" },
+  { path: "/gallery", name: "Gallery" },
+  { path: "/faqs", name: "FAQs" },
+  { path: "/contactUs", name: "Contact Us" },
 ];

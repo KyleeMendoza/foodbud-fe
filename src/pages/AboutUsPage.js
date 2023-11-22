@@ -9,16 +9,16 @@ function AboutUsPage() {
   return (
     <>
       <div id="aboutUs">
-        <div className="h-screen xl:h-[70vh] 2xl:h-[70vh] min-[1528px]:h-[80vh] ">
+        <div className="h-[140vh] lg:h-screen xl:h-[70vh] 2xl:h-[70vh] min-[1528px]:h-[80vh] border-2 border-red-600">
           <AboutUsHero />
         </div>
-        <div className="h-[25vh] xl:h-[20vh] 2xl:h-[30vh] min-[1528px]:h-[30vh] ">
+        <div className="h-[15vh] lg:h-[25vh] xl:h-[20vh] 2xl:h-[30vh] min-[1528px]:h-[30vh] ">
           <AboutUsDivider />
         </div>
-        <div className="h-auto ">
+        <div className="h-auto border-2 border-red-600">
           <AboutUsClients />
         </div>
-        <div className="flex flex-col lg:h-[50vh] xl:h-[40vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] ">
+        <div className="flex flex-col h-[70vh] lg:h-[50vh] xl:h-[40vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] border-2 border-red-600">
           <HomeFooter />
         </div>
       </div>

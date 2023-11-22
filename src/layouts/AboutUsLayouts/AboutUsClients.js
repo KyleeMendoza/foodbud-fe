@@ -6,8 +6,8 @@ function AboutUsClients() {
   return (
     <div className="h-full flex flex-col items-center justify-center  ">
       <div className="flex flex-col gap-10 w-[85%] 2xl:w-[75%] my-20 ">
-        <div className="flex ">
-          <div className="flex flex-col flex-1 gap-4 font-['Poppins']">
+        <div className="flex flex-col-reverse lg:flex-row">
+          <div className="flex flex-col text-center lg:text-start flex-1 gap-4 font-['Poppins']">
             <p className="font-bold text-2xl italic">Servicing since 2020</p>
             <p>
               Building customer trust in the food industry requires time,
@@ -54,14 +54,14 @@ function AboutUsClients() {
           <p className="font-bold text-2xl">Past &amp; Present Clients</p>
           <div className="flex flex-col w-full gap-5 ">
             <div className="flex justify-center gap-5">
-              <img src={logo} alt="" className="w-80 h-80" />{" "}
-              <img src={logo} alt="" className="w-80 h-80" />{" "}
-              <img src={logo} alt="" className="w-80 h-80" />
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />
             </div>
             <div className="flex justify-center gap-5">
-              <img src={logo} alt="" className="w-80 h-80" />{" "}
-              <img src={logo} alt="" className="w-80 h-80" />{" "}
-              <img src={logo} alt="" className="w-80 h-80" />
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
+              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />
             </div>
           </div>
         </div>
