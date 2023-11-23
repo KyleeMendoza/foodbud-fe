@@ -52,12 +52,12 @@ function ClientEvents({ cookies }) {
         {events.length === 0 ? (
           <>
             <div className="flex flex-col items-start justify-center gap-4">
-              <NavLink
+              {/* <NavLink
                 to="/client/createEvent"
                 className="bg-[#E6479F] p-2 rounded-lg text-white font-semibold"
               >
                 Create Event
-              </NavLink>
+              </NavLink> */}
               <p className="text-3xl text-white font-bold font-['Poppins']">
                 You have no events yet.
               </p>
@@ -66,12 +66,12 @@ function ClientEvents({ cookies }) {
         ) : (
           <>
             <div className="flex flex-col items-start justify-center gap-4">
-              <NavLink
+              {/* <NavLink
                 to="/client/createEvent"
                 className="bg-[#E6479F] p-2 rounded-lg text-white font-semibold"
               >
                 Create Event
-              </NavLink>
+              </NavLink> */}
               {events.map((events, key) => (
                 <NavLink
                   className="flex flex-col w-72 h-72 rounded-2xl drop-shadow-lg"

@@ -3,7 +3,7 @@ import EventStepper from "../../../components/EventStepper";
 import Button from "@mui/material/Button";
 import CelebrantDetails from "./createEventLayouts/CelebrantDetails";
 
-function ClientCreateEvent() {
+function ClientEditEvent() {
   return (
     <div className="border-2 border-red-600 pt-10">
       <div className="flex flex-col gap-10 border-2 border-green-600 bg-white p-10 rounded-2xl">
@@ -50,4 +50,4 @@ function ClientCreateEvent() {
   );
 }
 
-export default ClientCreateEvent;
+export default ClientEditEvent;

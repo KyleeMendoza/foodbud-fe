@@ -8,7 +8,7 @@ import ClientEvents from "../pages/Client/ClientNav/ClientEvents";
 import ClientAppointments from "../pages/Client/ClientNav/ClientAppointments";
 import ClientAccounts from "../pages/Client/ClientNav/ClientAccounts";
 import ClientEventDetails from "../pages/Client/ClientNav/ClientEventDetails";
-import ClientCreateEvent from "../pages/Client/ClientNav/ClientCreateEvent";
+import ClientEditEvent from "../pages/Client/ClientNav/ClientEditEvent";
 
 const ProtectedRoute = ({ cookies, setCookie }) => {
   const name = cookies.name;
@@ -32,7 +32,7 @@ const ProtectedRoute = ({ cookies, setCookie }) => {
         <Route path="home" element={<ClientHome name={name} />} />
         <Route path="events" element={<ClientEvents cookies={cookies} />} />
         <Route path="myEvent" element={<ClientEventDetails />} />
-        <Route path="createEvent" element={<ClientCreateEvent />} />
+        <Route path="editEvent" element={<ClientEditEvent />} />
         <Route path="appointments" element={<ClientAppointments />} />
         <Route path="accounts" element={<ClientAccounts />} />
       </Route>

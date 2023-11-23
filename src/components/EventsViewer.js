@@ -17,6 +17,7 @@ import {
   getFetchMeeting,
 } from "../services/getFetchEvent";
 import { getInvoice } from "../services/getInvoice";
+import { Link as NavLink } from "react-router-dom";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -284,13 +285,19 @@ export default function EventsViewer() {
         <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
           <div className=" flex justify-between font-['Poppins']">
             <p className="text-3xl font-bold text-[#E7238B]">Event Details</p>
-            <Button
+            {/* <Button
               variant="contained"
               onClick={handleEdit}
               style={{ backgroundColor: "#E7238B" }}
             >
               {editMode ? "cancel" : "edit"}
-            </Button>
+            </Button> */}
+            <NavLink
+              to="/client/editEvent"
+              className="bg-[#E7238B] rounded-md py-2 px-4 text-white font-semibold"
+            >
+              Edit
+            </NavLink>
           </div>
           <div className=" relative pb-20 ">
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
