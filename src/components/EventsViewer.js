@@ -272,7 +272,7 @@ export default function EventsViewer() {
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
-          className=" bg-white rounded-3xl w-[32%] p-2 ml-6 "
+          className=" bg-white rounded-3xl w-[40%] p-2 ml-6 "
         >
           <Tab label="My Event" {...a11yProps(0)} />
           <Tab label="Invoice" {...a11yProps(1)} />
