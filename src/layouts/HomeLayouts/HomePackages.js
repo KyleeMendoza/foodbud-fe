@@ -23,8 +23,8 @@ function HomePackages() {
         /> */}
           <Carousel />
         </div>
-        <div className="border-4 border-green-600 w-[110%] overflow-x-auto ">
-          <div className="flex gap-5 lg:gap-0 justify-around px-4 items-center w-[60rem] lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem] border-2 border-red-600">
+        <div className=" w-[110%] overflow-x-auto ">
+          <div className="flex gap-5 lg:gap-0 justify-around px-4 items-center w-[60rem] lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem] ">
             <div className="h-[14rem] w-[17rem] lg:w-[22%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
               <img
                 src={cw_ebox1}
