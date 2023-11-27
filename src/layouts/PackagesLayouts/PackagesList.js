@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "@mui/material/Button";
-
+import fullVenue from "../../assets/full_venue_big.png";
 import promo from "../../assets/packageBg.png";
 import PackageCarousel from "../../components/PackageCarousel";
 
@@ -12,7 +12,7 @@ function PackagesList() {
           <PackageCarousel />
         </div>
         <div className=" h-1/2 flex justify-center items-center ">
-          <div className="flex items-center border-2 border-black rounded-2xl h-full">
+          <div className="flex items-center border-2 border-black rounded-2xl h-full pr-5">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10">
               <div className="flex flex-col gap-8 ">
                 <p className="text-2xl font-bold">Full Venue Styling</p>
@@ -45,7 +45,7 @@ function PackagesList() {
             </div>
             <div className="flex flex-1 h-full rounded-2xl">
               <div>
-                <img src={promo} alt="" className="h-full" />
+                <img src={fullVenue} alt="" className="h-full rounded-2xl" />
               </div>
             </div>
           </div>

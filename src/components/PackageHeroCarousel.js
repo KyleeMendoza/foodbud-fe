@@ -10,6 +10,10 @@ import Button from "@mui/material/Button";
 
 import promo from "../assets/packageBg.png";
 
+import allIn from "../assets/all_in.png";
+import fullVenue from "../assets/full_venue.png";
+import addServ from "../assets/add_serv.png";
+
 const PackageHeroCarousel = ({ pic1, pic2, pic3 }) => {
   const settings = {
     dots: true,
@@ -41,13 +45,13 @@ const PackageHeroCarousel = ({ pic1, pic2, pic3 }) => {
       <div className=" lg:w-[60%] xl:w-[60%] 2xl:w-[45%]">
         <div className=" h-[29rem] transition-opacity duration-500">
           {pic1 ? (
-            <img src={cs_aikp} alt="" className="w-full h-full rounded-xl " />
+            <img src={allIn} alt="" className="w-full h-full rounded-xl " />
           ) : pic2 ? (
-            <img src={cw_fvs} alt="" className="w-full h-full rounded-xl " />
+            <img src={fullVenue} alt="" className="w-full h-full rounded-xl " />
           ) : pic3 ? (
-            <img src={cw_as} alt="" className="w-full h-full rounded-xl " />
+            <img src={addServ} alt="" className="w-full h-full rounded-xl " />
           ) : (
-            <img src={cw_hero} alt="" className="w-full h-full rounded-xl " />
+            <img src={allIn} alt="" className="w-full h-full rounded-xl " />
           )}
         </div>
       </div>

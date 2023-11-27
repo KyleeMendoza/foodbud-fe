@@ -4,8 +4,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-
 import packageBg from "../assets/packageBg.png";
+
+//IMPORT IMG
+// import packages from "../assets/Gender/BOY";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -42,6 +44,55 @@ function a11yProps(index) {
 
 export default function GalleryViewer() {
   const [value, setValue] = React.useState(0);
+  const importAll = (context) => context.keys().map(context);
+
+  //IMPORT PACKAGES for subfolder budgetPackage
+  const packageImagesContext = require.context(
+    "../assets/Packages/budgetPackage",
+    false,
+    /\.png$/
+  );
+  const packageImages = importAll(packageImagesContext);
+
+  //IMPORT gender for subfolder boy
+  const genderImagesContext = require.context(
+    "../assets/Gender/boy",
+    false,
+    /\.png$/
+  );
+  const genderImages = importAll(genderImagesContext);
+
+  //IMPORT typeOfEvents for subfolder Wedding
+  const typeOfEventsImagesContext = require.context(
+    "../assets/typeOfEvents/Wedding",
+    false,
+    /\.png$/
+  );
+  const typeOfEventsImages = importAll(typeOfEventsImagesContext);
+
+  //IMPORT theme for subfolder unicorn
+  const themeImagesContext = require.context(
+    "../assets/theme/unicorn",
+    false,
+    /\.png$/
+  );
+  const themeImages = importAll(themeImagesContext);
+
+  //IMPORT food
+  const foodImagesContext = require.context("../assets/Food", false, /\.png$/);
+  const foodImages = importAll(foodImagesContext);
+
+  //IMPORT others for subfolder candyCorner
+  const othersImagesContext = require.context(
+    "../assets/others/candyCorner",
+    false,
+    /\.png$/
+  );
+  const othersImages = importAll(othersImagesContext);
+
+  React.useEffect(() => {
+    console.log(othersImages);
+  }, [othersImages]);
 
   //ARRAY OF IMAGES
   const packageBgArray = [
@@ -90,7 +141,7 @@ export default function GalleryViewer() {
       </Box>
       <CustomTabPanel value={value} index={0} className="">
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {packageImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
@@ -99,7 +150,7 @@ export default function GalleryViewer() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {genderImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
@@ -108,7 +159,7 @@ export default function GalleryViewer() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {typeOfEventsImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
@@ -117,7 +168,7 @@ export default function GalleryViewer() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {themeImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
@@ -144,7 +195,7 @@ export default function GalleryViewer() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {foodImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
@@ -153,7 +204,7 @@ export default function GalleryViewer() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
         <div className=" grid grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
+          {othersImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
             </div>
