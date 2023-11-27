@@ -7,15 +7,17 @@ import HomeFooter from "../layouts/HomeLayouts/HomeFooter";
 function GalleryPage() {
   return (
     <>
-      <div id="gallery">
-        <div className="lg:h-[50vh] xl:h-[40vh] 2xl:h-[40vh]  ">
+      <div id="gallery" className="h-auto">
+        {/* lg:h-[50vh] xl:h-[40vh] 2xl:h-[40vh]   */}
+        <div className="flex flex-col">
           <GalleryHero />
         </div>
-        <div className="lg:h-[120vh] xl:h-[110vh] 2xl:h-[105vh] min-[1528px]:h-[120vh] ">
+        {/* lg:h-[120vh] xl:h-[110vh] 2xl:h-[105vh] min-[1528px]:h-[120vh]  */}
+        <div className="flex flex-col">
           <GalleryCollections />
         </div>
         <div
-          className="flex flex-col lg:h-[50vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] "
+          className="flex flex-col"
           // id="footer"
         >
           <HomeFooter />

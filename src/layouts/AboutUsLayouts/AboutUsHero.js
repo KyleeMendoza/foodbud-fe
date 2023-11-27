@@ -7,8 +7,8 @@ import custdriven from "../../assets/cwau-custdriven.png";
 
 function AboutUsHero() {
   return (
-    <div className="h-full flex flex-col items-center ">
-      <div className="flex flex-col xl:h-[85%] lg:h-[90%] lg:mt-10 mt-20 2xl:w-[80%] gap-8 lg:gap-0 items-center justify-around ">
+    <div className="h-full ">
+      <div className="flex flex-col gap-8 items-center justify-around  py-10">
         <div className="flex flex-col gap-2 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] px-8 lg:px-0 font-['Poppins'] text-center ">
           <p className="text-black font-bold text-4xl capitalize">about us</p>
           <p className="text-md w-[98%] lg:w-full">
