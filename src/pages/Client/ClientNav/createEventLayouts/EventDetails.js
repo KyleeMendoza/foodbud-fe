@@ -1,7 +1,7 @@
 import React from "react";
 import SelectorInput from "../../../../components/SelectorInput";
 
-function EventDetails() {
+function EventDetails({ formData, handleModify, handleSelectorChange }) {
   const [preparationTime, setPreparationTime] = React.useState("");
   const [startTime, setStartTime] = React.useState("");
   const [eventType, setEventType] = React.useState("");
@@ -40,7 +40,9 @@ function EventDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            // placeholder="Rocel"
+            name="event_date"
+            value={formData.event_date || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">
@@ -50,7 +52,9 @@ function EventDetails() {
               data={preparationTimeData}
               state={preparationTime}
               setter={setPreparationTime}
-              title={"Prep"}
+              title={formData.prep_time}
+              name={"prep_time"}
+              handleSelectorChange={handleSelectorChange}
             />
           </div>
         </label>
@@ -61,18 +65,21 @@ function EventDetails() {
               data={startTimeData}
               state={startTime}
               setter={setStartTime}
-              title={"Start"}
+              title={formData.start_time}
+              name={"start_time"}
+              handleSelectorChange={handleSelectorChange}
             />
           </div>
         </label>
         <label className="flex items-center justify-between">
-          <p className="font-semibold">Time of Event:</p>
+          <p className="font-semibold">Type of Event:</p>
           <div className=" w-[50%] flex flex-start">
-            <SelectorInput
-              data={events}
-              state={eventType}
-              setter={setEventType}
-              title={"Events"}
+            <input
+              className="font-normal border-2 p-2 rounded-md w-[50%]"
+              type="string"
+              name="event_type"
+              value={formData.event_type || ""}
+              onChange={handleModify}
             />
           </div>
         </label>
@@ -81,7 +88,9 @@ function EventDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Candyland"
+            name="theme"
+            value={formData.theme || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">
@@ -89,7 +98,9 @@ function EventDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Enter Address"
+            name="color_theme"
+            value={formData.color_theme || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">

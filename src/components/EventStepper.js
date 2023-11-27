@@ -7,7 +7,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 // IMPORTS
 import CelebrantDetails from "../pages/Client/ClientNav/createEventLayouts/CelebrantDetails";
 import VenueDetails from "../pages/Client/ClientNav/createEventLayouts/VenueDetails";
@@ -90,12 +90,18 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
-export default function EventStepper({ formData, handleModify, handleSave }) {
+export default function EventStepper({
+  formData,
+  handleModify,
+  handleSave,
+  handleSelectorChange,
+}) {
   // const location = useLocation();
   // const formData = location.state.formData;
   // const { formData } = location.state;
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  const navigate = useNavigate();
 
   const isStepOptional = (step) => {
     // return step === 1;
@@ -185,13 +191,28 @@ export default function EventStepper({ formData, handleModify, handleSave }) {
                 handleModify={handleModify}
               />
             ) : activeStep + 1 === 2 ? (
-              <VenueDetails />
+              <VenueDetails
+                formData={formData}
+                handleModify={handleModify}
+                handleSelectorChange={handleSelectorChange}
+              />
             ) : activeStep + 1 === 3 ? (
-              <EventDetails />
+              <EventDetails
+                formData={formData}
+                handleModify={handleModify}
+                handleSelectorChange={handleSelectorChange}
+              />
             ) : activeStep + 1 === 4 ? (
-              <FoodChoicesDetails />
+              <FoodChoicesDetails
+                formData={formData}
+                // handleModify={handleModify}
+                handleSelectorChange={handleSelectorChange}
+              />
             ) : activeStep + 1 === 5 ? (
-              <AdditionalDetails />
+              <AdditionalDetails
+                formData={formData}
+                handleModify={handleModify}
+              />
             ) : null}
           </div>
           <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
@@ -213,12 +234,26 @@ export default function EventStepper({ formData, handleModify, handleSave }) {
             )}
 
             <Button
-              onClick={handleNext}
+              onClick={
+                activeStep === steps.length - 1
+                  ? () => {
+                      handleSave();
+                      navigate("/client/events");
+                    }
+                  : handleNext
+              }
               variant="contained"
               style={{ backgroundColor: "#E6479F" }}
             >
               {activeStep === steps.length - 1 ? "Finish" : "Next"}
             </Button>
+            {/* <NavLink
+              to="/client/editEvent"
+              state={{ eventId }}
+              className="bg-[#E7238B] rounded-md py-2 px-4 text-white font-semibold"
+            >
+              Edit
+            </NavLink> */}
           </Box>
         </React.Fragment>
       )}

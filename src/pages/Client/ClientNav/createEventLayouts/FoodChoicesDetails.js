@@ -3,7 +3,7 @@ import SelectorInput from "../../../../components/SelectorInput";
 import AddIcon from "@mui/icons-material/Add";
 import Button from "@mui/material/Button";
 
-function FoodChoicesDetails() {
+function FoodChoicesDetails({ formData, handleSelectorChange }) {
   const [porkChickenAdditional, setPorkChickenAdditional] = useState(0);
   const [fishAdditional, setFishAdditional] = useState(0);
   const [pastaAdditional, setPastaAdditional] = useState(0);
@@ -101,7 +101,7 @@ function FoodChoicesDetails() {
         <p className="text-primary-400 font-bold text-2xl">Food Choices</p>
       </div>
       <div className="flex flex-col w-[50%] gap-4">
-        <label className="flex items-center justify-between">
+        {/* <label className="flex items-center justify-between">
           <p className="font-semibold">Set:</p>
           <div className=" w-[50%] flex flex-start">
             <SelectorInput
@@ -111,27 +111,30 @@ function FoodChoicesDetails() {
               title={"Set"}
             />
           </div>
-        </label>
+        </label> */}
         <label className="flex items-center justify-between">
-          <p className="font-semibold">Pork or Chicken:</p>
+          {/* <p className="font-semibold">Pork or Chicken:</p> */}
+          <p className="font-semibold">Dish 1:</p>
           <div className=" w-[50%] flex flex-start items-center gap-4">
             <SelectorInput
               data={porkChickenData}
               state={porkChicken}
               setter={setPorkChicken}
-              title={"Pork or Chicken"}
+              title={formData.dish_1}
+              name={"dish_1"}
+              handleSelectorChange={handleSelectorChange}
             />
-            <Button
+            {/* <Button
               variant="outlined"
               startIcon={<AddIcon />}
               sx={{ height: "80%" }}
               onClick={handleAddPorkChicken}
             >
               Add
-            </Button>
+            </Button> */}
           </div>
         </label>
-        {Array.from({ length: porkChickenAdditional }).map((_, index) => (
+        {/* {Array.from({ length: porkChickenAdditional }).map((_, index) => (
           <label className="flex items-center justify-between">
             <p className="font-semibold"></p>
             <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -144,27 +147,30 @@ function FoodChoicesDetails() {
               />
             </div>
           </label>
-        ))}
+        ))} */}
         <label className="flex items-center justify-between">
-          <p className="font-semibold">Fish:</p>
+          {/* <p className="font-semibold">Fish:</p> */}
+          <p className="font-semibold">Dish 2:</p>
           <div className=" w-[50%] flex flex-start items-center gap-4">
             <SelectorInput
               data={fishData}
               state={fish}
               setter={setFish}
-              title={"Fish"}
+              title={formData.dish_2}
+              name={"dish_2"}
+              handleSelectorChange={handleSelectorChange}
             />
-            <Button
+            {/* <Button
               variant="outlined"
               startIcon={<AddIcon />}
               sx={{ height: "80%" }}
               onClick={handleAddFish}
             >
               Add
-            </Button>
+            </Button> */}
           </div>
         </label>
-        {Array.from({ length: fishAdditional }).map((_, index) => (
+        {/* {Array.from({ length: fishAdditional }).map((_, index) => (
           <label className="flex items-center justify-between">
             <p className="font-semibold"></p>
             <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -177,7 +183,7 @@ function FoodChoicesDetails() {
               />
             </div>
           </label>
-        ))}
+        ))} */}
         <label className="flex items-center justify-between">
           <p className="font-semibold">Pasta:</p>
           <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -185,19 +191,21 @@ function FoodChoicesDetails() {
               data={pastaData}
               state={pasta}
               setter={setPasta}
-              title={"Pasta"}
+              title={formData.pasta}
+              name={"pasta"}
+              handleSelectorChange={handleSelectorChange}
             />
-            <Button
+            {/* <Button
               variant="outlined"
               startIcon={<AddIcon />}
               sx={{ height: "80%" }}
               onClick={handleAddPasta}
             >
               Add
-            </Button>
+            </Button> */}
           </div>
         </label>
-        {Array.from({ length: pastaAdditional }).map((_, index) => (
+        {/* {Array.from({ length: pastaAdditional }).map((_, index) => (
           <label className="flex items-center justify-between">
             <p className="font-semibold"></p>
             <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -210,7 +218,7 @@ function FoodChoicesDetails() {
               />
             </div>
           </label>
-        ))}
+        ))} */}
         <label className="flex items-center justify-between">
           <p className="font-semibold">Dessert:</p>
           <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -218,19 +226,21 @@ function FoodChoicesDetails() {
               data={dessertData}
               state={dessert}
               setter={setDessert}
-              title={"Dessert"}
+              title={formData.dessert}
+              name={"dessert"}
+              handleSelectorChange={handleSelectorChange}
             />
-            <Button
+            {/* <Button
               variant="outlined"
               startIcon={<AddIcon />}
               sx={{ height: "80%" }}
               onClick={handleAddDessert}
             >
               Add
-            </Button>
+            </Button> */}
           </div>
         </label>
-        {Array.from({ length: dessertAdditional }).map((_, index) => (
+        {/* {Array.from({ length: dessertAdditional }).map((_, index) => (
           <label className="flex items-center justify-between">
             <p className="font-semibold"></p>
             <div className=" w-[50%] flex flex-start items-center gap-4">
@@ -243,7 +253,7 @@ function FoodChoicesDetails() {
               />
             </div>
           </label>
-        ))}
+        ))} */}
         <label className="flex items-center justify-between">
           <p className="font-semibold"></p>
           <div className=" w-[50%] flex flex-start">
@@ -251,7 +261,6 @@ function FoodChoicesDetails() {
               className="font-normal border-2 p-2 rounded-md w-full"
               type="string"
               placeholder="Plain White Rice"
-              readOnly="true"
             />
           </div>
         </label>
@@ -262,7 +271,6 @@ function FoodChoicesDetails() {
               className="font-normal border-2 p-2 rounded-md w-full"
               type="string"
               placeholder="Red Iced Tea"
-              readOnly="true"
             />
           </div>
         </label>
@@ -273,7 +281,6 @@ function FoodChoicesDetails() {
               className="font-normal border-2 p-2 rounded-md w-full"
               type="string"
               placeholder="Bottled Water"
-              readOnly="true"
             />
           </div>
         </label>

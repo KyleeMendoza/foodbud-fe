@@ -183,21 +183,21 @@ export default function EventsViewer() {
   };
 
   //FETCH EVENT
-  // React.useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await getFetchEvent(eventId);
-  //       setFormData(response.fetchEvent);
-  //       // console.log(response.fetchEvent);
-  //     } catch (error) {
-  //       console.error("Error:", error.message);
-  //       window.alert(
-  //         "An error occurred while fetching the bet history. Please try again later."
-  //       );
-  //     }
-  //   };
-  //   fetchData();
-  // }, [eventId]);
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getFetchEvent(eventId);
+        setFormData(response.fetchEvent);
+        // console.log(response.fetchEvent);
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert(
+          "An error occurred while fetching the bet history. Please try again later."
+        );
+      }
+    };
+    fetchData();
+  }, [eventId]);
 
   // FETCH FOOD FORM
   React.useEffect(() => {

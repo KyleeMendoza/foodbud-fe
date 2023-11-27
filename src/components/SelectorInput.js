@@ -5,8 +5,16 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 
-export default function SelectorInput({ data, state, setter, title }) {
+export default function SelectorInput({
+  data,
+  state,
+  setter,
+  title,
+  name,
+  handleSelectorChange,
+}) {
   const handleChange = (event) => {
+    handleSelectorChange(name, event.target.value);
     setter(event.target.value);
   };
 

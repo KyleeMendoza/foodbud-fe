@@ -3,7 +3,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SelectorInput from "../../../../components/SelectorInput";
 
-function AdditionalDetails() {
+function AdditionalDetails({ formData, handleModify }) {
   const [startTime, setStartTime] = React.useState("");
   const [fromTime, setFromTime] = React.useState("");
   const [toTime, setToTime] = React.useState("");

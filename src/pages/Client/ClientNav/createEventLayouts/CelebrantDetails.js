@@ -12,9 +12,9 @@ function CelebrantDetails({ formData, handleModify }) {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            // placeholder="Rocel"
-            value={formData.celebrant_name}
-            readOnly
+            name="celebrant_name"
+            value={formData.celebrant_name || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">

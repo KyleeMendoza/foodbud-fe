@@ -1,7 +1,7 @@
 import React from "react";
 import SelectorInput from "../../../../components/SelectorInput";
 
-function VenueDetails() {
+function VenueDetails({ formData, handleModify, handleSelectorChange }) {
   const [fromTime, setFromTime] = React.useState("");
   const [toTime, setToTime] = React.useState("");
   const [venue, setVenue] = React.useState("");
@@ -41,7 +41,9 @@ function VenueDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Rocel"
+            name="venue_address"
+            value={formData.venue_address || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">
@@ -49,26 +51,25 @@ function VenueDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Age"
+            name="venue_location"
+            value={formData.venue_location || ""}
+            onChange={handleModify}
           />
         </label>
         <label className="flex items-center justify-between">
           <p className="font-semibold">Venue Hours Booked:</p>
-          {/* <input
-            className="font-normal border-2 p-2 rounded-md w-[50%]"
-            type="string"
-            placeholder="Age"
-          /> */}
           <div className="flex justify-between items-center w-[50%] gap-2">
-            <div className="w-[50%]">
+            <div className="w-[100%]">
               <SelectorInput
                 data={from}
                 state={fromTime}
                 setter={setFromTime}
-                title={"From"}
+                title={formData.venue_time}
+                name={"venue_time"}
+                handleSelectorChange={handleSelectorChange}
               />
             </div>
-            <p>To</p>
+            {/* <p>To</p>
             <div className="w-[50%]">
               <SelectorInput
                 data={to}
@@ -76,7 +77,7 @@ function VenueDetails() {
                 setter={setToTime}
                 title={"To"}
               />
-            </div>
+            </div> */}
           </div>
         </label>
         <label className="flex items-center justify-between">
@@ -85,18 +86,21 @@ function VenueDetails() {
             <input
               className="font-normal border-2 p-2 rounded-md w-[50%]"
               type="string"
-              placeholder="Age"
+              name="venue_floor"
+              value={formData.venue_floor || ""}
+              onChange={handleModify}
             />
           </div>
         </label>
         <label className="flex items-center justify-between">
           <p className="font-semibold">Type of Venue:</p>
           <div className=" w-[50%] flex flex-start">
-            <SelectorInput
-              data={venues}
-              state={venue}
-              setter={setVenue}
-              title={"Venue"}
+            <input
+              className="font-normal border-2 p-2 rounded-md w-[50%]"
+              type="string"
+              name="venue_type"
+              value={formData.venue_type || ""}
+              onChange={handleModify}
             />
           </div>
         </label>

@@ -24,6 +24,13 @@ function ClientEditEvent() {
     }));
   };
 
+  const handleSelectorChange = (name, value) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   //FUNCTION THAT PUSHES THE CHANGES
   const saveNewData = async () => {
     try {
@@ -79,6 +86,7 @@ function ClientEditEvent() {
             formData={formData}
             handleModify={handleModify}
             handleSave={handleSave}
+            handleSelectorChange={handleSelectorChange}
           />
         </div>
       </div>
