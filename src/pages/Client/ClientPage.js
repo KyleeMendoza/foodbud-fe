@@ -30,7 +30,7 @@ import CakeIcon from "@mui/icons-material/Cake";
 import ContentPasteIcon from "@mui/icons-material/ContentPaste";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-import { Link as NavLink, useNavigate } from "react-router-dom";
+import { Link as NavLink, useNavigate, useLocation } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
 import clientBg from "../../assets/clientBg.png";
@@ -119,6 +119,7 @@ const Drawer = styled(MuiDrawer, {
 const defaultTheme = createTheme();
 
 export default function ClientPage({ setCookie }) {
+  const location = useLocation();
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
 
@@ -192,8 +193,8 @@ export default function ClientPage({ setCookie }) {
           {/* ROUTES GOING TO EACH NAVS */}
           {linkName.map((link, key) => (
             <NavLink to={links[key]} key={key}>
-              <ListItemButton>
-                <ListItemIcon style={{ fontSize: "10px" }}>
+              <ListItemButton selected={location.pathname === links[key]}>
+                <ListItemIcon>
                   {React.createElement(linkIcons[key])}
                 </ListItemIcon>
                 <ListItemText primary={link} />

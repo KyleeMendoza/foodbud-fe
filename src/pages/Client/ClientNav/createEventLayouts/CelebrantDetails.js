@@ -1,6 +1,6 @@
 import React from "react";
 
-function CelebrantDetails() {
+function CelebrantDetails({ formData, handleModify }) {
   return (
     <div className="flex flex-col gap-4 ">
       <div>
@@ -12,7 +12,9 @@ function CelebrantDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Rocel"
+            // placeholder="Rocel"
+            value={formData.celebrant_name}
+            readOnly
           />
         </label>
         <label className="flex items-center justify-between">
@@ -22,6 +24,9 @@ function CelebrantDetails() {
               className="font-normal border-2 p-2 rounded-md w-[50%]"
               type="string"
               placeholder="Age"
+              name="celebrant_age"
+              value={formData.celebrant_age || ""}
+              onChange={handleModify}
             />
           </div>
         </label>

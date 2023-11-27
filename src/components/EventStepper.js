@@ -7,6 +7,7 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useLocation } from "react-router-dom";
 // IMPORTS
 import CelebrantDetails from "../pages/Client/ClientNav/createEventLayouts/CelebrantDetails";
 import VenueDetails from "../pages/Client/ClientNav/createEventLayouts/VenueDetails";
@@ -89,7 +90,10 @@ ColorlibStepIcon.propTypes = {
   icon: PropTypes.node,
 };
 
-export default function EventStepper() {
+export default function EventStepper({ formData, handleModify, handleSave }) {
+  // const location = useLocation();
+  // const formData = location.state.formData;
+  // const { formData } = location.state;
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
@@ -135,6 +139,10 @@ export default function EventStepper() {
     setActiveStep(0);
   };
 
+  // React.useEffect(() => {
+  //   console.log(formData);
+  // }, [formData]);
+
   return (
     <Box sx={{ width: "100%" }}>
       <Stepper activeStep={activeStep}>
@@ -172,7 +180,10 @@ export default function EventStepper() {
         <React.Fragment>
           <div className="border-2  mt-10 p-5 rounded-2xl">
             {activeStep + 1 === 1 ? (
-              <CelebrantDetails />
+              <CelebrantDetails
+                formData={formData}
+                handleModify={handleModify}
+              />
             ) : activeStep + 1 === 2 ? (
               <VenueDetails />
             ) : activeStep + 1 === 3 ? (
