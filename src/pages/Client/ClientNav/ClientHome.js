@@ -1,15 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import { Divider } from "@mui/material";
 import SelectButton from "../../../components/SelectButton";
 import { useEffect } from "react";
+import Cookies from "js-cookie";
+import axios from "axios";
+import { getFetchFT, getFetchMeeting } from "../../../services/getFetchEvent";
 
 function ClientHome({ name }) {
-  // const clientName = cookies.name;
+  const EventID = localStorage.getItem("eventID");
+  const [eventDetails, setEventDetails] = useState({});
+  const [foodTastingDate, setFoodTastingDate] = useState("");
+  const [onlineMeetingDate, setOnlineMeetingDate] = useState("");
 
-  // useEffect(() => {
-  //   console.log(cookies);
-  // }, [cookies])
+  useEffect(() => {
+    const fetchEventDetails = async () => {
+      try {
+        const response = await axios.get(
+          `https://3.27.163.46/api/event/dashboard?eventID=${EventID}`,
+          {
+            params: {
+              eventID: EventID,
+            },
+          }
+        );
+
+        setEventDetails(response.data);
+      } catch (error) {
+        console.error("Error fetching event details:", error);
+      }
+    };
+
+    if (EventID) {
+      fetchEventDetails();
+    }
+  }, [EventID]);
+
+  useEffect(() => {
+    if (EventID) {
+      const fetchData = async () => {
+        try {
+          const response = await getFetchFT(EventID);
+          setFoodTastingDate(response.fetchFT.date);
+          console.log(response.fetchFT);
+        } catch (error) {
+          console.error("Error:", error.message);
+          window.alert(
+            "An error occurred while fetching. Please try again later."
+          );
+        }
+      };
+      fetchData();
+    }
+  }, [EventID]);
+
+  useEffect(() => {
+    if (EventID) {
+      const fetchData = async () => {
+        try {
+          const response = await getFetchMeeting(EventID);
+          setOnlineMeetingDate(response.FetchMeeting.date);
+
+          console.log(response.FetchMeeting);
+        } catch (error) {
+          console.error("Error:", error.message);
+          window.alert(
+            "An error occurred while fetching. Please try again later."
+          );
+        }
+      };
+      fetchData();
+    }
+  }, [EventID]);
+
+  const eventDate = new Date(eventDetails.event_date);
+  const onlineDate = new Date(onlineMeetingDate);
+
+  const FtDate = new Date(foodTastingDate);
+
+  const currentDate = new Date();
+  const isUpcoming = currentDate < eventDate;
+
+  const isUpcomingFT = currentDate < FtDate;
+
+  const isUpcomingOL = currentDate < onlineDate;
 
   return (
     <div className="h-full py-10">
@@ -25,33 +99,60 @@ function ClientHome({ name }) {
         </div>
         <div className="flex gap-5 text-white">
           <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-slate-500">
-            <div className="flex flex-col gap-2 h-[65%] p-10 ">
-              <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
-              <p className="text-md capitalize ">
-                Zion Kyre, Deluxe Package, 150 pax, Safari
-              </p>
-            </div>
+            {EventID && (
+              <div className="flex flex-col gap-2 h-[65%] p-10 ">
+                <p className="text-3xl font-bold capitalize ">
+                  {eventDetails.event_date}
+                </p>
+                <p className="text-xl capitalize ">
+                  {eventDetails.celebrant_name}, {eventDetails.package_type},{" "}
+                  {eventDetails.hc_kids + eventDetails.hc_adults} pax,{" "}
+                  {eventDetails.theme}
+                </p>
+              </div>
+            )}
             <div className="flex items-center flex-1 border-t-2 border-white px-10">
-              <p className="text-xl capitalize ">Upcoming</p>
+              {EventID && (
+                <p className="text-2xl font-bold capitalize">
+                  {" "}
+                  {isUpcoming ? "UPCOMING" : "DONE "}
+                </p>
+              )}
             </div>
           </div>
           <div className="flex-1 flex gap-5 ">
             <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-pink-500">
               <div className="flex flex-col gap-2 h-[65%] p-10">
                 <p className="text-md capitalize ">Food Tasting</p>
-                <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
+                <p className="text-3xl font-bold capitalize ">
+                  {foodTastingDate}
+                </p>
               </div>
               <div className="flex items-center flex-1 border-t-2 border-white px-10">
-                <p className="text-xl capitalize ">Completed</p>
+                {EventID && (
+                  <p className="text-xl capitalize">
+                    {" "}
+                    {isUpcomingFT ? "UPCOMING" : "COMPLETED "}
+                  </p>
+                )}
               </div>
             </div>
             <div className="flex flex-col justify-between h-[13rem] flex-1 rounded-xl bg-gradient-to-r from-blue-500">
               <div className="flex flex-col gap-2 h-[65%] p-10">
                 <p className="text-md capitalize ">Online Meeting</p>
-                <p className="text-3xl font-bold capitalize ">Aug 05, 2023</p>
+                <p className="text-3xl font-bold capitalize ">
+                  {onlineMeetingDate}
+                </p>
               </div>
               <div className="flex items-center flex-1 border-t-2 border-white px-10">
-                <p className="text-xl capitalize ">Upcoming</p>
+                <p className="text-xl capitalize ">
+                  {EventID && (
+                    <p className="text-2xl font-bold capitalize">
+                      {" "}
+                      {isUpcomingOL ? "UPCOMING" : "COMPLETED "}
+                    </p>
+                  )}
+                </p>
               </div>
             </div>
           </div>
@@ -63,13 +164,38 @@ function ClientHome({ name }) {
               <Button variant="contained">view</Button>
             </div>
             <div className="font-semibold text-black flex flex-col mx-5 mb-5">
-              <p>Celebrant Name:</p>
-              <p>Event Date: </p>
-              <p>Start Time: </p>
-              <p>Type of Event: </p>
-              <p>Theme of Event: </p>
-              <p>Venue:</p>
-              <p>Total Headcount: </p>
+              <p>
+                Celebrant Name:{" "}
+                <span className="text-red-400">
+                  {eventDetails.celebrant_name}
+                </span>
+              </p>
+              <p>
+                Event Date:{" "}
+                <span className="text-red-400"> {eventDetails.event_date}</span>
+              </p>
+              <p>
+                Start Time:{" "}
+                <span className="text-red-400">{eventDetails.start_time}</span>
+              </p>
+              <p>
+                Type of Event:{" "}
+                <span className="text-red-400">{eventDetails.event_type} </span>
+              </p>
+              <p>
+                Theme of Event:{" "}
+                <span className="text-red-400">{eventDetails.theme}</span>
+              </p>
+              <p>
+                Venue:{" "}
+                <span className="text-red-400">{eventDetails.venue}</span>
+              </p>
+              <p>
+                Total Headcount:{" "}
+                <span className="text-red-400">
+                  {eventDetails.hc_kids + eventDetails.hc_adults} pax{" "}
+                </span>
+              </p>
             </div>
           </div>
           <div className=" flex-1 rounded-xl">
@@ -79,7 +205,9 @@ function ClientHome({ name }) {
                   Meeting Details
                 </p>
                 <div className="flex flex-col font-bold">
-                  <p className="text-md capitalize text-black">Zion Kyre</p>
+                  <p className="text-md capitalize text-black">
+                    {eventDetails}
+                  </p>
                   <p className="text-md capitalize text-black">
                     Deluxe Package
                   </p>
