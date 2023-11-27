@@ -130,6 +130,7 @@ export default function ClientPage({ setCookie }) {
   const handleLogout = () => {
     // Clear user session information (e.g., remove stored username or token)
     setCookie("username", "", { expires: 0 });
+    localStorage.clear();
 
     // Redirect to the login page
     navigate("/login");

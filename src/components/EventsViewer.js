@@ -208,9 +208,7 @@ export default function EventsViewer() {
         // console.log(response.fetchFT)
       } catch (error) {
         console.error("Error:", error.message);
-        window.alert(
-          "An error occurred while fetching the bet history. Please try again later."
-        );
+        window.alert("An error occurred. Please try again later.");
       }
     };
     fetchData();
@@ -225,9 +223,7 @@ export default function EventsViewer() {
         // console.log(response.fetchFT)
       } catch (error) {
         console.error("Error:", error.message);
-        window.alert(
-          "An error occurred while fetching the bet history. Please try again later."
-        );
+        window.alert("An error occurred. Please try again later.");
       }
     };
     fetchData();
@@ -243,9 +239,7 @@ export default function EventsViewer() {
         setAddsData(response.addonDetails);
       } catch (error) {
         console.error("Error:", error.message);
-        window.alert(
-          "An error occurred while fetching the bet history. Please try again later."
-        );
+        window.alert("An error occurred. Please try again later.");
       }
     };
     fetchData();
