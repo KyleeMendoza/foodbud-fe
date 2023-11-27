@@ -36,11 +36,11 @@ function EventDetails() {
       </div>
       <div className="flex flex-col w-[50%] gap-4">
         <label className="flex items-center justify-between">
-          <p className="font-semibold">Event Name:</p>
+          <p className="font-semibold">Event Date:</p>
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Rocel"
+            // placeholder="Rocel"
           />
         </label>
         <label className="flex items-center justify-between">
@@ -81,7 +81,7 @@ function EventDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Age"
+            placeholder="Candyland"
           />
         </label>
         <label className="flex items-center justify-between">
@@ -89,7 +89,7 @@ function EventDetails() {
           <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
-            placeholder="Age"
+            placeholder="Enter Address"
           />
         </label>
         <label className="flex items-center justify-between">
@@ -98,7 +98,7 @@ function EventDetails() {
             <input
               className="font-normal border-2 p-2 rounded-md w-[50%]"
               type="string"
-              placeholder="Age"
+              placeholder="Adult"
             />
           </div>
         </label>
@@ -108,7 +108,7 @@ function EventDetails() {
             <input
               className="font-normal border-2 p-2 rounded-md w-[50%]"
               type="string"
-              placeholder="Age"
+              placeholder="Kids"
             />
           </div>
         </label>
