@@ -5,7 +5,7 @@ import cw_hero from "../../assets/CW-Hero.png";
 
 function Hero() {
   return (
-    <div className="flex flex-col h-full lg:h-screen relative ">
+    <div className="flex flex-col h-screen relative ">
       {/* <div className="z-10 ">
         <NavBar />
       </div> */}

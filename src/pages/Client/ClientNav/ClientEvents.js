@@ -99,7 +99,7 @@ function ClientEvents({ cookies }) {
                       <p className="text-2xl font-bold capitalize">
                         {events.celebrant}
                       </p>
-                      <p className="text-sm capitalize">{events.event_type}l</p>
+                      <p className="text-sm capitalize">{events.event_type}</p>
                     </div>
                     <div className="flex justify-between items-center">
                       <p className="text-sm capitalize font-bold ">

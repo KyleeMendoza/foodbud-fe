@@ -2,8 +2,8 @@ import React from "react";
 
 function FaqsCondition() {
   return (
-    <div className="flex bg-[#F9E5F2] justify-center items-center  h-full">
-      <div className="flex flex-col gap-10   font-['Poppins'] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] w-[90%]">
+    <div className=" bg-[#F9E5F2] h-full ">
+      <div className="flex flex-col gap-10   font-['Poppins'] py-20 px-32 ">
         <p className="text-4xl font-bold text-primary-500">
           TERMS AND CONDITIONS
         </p>

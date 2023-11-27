@@ -2,12 +2,67 @@ import React from "react";
 import EventStepper from "../../../components/EventStepper";
 import Button from "@mui/material/Button";
 import CelebrantDetails from "./createEventLayouts/CelebrantDetails";
+import { postEditEvent } from "../../../services/postEditEvent";
+import { getFetchEvent } from "../../../services/getFetchEvent";
+import { useLocation } from "react-router-dom";
 
 function ClientEditEvent() {
+  const location = useLocation();
+  const eventId = location.state.eventId;
+
+  const [formData, setFormData] = React.useState({});
+
+  const handleSave = () => {
+    saveNewData();
+  };
+
+  const handleModify = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  //FUNCTION THAT PUSHES THE CHANGES
+  const saveNewData = async () => {
+    try {
+      const response = await postEditEvent(eventId, formData);
+      console.log(response);
+    } catch (error) {
+      console.error("Error:", error.message);
+      window.alert(
+        "An error occurred while saving the event. Please try again later."
+      );
+    }
+  };
+
+  //FETCH EVENT
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getFetchEvent(eventId);
+        setFormData(response.fetchEvent);
+        // console.log(response.fetchEvent);
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert(
+          "An error occurred while fetching the bet history. Please try again later."
+        );
+      }
+    };
+    fetchData();
+  }, [eventId]);
+
+  //CONSOLE CHECKER
+  React.useEffect(() => {
+    console.log(formData);
+  }, [formData]);
+
   return (
-    <div className="border-2 border-red-600 pt-10">
-      <div className="flex flex-col gap-10 border-2 border-green-600 bg-white p-10 rounded-2xl">
-        <div className="flex flex-col gap-2 border-2 border-red-600">
+    <div className=" pt-10">
+      <div className="flex flex-col gap-10  bg-white p-10 rounded-2xl">
+        <div className="flex flex-col gap-2 ">
           <p className="text-[#03A9F4] font-bold text-2xl">Event Form</p>
           <p className="text-[#03A9F4]">
             In order to enhance the efficiency of the reservation process and
@@ -19,31 +74,12 @@ function ClientEditEvent() {
             you!
           </p>
         </div>
-        {/* <div className="flex flex-col gap-4 border-2 border-red-600">
-          <div>
-            <p className="text-primary-400 font-bold text-2xl">Celebrant</p>
-          </div>
-          <div className="flex flex-col w-[50%] gap-4">
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Celebrant Name:</p>
-              <input
-                className="font-normal border-2 p-2 rounded-md w-[50%]"
-                type="string"
-                placeholder="Rocel"
-              />
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Age:</p>
-              <input
-                className="font-normal border-2 p-2 rounded-md w-[50%]"
-                type="string"
-                placeholder="Age"
-              />
-            </label>
-          </div>
-        </div> */}
-        <div className="border-2 border-red-600 px-5">
-          <EventStepper />
+        <div className=" px-5">
+          <EventStepper
+            formData={formData}
+            handleModify={handleModify}
+            handleSave={handleSave}
+          />
         </div>
       </div>
     </div>

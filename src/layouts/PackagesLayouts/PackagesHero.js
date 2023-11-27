@@ -13,8 +13,8 @@ function PackagesHero() {
   const [pic2, setPic2] = useState(false);
   const [pic3, setPic3] = useState(false);
   return (
-    <div className=" h-full">
-      <div className="flex flex-col gap-10 h-full py-10  ">
+    <div className=" h-full ">
+      <div className="flex flex-col gap-10 h-full py-10 ">
         <div className="flex flex-col gap-10 items-center justify-center ">
           <div className="flex flex-col lg:w-[70%] xl:w-[60%] 2xl:w-[55%] text-center gap-10 justify-center items-center font-['Poppins'] ">
             <p className="text-3xl font-bold capitalize">our packages</p>

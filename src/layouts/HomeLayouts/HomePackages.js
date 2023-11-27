@@ -10,8 +10,8 @@ import Carousel from "../../components/Carousel";
 
 function HomePackages() {
   return (
-    <div className=" h-full lg:pt-10">
-      <div className=" flex flex-col pt-10 px-2 lg:px-0 lg:pt-0 gap-10 text-center items-center">
+    <div className=" h-full ">
+      <div className=" flex flex-col py-10 gap-10 text-center items-center ">
         <p className="w-[95%] lg:w-full text-xl lg:text-xl capitalize font-['Poppins'] text-sky-400 font-semibold">
           Crafting unforgettable moments, one bite at a time.
         </p>
@@ -24,8 +24,8 @@ function HomePackages() {
           <Carousel />
         </div>
         <div className=" w-[110%] overflow-x-auto lg:flex lg:justify-center lg:items-center">
-          <div className="flex gap-5 lg:gap-0 justify-around px-4 items-center w-[60rem] lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem] ">
-            <div className="h-[14rem] w-[17rem] lg:w-[22%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+          <div className="flex gap-5 py-2 justify-around px-4 items-center lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem] ">
+            <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
               <img
                 src={cw_ebox1}
                 alt=""
@@ -35,7 +35,7 @@ function HomePackages() {
                 baptismal
               </p>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-[22%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
               <img
                 src={cw_ebox2}
                 alt=""
@@ -45,7 +45,7 @@ function HomePackages() {
                 baptismal
               </p>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-[22%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
               <img
                 src={cw_ebox3}
                 alt=""
@@ -55,7 +55,7 @@ function HomePackages() {
                 baptismal
               </p>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-[22%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
               <img
                 src={cw_ebox4}
                 alt=""

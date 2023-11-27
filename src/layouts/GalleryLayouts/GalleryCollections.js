@@ -3,8 +3,8 @@ import GalleryViewer from "../../components/GalleryViewer";
 
 function GalleryCollections() {
   return (
-    <div className="  flex justify-center items-center h-full">
-      <div className=" lg:w-[90%] xl:w-[80%] 2xl:w-[80%]">
+    <div className="h-full ">
+      <div className=" px-40 py-10">
         <GalleryViewer />
       </div>
     </div>

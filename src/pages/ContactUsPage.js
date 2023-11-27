@@ -6,12 +6,12 @@ import HomeFooter from "../layouts/HomeLayouts/HomeFooter";
 function ContactUsPage() {
   return (
     <>
-      <div id="faqs">
-        <div className="h-[100vh]  ">
+      <div id="faqs" className="h-auto">
+        <div className="flex flex-col">
           <ContactHero />
         </div>
         <div
-          className="flex flex-col h-[50vh] 2xl:h-[40vh] min-[1528px]:h-[50vh] "
+          className="flex flex-col"
           // id="footer"
         >
           <HomeFooter />

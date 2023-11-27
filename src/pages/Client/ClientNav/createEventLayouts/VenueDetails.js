@@ -52,27 +52,31 @@ function VenueDetails() {
             placeholder="Age"
           />
         </label>
-        <label className="flex items-center justify-between ">
+        <label className="flex items-center justify-between">
           <p className="font-semibold">Venue Hours Booked:</p>
           {/* <input
             className="font-normal border-2 p-2 rounded-md w-[50%]"
             type="string"
             placeholder="Age"
           /> */}
-          <div className="flex justify-between items-center  gap-2">
-            <SelectorInput
-              data={from}
-              state={fromTime}
-              setter={setFromTime}
-              title={"From"}
-            />
+          <div className="flex justify-between items-center w-[50%] gap-2">
+            <div className="w-[50%]">
+              <SelectorInput
+                data={from}
+                state={fromTime}
+                setter={setFromTime}
+                title={"From"}
+              />
+            </div>
             <p>To</p>
-            <SelectorInput
-              data={to}
-              state={toTime}
-              setter={setToTime}
-              title={"To"}
-            />
+            <div className="w-[50%]">
+              <SelectorInput
+                data={to}
+                state={toTime}
+                setter={setToTime}
+                title={"To"}
+              />
+            </div>
           </div>
         </label>
         <label className="flex items-center justify-between">
@@ -87,11 +91,6 @@ function VenueDetails() {
         </label>
         <label className="flex items-center justify-between">
           <p className="font-semibold">Type of Venue:</p>
-          {/* <input
-            className="font-normal border-2 p-2 rounded-md w-[50%]"
-            type="string"
-            placeholder="Age"
-          /> */}
           <div className=" w-[50%] flex flex-start">
             <SelectorInput
               data={venues}

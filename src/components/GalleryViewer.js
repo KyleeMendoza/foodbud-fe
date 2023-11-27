@@ -43,6 +43,7 @@ function a11yProps(index) {
 export default function GalleryViewer() {
   const [value, setValue] = React.useState(0);
 
+  //ARRAY OF IMAGES
   const packageBgArray = [
     "packageBg1",
     "packageBg2",

@@ -3,8 +3,8 @@ import AccordionFaqs from "../../components/AccordionFaqs";
 
 function FaqsFaqs() {
   return (
-    <div className="flex justify-center items-center  h-full">
-      <div className="flex flex-col gap-10 w-[90%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%]  font-['Poppins']">
+    <div className=" h-full">
+      <div className="flex flex-col gap-10  px-32 py-20 font-['Poppins']">
         <p className="text-4xl font-bold text-primary-500">
           Frequently Asked Questions
         </p>
