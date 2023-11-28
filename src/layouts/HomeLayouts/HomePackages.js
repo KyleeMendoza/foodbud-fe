@@ -13,7 +13,7 @@ function HomePackages() {
     <div className=" h-full ">
       <div className=" flex flex-col py-10 gap-10 text-center items-center ">
         <p className="w-[95%] lg:w-full text-xl lg:text-xl capitalize font-['Poppins'] text-sky-400 font-semibold">
-          Crafting unforgettable moments, one bite at a time.
+          Crafting unforgettable moments, one moment at a time.
         </p>
         <div className=" w-[104%] lg:w-[70%] lg:h-[25rem] 2xl:h-[30rem]">
           {/* <img
@@ -32,7 +32,7 @@ function HomePackages() {
                 className="w-full h-[80%] rounded-t-xl"
               />
               <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
-                baptismal
+                Baptismal
               </p>
             </div>
             <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
@@ -42,7 +42,7 @@ function HomePackages() {
                 className="w-full h-[80%] rounded-t-xl"
               />
               <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
-                baptismal
+                Kid's Party
               </p>
             </div>
             <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
@@ -52,7 +52,7 @@ function HomePackages() {
                 className="w-full h-[80%] rounded-t-xl"
               />
               <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
-                baptismal
+                Adult's Party
               </p>
             </div>
             <div className="h-[14rem] w-[17rem] lg:w-[30%] lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
@@ -62,7 +62,7 @@ function HomePackages() {
                 className="w-full h-[80%] rounded-t-xl"
               />
               <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
-                baptismal
+                Corporate
               </p>
             </div>
           </div>

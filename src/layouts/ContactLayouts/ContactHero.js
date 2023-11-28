@@ -10,7 +10,7 @@ import FmdGoodIcon from "@mui/icons-material/FmdGood";
 
 function ContactHero() {
   return (
-    <div className=" h-full">
+    <div className="h-full">
       <div className="flex flex-col justify-center items-start gap-10 font-['Poppins']  py-10 px-20">
         <p className="text-4xl font-bold uppercase text-primary-500 w-[50%]">
           CONTACT DETAILS AND OFFICE LOCATION
@@ -24,7 +24,13 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>www.facebook.com/foodbudevents</p>
+            <a
+              href="https://www.facebook.com/foodbudevents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.facebook.com/foodbudevents
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <InstagramIcon
@@ -34,7 +40,13 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>www.instagram.com/foodbudevents</p>
+            <a
+              href="https://www.instagram.com/foodbudevents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.instagram.com/foodbudevents
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <TwitterIcon
@@ -44,7 +56,13 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>www.tiktok.com/@foodbudevents</p>
+            <a
+              href="https://www.tiktok.com/@foodbudevents"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.tiktok.com/@foodbudevents
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <LocalPhoneIcon
@@ -64,7 +82,13 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>foodbudevents@gmail.com</p>
+            <a
+              href="mailto:foodbudevents@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              foodbudevents@gmail.com
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <FmdGoodIcon
@@ -75,16 +99,14 @@ function ContactHero() {
               }}
             />
             <p>
-              Blk 11 Lot 12 Victoria St., Queensville Subdivision, Caloocan City
-              PHL
+              Blk 11 Lot 12 Victoria St., Queensville Subdivision, Caloocan
+              City PHL
             </p>
           </div>
         </div>
         <iframe
-          className="w-1/2 h-full "
+          className="w-1/2 h-50 "
           title="Google Map"
-          // width="600"
-          // height="450"
           frameBorder="0"
           style={{ border: 0 }}
           src="https://www.google.com/maps/embed/v1/place?q=place_id:YOUR_PLACE_ID&key=YOUR_API_KEY"
@@ -92,7 +114,7 @@ function ContactHero() {
         ></iframe>
 
         <Button variant="contained" size="large">
-          Google Map Locaton
+          Google Map Location
         </Button>
       </div>
     </div>
@@ -100,3 +122,4 @@ function ContactHero() {
 }
 
 export default ContactHero;
+

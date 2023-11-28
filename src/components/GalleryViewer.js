@@ -133,7 +133,6 @@ export default function GalleryViewer() {
           <Tab label="Gender" {...a11yProps(1)} />
           <Tab label="Type of Event" {...a11yProps(2)} />
           <Tab label="Theme" {...a11yProps(3)} />
-          <Tab label="Color" {...a11yProps(4)} />
           <Tab label="Styling" {...a11yProps(5)} />
           <Tab label="Food" {...a11yProps(6)} />
           <Tab label="Others" {...a11yProps(7)} />

@@ -54,7 +54,7 @@ function HomeFooter() {
         </div>
         <div className="flex justify-center items-center py-3 bg-pink-primary-400 h-[10%] w-full">
           <p className="text-sm text-white">
-            Copyright © 2023 Elysium | All Rights Reserved
+            Copyright © 2023 Foodbud Events & Catering | All Rights Reserved
           </p>
         </div>
       </div>

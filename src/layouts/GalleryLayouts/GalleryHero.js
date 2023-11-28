@@ -5,7 +5,7 @@ function GalleryHero() {
     <div className="flex bg-[#E6F6FE] justify-center items-center  h-full ">
       <div className="flex flex-col gap-10  font-['Poppins'] text-center px-52 py-20">
         <p className="text-5xl font-bold text-primary-500">
-          Explore the Churvaness
+           Explore Our Moments
         </p>
         <p className="text-lg">
           Craft your ideal event by tailoring it to your preferences, from venue

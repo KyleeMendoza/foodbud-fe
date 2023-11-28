@@ -14,24 +14,18 @@ function HomeAboutUs() {
         <div className="flex justify-center items-center w-[90%] lg:w-[50%] rounded-xl text-center drop-shadow-lg backdrop-blur-sm bg-pink-500/30 text-white py-10">
           <div className="flex flex-col justify-between items-center gap-5 w-[85%] h-[85%] font-['Poppins'] lg:text-sm xl:text-md 2xl:text-xl">
             <p className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold">
-              Our Story.
+              Our Story
             </p>
             <p className="text-lg lg:text-md font-semibold italic">
-              Servicing since 2020
+              Servicing since 2021
             </p>
             <p className="text-sm lg:text-md">
-              We at Elysiums specialize in full time catering services in and
-              outside Metro Manila, Philippines. We are based in lorem City but
-              we have traveled far and around the Luzon area, helping people
-              create lasting memories of their special day.
+            At Food Bud Events & Catering Services, we specialize in crafting unforgettable moments for your little ones and beyond. Our diverse party packages ensure a fun-filled experience for every occasion, from kiddie parties to corporate events. 
             </p>
             <p className="text-sm lg:text-md">
-              We are a trusted name because of a simple recipe: service,
-              presentation, and quality food. Fresh ingredients are used to
-              create only the best flavors. Backed by our experienced staff, we
-              aim to deliver only the most memorable experience for you.{" "}
+            Committed to excellence, our mission is to surpass client expectations by giving our best in every event. With a vision to be among Metro Manila's premier kiddie suppliers, we offer quality services at reasonable prices.
             </p>
-            <p className=" font-semibold">Read More...</p>
+            <p className=" font-semibold">Read More...{}</p>
           </div>
         </div>
       </div>

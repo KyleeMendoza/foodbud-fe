@@ -72,10 +72,10 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          <p>To book our catering services, follow these easy steps: </p>
+          <p><br />• Read FIRST the terms & conditions. And Pay a reservation fee of ₱5,000 to secure your date.</p>
+          <p><br />• Fill out our reservation form and send it to us.</p>
+          <p><br />• We'll schedule a meeting to discuss and clarify details, as well as arrange a convenient time for a food tasting (delivery only).</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -93,10 +93,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          Our cancellation policy / no refund is outlined in our contract. 
+          Please refer to our terms and conditions or contact us for more information.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -114,10 +112,7 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          We cater to a wide range of events, including weddings, corporate gatherings, birthdays, and more.
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -134,12 +129,10 @@ export default function AccordionFaqs() {
           </Typography>
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
-          <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
+        <Typography className="text-[#1261A6]">
+    Food Bud Events and Catering (Main Office)1423 Caloocan, Philippines 
+    <p><br />Note: Office visit is strictly for contract signing, clarifications about the package and payments only and by appointment basis.</p>
+  </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion
@@ -156,10 +149,7 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          We can cater any events within NCR and nearby provinces
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -178,10 +168,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          For inquiries or to discuss your event catering needs, feel free to send us a message on our Facebook page. 
+          We strive to respond promptly and look forward to assisting you with your event plans
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -199,10 +187,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          Yes, we offer tasting sessions to help you choose the perfect menu for your event. 
+          Contact us so we can set an appointment with you
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -221,10 +207,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+          It's recommended to book our services as early as possible to ensure availability, especially for peak seasons. 
+          Contact us to check our current schedule and secure your date.
           </Typography>
         </AccordionDetails>
       </Accordion>

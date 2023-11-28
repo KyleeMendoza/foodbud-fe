@@ -17,42 +17,18 @@ function AboutUsClients() {
       <div className="flex flex-col gap-10  px-20 py-10">
         <div className="flex flex-col-reverse lg:flex-row ">
           <div className="flex flex-col text-start flex-1 gap-4 font-['Poppins']">
-            <p className="font-bold text-2xl italic">Servicing since 2020</p>
+            <p className="font-bold text-2xl italic">Servicing since 2021</p>
             <p>
-              Building customer trust in the food industry requires time,
-              effort, and great passion. For Alfonso’s, it began in 1988 with a
-              humble pizza outlet in Makati. The experience gained during those
-              early years paved the way for small time canteen operations and
-              catering to small private functions. Gradually, service offerings
-              expanded to cater to more elaborate events in and out of Metro
-              Manila. This eventually led to the incorporation of Seafood
-              Ventures Corporation, a company whose main focus is to provide
-              catering services to private and public institutions around the
-              country.
+            Welcome to Food Bud Events and Catering Services, where we specialize in crafting unforgettable moments for your little ones and beyond. Our diverse party packages ensure a fun-filled experience for every occasion, from kiddie parties to corporate events. Committed to excellence, our mission is to surpass client expectations by giving our best in every event.
             </p>
             <p>
-              Mrs. Alice Patag, the hands-on CEO of the company, manages
-              day-to-day operations and conducts quality inspections in catering
-              functions. Her active involvement in all aspects of the business
-              ensures that client needs and concerns are immediately addressed.
-              She is ably supported by a seasoned pool of managers with the
-              expertise to do what it takes to create truly memorable events. As
-              the organization continues to grow, we equip employees with the
-              necessary training that enables them not just to respond, but to
-              anticipate our customers' needs.
+            Founded by Ms. Myka Roque and Mr. Ruben Lumagbas, Food Bud Events and Catering Services has proudly operated for 2 years, experiencing notable growth and earning an impressive Facebook page rating of 4.9.With an average daily engagement of 85 individuals, our business has become a trusted choice for clients seeking top-notch event services.
             </p>
             <p>
-              Our seasoned chefs will help you create the best menu for your
-              palette and for your budget. Having had more than 10 years of
-              experience abroad and locally, they have gained expertise in an
-              abundance of cuisines while continuing to innovate and create the
-              best quality food for your event and for your guests.
+            Beyond our expertise in catering and services, we also offer equipment rentals for stylish event designs and excel in event management for various celebrations, including birthdays, baptisms, debuts, and corporate events.
             </p>
             <p>
-              To date, we have over 100 staff members that help us continue to
-              grow and excel in food service and creation. We provide regular
-              training to our staff in food safety and service to meet global
-              standards.
+            Join us on this journey at our offices in North Caloocan and let's create lasting memories together. Your celebration is special, and so are we.
             </p>
           </div>
           <div className="flex-1 flex justify-center">

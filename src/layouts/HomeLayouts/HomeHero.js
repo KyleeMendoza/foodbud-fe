@@ -25,13 +25,11 @@ function Hero() {
             Elevate Your Events with us!
           </p>
           <p className=" text-lg text-white lg:w-[40%] text-center lg:text-left">
-            At Elysium, we are more than just a catering company; we're your
-            culinary partners in creating unforgettable moments.
+            At Food Bud Events and Catering Services, we are more than just a catering company. We're your culinary partners in creating unforgettable moments.
           </p>
           <div className=" flex justify-center lg:justify-normal items-center ">
             <a
-              //   href={resume}
-              download="Mendoza, Kyle Dominic L. - Resume.pdf"
+              
               className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-7 py-3 text-lg font-semibold  text-white shadow-middle rounded-md bg-primary-500"
             >
               Book Now!

@@ -2,7 +2,7 @@ import React from "react";
 import clp_login from "../../assets/clp-login.png";
 
 function HomeTestimonials() {
-  const names = ["juan dela cruz", "cardo dalisay", "pepeng agimat"];
+  const names = ["juan dela cruz", "cardo dalisay", "agimat"];
   return (
     <div className=" h-full ">
       {/* <div className="h-full relative">
@@ -119,26 +119,22 @@ function HomeTestimonials() {
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
-                    cardo dalisay
+                    Kristel Ann Tuscano
                   </p>
                   <p className="text-slate-400 text-sm lg:text-md">
-                    September 2023
+                    August 2023
                   </p>
                 </div>
                 <div className="stars">stars</div>
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                  We had the most incredible experience with (Food Bud Events & Catering Services) at my little sister’s 7th birthday party! grabe, 
+                  from start to finish of our event, your services were exceptional. the food impressed us that left both of our guests (kids and adults) delighted — plus
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                  + beautifully presented! every detail (small or big) was taken care of, and their professionalism and attentiveness to our guests needs were commendable…  
+                  super duper maasikaso po ni Sir Kyle (Team Leader) all throughout our event, couldn’t ask for more na talaga! 
                 </p>
               </div>
             </div>
@@ -146,7 +142,7 @@ function HomeTestimonials() {
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
-                    cardo dalisay
+                    Djlord Sucat  
                   </p>
                   <p className="text-slate-400 text-sm lg:text-md">
                     September 2023
@@ -156,16 +152,12 @@ function HomeTestimonials() {
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                    We had an event last September 22 with Food Bud Events and Catering Services for my nephew’s 7th Birtday, 
+                and they have provided an awesome experience with their creative setup and amazing group of staff.
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                We actually didn't expect the amount of attendees as it exceeded the number of guests we anticipated, and we're quite anxious in terms of quantity. But to our surprise, 
+                Food Bud's outstanding team planned and executed excellently the distribution of meals. 
                 </p>
               </div>
             </div>
@@ -173,7 +165,7 @@ function HomeTestimonials() {
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
-                    cardo dalisay
+                        Jongko Janina
                   </p>
                   <p className="text-slate-400 text-sm lg:text-md">
                     September 2023
@@ -183,22 +175,17 @@ function HomeTestimonials() {
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                    Hello po. I just wanted to provide feedback po regarding our event last September 23 for my son’s 4th birthday celebration. 
                 </p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perspiciatis voluptas corporis quos facilis nihil excepturi
-                  quo, perferendis porro aspernatur sapiente vitae cum labore
-                  commodi rem.
+                    My husband and I are very thankful to your team and we can say choosing your service is one of the best decision we made for our son’s birthday. 
+                    The food was absolutely delicious which was also mentioned by most of our guests during that day.
                 </p>
               </div>
             </div>
           </div>
           <a className="text-xl font-bold text-sky-400 underline capitalize">
-            read more
+            read more 
           </a>
         </div>
       </div>

@@ -12,9 +12,8 @@ function AboutUsHero() {
         <div className="flex flex-col gap-2 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] px-8 lg:px-0 font-['Poppins'] text-center ">
           <p className="text-black font-bold text-4xl capitalize">about us</p>
           <p className="text-md w-[98%] lg:w-full">
-            This is the part where we will introduce food bud in a short
-            description only were we are like trying to promote our business to
-            therm and convince tthem to book an event with us chucu
+              Step into a world of culinary delight and seamless events with Food Bud – your gateway to 
+              memorable celebrations. Discover why our touch makes all the difference.
           </p>
         </div>
         <div className="w-full px-8 lg:px-0 lg:w-[80%] font-['Poppins'] ">
