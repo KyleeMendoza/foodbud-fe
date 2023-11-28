@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SelectorInput from "../../../../components/SelectorInput";
-import AddIcon from '@mui/icons-material/Add';
-import IconButton from '@mui/material/IconButton';
+import AddIcon from "@mui/icons-material/Add";
+import IconButton from "@mui/material/IconButton";
 import axios from "axios";
 
 function AdditionalDetails({ formData, handleModify, eventId }) {
@@ -11,7 +11,7 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
   const [fromTime, setFromTime] = React.useState("");
   const [toTime, setToTime] = React.useState("");
   const [set, setSet] = React.useState("");
-  const [selectedService, setSelectedService] = React.useState('');
+  const [selectedService, setSelectedService] = React.useState("");
   const [displayedServices, setDisplayedServices] = React.useState([]);
 
   // useEffect (() =>{
@@ -33,28 +33,28 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
   ];
 
   const serviceOptions = [
-    'Host Magician',
-    'Bubble Show',
-    'Face Painting',
-    'Mascots',
-    'Lights and Sounds',
-    'Lights & Sounds Adult',
-    'Cake & Cupcakes',
-    'Photobooth Standee',
-    'Photobooth Magnetic',
-    'Photo Coverage',
-    'Photo Coverage + Church',
-    'Photo & Video Coverage',
-    'Photo & Video Coverage + Church',
-    '4 pcs Food Carts 50 pax',
-    '4 pcs Food Carts 100 pax',
-    'Lighted Number',
-    'Food Warmer',
-    'Kiddie Table & Chair',
-    'Lighted Entrance Arch',
-    'Backdrop Panel',
-    'Ceiling Balloons (300 pcs)',
-    'Peacock Chair'
+    "Host Magician",
+    "Bubble Show",
+    "Face Painting",
+    "Mascots",
+    "Lights and Sounds",
+    "Lights & Sounds Adult",
+    "Cake & Cupcakes",
+    "Photobooth Standee",
+    "Photobooth Magnetic",
+    "Photo Coverage",
+    "Photo Coverage + Church",
+    "Photo & Video Coverage",
+    "Photo & Video Coverage + Church",
+    "4 pcs Food Carts 50 pax",
+    "4 pcs Food Carts 100 pax",
+    "Lighted Number",
+    "Food Warmer",
+    "Kiddie Table & Chair",
+    "Lighted Entrance Arch",
+    "Backdrop Panel",
+    "Ceiling Balloons (300 pcs)",
+    "Peacock Chair",
   ];
 
   const handleServiceChange = (event) => {
@@ -62,36 +62,75 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
   };
 
   const addService = () => {
-    if (selectedService !== '') {
+    if (selectedService !== "") {
       setDisplayedServices([...displayedServices, selectedService]);
-      setSelectedService('');
+      setSelectedService("");
 
-      axios.post('https://3.27.163.46/api/additional/food', {
-        event_id: eventId,
-        addons: selectedService
-      })
-      .then(response => {
-        console.log('POST request successful:', response.data);
-      })
-      .catch(error => {
-        console.error('Error making POST request:', error);
-      });
+      axios
+        .post("https://3.27.163.46/api/additional/food", {
+          event_id: eventId,
+          addons: selectedService,
+        })
+        .then((response) => {
+          console.log("POST request successful:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error making POST request:", error);
+        });
 
-      setSelectedService('');
+      setSelectedService("");
     }
   };
-
 
   const startTimeData = [
     "12:00 AM",
     "12:30 AM",
     "1:00 AM",
     "1:30 AM",
+    "2:00 AM",
+    "2:30 AM",
+    "3:00 AM",
+    "3:30 AM",
+    "4:00 AM",
+    "4:30 AM",
+    "5:00 AM",
+    "5:30 AM",
+    "6:00 AM",
+    "6:30 AM",
+    "7:00 AM",
+    "7:30 AM",
+    "8:00 AM",
+    "8:30 AM",
+    "9:00 AM",
+    "9:30 AM",
+    "10:00 AM",
+    "10:30 AM",
+    "11:00 AM",
+    "11:30 AM",
     "12:00 PM",
     "12:30 PM",
     "1:00 PM",
     "1:30 PM",
-    // Add more times as needed
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
+    "8:00 PM",
+    "8:30 PM",
+    "9:00 PM",
+    "9:30 PM",
+    "10:00 PM",
+    "10:30 PM",
+    "11:00 PM",
+    "11:30 PM",
   ];
 
   const from = [
@@ -99,10 +138,50 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
     "12:30 AM",
     "1:00 AM",
     "1:30 AM",
+    "2:00 AM",
+    "2:30 AM",
+    "3:00 AM",
+    "3:30 AM",
+    "4:00 AM",
+    "4:30 AM",
+    "5:00 AM",
+    "5:30 AM",
+    "6:00 AM",
+    "6:30 AM",
+    "7:00 AM",
+    "7:30 AM",
+    "8:00 AM",
+    "8:30 AM",
+    "9:00 AM",
+    "9:30 AM",
+    "10:00 AM",
+    "10:30 AM",
+    "11:00 AM",
+    "11:30 AM",
     "12:00 PM",
     "12:30 PM",
     "1:00 PM",
     "1:30 PM",
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
+    "8:00 PM",
+    "8:30 PM",
+    "9:00 PM",
+    "9:30 PM",
+    "10:00 PM",
+    "10:30 PM",
+    "11:00 PM",
+    "11:30 PM",
     // Add more times as needed
   ];
   const to = [
@@ -110,16 +189,58 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
     "12:30 AM",
     "1:00 AM",
     "1:30 AM",
+    "2:00 AM",
+    "2:30 AM",
+    "3:00 AM",
+    "3:30 AM",
+    "4:00 AM",
+    "4:30 AM",
+    "5:00 AM",
+    "5:30 AM",
+    "6:00 AM",
+    "6:30 AM",
+    "7:00 AM",
+    "7:30 AM",
+    "8:00 AM",
+    "8:30 AM",
+    "9:00 AM",
+    "9:30 AM",
+    "10:00 AM",
+    "10:30 AM",
+    "11:00 AM",
+    "11:30 AM",
     "12:00 PM",
     "12:30 PM",
     "1:00 PM",
     "1:30 PM",
+    "2:00 PM",
+    "2:30 PM",
+    "3:00 PM",
+    "3:30 PM",
+    "4:00 PM",
+    "4:30 PM",
+    "5:00 PM",
+    "5:30 PM",
+    "6:00 PM",
+    "6:30 PM",
+    "7:00 PM",
+    "7:30 PM",
+    "8:00 PM",
+    "8:30 PM",
+    "9:00 PM",
+    "9:30 PM",
+    "10:00 PM",
+    "10:30 PM",
+    "11:00 PM",
+    "11:30 PM",
   ];
 
   return (
     <div className="flex flex-col gap-4 ">
       <div>
-        <p className="text-primary-400 font-bold text-2xl">Additional Details</p>
+        <p className="text-primary-400 font-bold text-2xl">
+          Additional Details
+        </p>
       </div>
       <div className="flex flex-col w-[70%] gap-4">
         <div className="flex flex-col gap-4 p-4 rounded-lg border-2 ">
@@ -138,30 +259,32 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
                 >
                   <option value="">Select a service</option>
                   {serviceOptions
-                    .filter(option => !displayedServices.includes(option)) // Filter out selected options
+                    .filter((option) => !displayedServices.includes(option)) // Filter out selected options
                     .map((service, index) => (
                       <option key={index} value={service}>
                         {service}
                       </option>
                     ))}
                 </select>
-                <IconButton onClick={addService} color="primary" aria-label="Add service">
+                <IconButton
+                  onClick={addService}
+                  color="primary"
+                  aria-label="Add service"
+                >
                   <AddIcon />
                 </IconButton>
               </div>
 
               <div>
                 <h3 className="font-bold text-lg">Selected Services:</h3>
-                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
                   {displayedServices.map((service, index) => (
                     <li key={index}>{service}</li>
                   ))}
                 </ul>
               </div>
             </div>
-
           </div>
-
         </div>
         {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Photobooth:</p>
