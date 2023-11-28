@@ -6,7 +6,7 @@ import { randomTraderName, randomEmail } from "@mui/x-data-grid-generator";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
 import NavBar from "./NavBar";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 // import { getTransactionTable } from "../services/getTransactionTable";
 
 const VISIBLE_FIELDS = [
@@ -120,7 +120,7 @@ export default function AccountsTable() {
   const [data, setData] = useState([]);
 
   // Get all the payment
-  const API_ENDPOINT = "http://localhost:9000/api/all/payments/:event_id";
+  const API_ENDPOINT = "http://localhost:9000/api/all/payments/2";
 
   // Transaction tab
   useEffect(() => {
@@ -128,10 +128,10 @@ export default function AccountsTable() {
       try {
         const response = await fetch(API_ENDPOINT);
         const result = await response.json();
+        setData(result.clients);
         const filteredData = result.payments.filter(
           (row) => row.payment_paid !== null
         );
-        // setData(result.clients)
 
         console.log(filteredData);
 
@@ -213,7 +213,7 @@ export default function AccountsTable() {
               }}
               rows={data} // Pass the API data as rows
               columns={columns}
-              getRowId={(row) => row.id}
+              getRowId={(row) => row.event_id}
               component={{ Toolbar: GridToolbar }}
             />
 

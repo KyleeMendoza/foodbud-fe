@@ -251,16 +251,16 @@ function ClientHome({ name }) {
                   <div className="flex flex-col justify-between h-[80%] font-bold">
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex flex-col">
                       <div className="flex justify-between">
                         <p>Total Availed</p>
-                        <p>84,200</p>
+                        <p>xxxxx</p>
                       </div>
                       <div className="flex justify-between">
                         <p>Total Availed</p>
-                        <p>84,200</p>
+                        <p>xxxxx</p>
                       </div>
                     </div>
                   </div>
@@ -295,36 +295,36 @@ function ClientHome({ name }) {
                 <div className="flex flex-col justify-between h-[80%] font-bold">
                   <div className="flex justify-between">
                     <p>Total Availed</p>
-                    <p>84,200</p>
+                    <p>xxxxx</p>
                   </div>
                   <div className="flex flex-col">
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                     <div className="flex justify-between">
                       <p>Total Availed</p>
-                      <p>84,200</p>
+                      <p>xxxxx</p>
                     </div>
                   </div>
                 </div>

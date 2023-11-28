@@ -4,9 +4,10 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import { useState } from "react";
 
 import AppointmentTable from "./AppointmentTable";
-import AccountTab from "./AccountsTable";
+import AccountsTable from "./AccountsTable";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -61,7 +62,7 @@ export default function AccountsTab() {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <AccountsTab />
+        <AccountsTable />
       </CustomTabPanel>
     </Box>
   );

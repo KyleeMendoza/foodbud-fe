@@ -17,7 +17,7 @@ function ClientAccounts() {
               <p>December 25, 2023</p>
             </div>
           </div>
-          <Button variant="contained" size="large">
+          <Button to="/client/editEvent" variant="contained" size="large">
             Add
           </Button>
           {/* <div>
