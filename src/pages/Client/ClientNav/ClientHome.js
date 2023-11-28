@@ -9,7 +9,7 @@ function ClientHome({ name }) {
   const EventID = localStorage.getItem("eventID");
   const [eventDetails, setEventDetails] = useState({});
   const [foodTastingDate, setFoodTastingDate] = useState("");
-  const [onlineMeet, setOnlineMeet] = useState({})
+  const [onlineMeet, setOnlineMeet] = useState({});
   const [onlineMeetingDate, setOnlineMeetingDate] = useState("");
 
   useEffect(() => {
@@ -61,7 +61,7 @@ function ClientHome({ name }) {
           setOnlineMeetingDate(response.FetchMeeting.date);
 
           setOnlineMeet(response.FetchMeeting);
-          console.log(response.FetchMeeting)
+          console.log(response.FetchMeeting);
         } catch (error) {
           console.error("Error:", error.message);
           window.alert(

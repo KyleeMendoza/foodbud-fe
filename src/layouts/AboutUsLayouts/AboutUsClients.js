@@ -2,11 +2,20 @@ import React from "react";
 import logo from "../../assets/G-FoodbudFooterLogo.png";
 import ReviewComponent from "../../components/ReviewComponent";
 
+import client1 from "../../assets/client1.png";
+import client2 from "../../assets/client2.png";
+import client3 from "../../assets/client3.png";
+import client4 from "../../assets/client4.png";
+import client5 from "../../assets/client5.png";
+import client6 from "../../assets/client6.png";
+import client7 from "../../assets/client7.png";
+import client8 from "../../assets/client8.png";
+
 function AboutUsClients() {
   return (
     <div className="h-full ">
       <div className="flex flex-col gap-10  px-20 py-10">
-        <div className="flex flex-row ">
+        <div className="flex flex-col-reverse lg:flex-row ">
           <div className="flex flex-col text-start flex-1 gap-4 font-['Poppins']">
             <p className="font-bold text-2xl italic">Servicing since 2020</p>
             <p>
@@ -47,22 +56,20 @@ function AboutUsClients() {
             </p>
           </div>
           <div className="flex-1 flex justify-center">
-            <img src={logo} alt="" className="w-96 h-96" />
+            <img src={logo} alt="" className="lg:w-96 lg:h-96" />
           </div>
         </div>
         <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center ">
           <p className="font-bold text-2xl">Past &amp; Present Clients</p>
-          <div className="flex flex-col w-full gap-5 ">
-            <div className="flex justify-center gap-5">
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />
-            </div>
-            <div className="flex justify-center gap-5">
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />{" "}
-              <img src={logo} alt="" className="w-24 h-24 lg:w-80 lg:h-80" />
-            </div>
+          <div className="grid grid-cols-4 grid-rows-2 gap-2 lg:gap-10">
+            <img src={client1} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client2} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client3} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client4} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client5} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client6} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client7} alt="" className="lg:w-52 lg:h-52" />
+            <img src={client8} alt="" className="lg:w-52 lg:h-52" />
           </div>
         </div>
       </div>
