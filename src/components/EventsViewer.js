@@ -296,8 +296,9 @@ export default function EventsViewer() {
           <div className=" relative pb-20 ">
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Celebrant Name:</p>
                 {editMode ? (
@@ -306,7 +307,7 @@ export default function EventsViewer() {
                     type="text"
                     name="celebrant_name"
                     value={formData.celebrant_name}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1 ">
@@ -316,8 +317,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Age:</p>
                 {editMode ? (
@@ -326,7 +328,7 @@ export default function EventsViewer() {
                     type="number"
                     name="celebrant_age"
                     value={formData.celebrant_age || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">
@@ -336,8 +338,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  }`}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                }`}
               >
                 <p>Preparation Time:</p>
                 {editMode ? (
@@ -345,8 +348,8 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="prep_time"
                     value={formData.prep_time || ""}
-                  // disabled={formData.start_time === formData.prep_time}
-                  // onChange={handleModify}
+                    // disabled={formData.start_time === formData.prep_time}
+                    // onChange={handleModify}
                   >
                     {Array.from({ length: 24 }, (_, index) => {
                       const hours = index % 12 || 12; // Convert 0 to 12
@@ -365,8 +368,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  }`}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                }`}
               >
                 <p>Start Time:</p>
                 {editMode ? (
@@ -374,8 +378,8 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="start_time"
                     value={formData.start_time || ""}
-                  // onChange={handleModify}
-                  // disabled={formData.start_time === formData.prep_time}
+                    // onChange={handleModify}
+                    // disabled={formData.start_time === formData.prep_time}
                   >
                     {Array.from({ length: 24 }, (_, index) => {
                       const hours = index % 12 || 12; // Convert 0 to 12
@@ -398,8 +402,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Event Type:</p>
                 {editMode ? (
@@ -407,7 +412,7 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="event_type"
                     value={formData.event_type || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   >
                     <option value="">Select Event Type</option>
                     <option value="Anniversary">Anniversary</option>
@@ -424,8 +429,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Theme:</p>
                 {editMode ? (
@@ -434,7 +440,7 @@ export default function EventsViewer() {
                     type="text"
                     name="theme"
                     value={formData.theme || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">{formData.theme}</span>
@@ -442,8 +448,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Color Theme:</p>
                 {editMode ? (
@@ -452,7 +459,7 @@ export default function EventsViewer() {
                     type="text"
                     name="color_theme"
                     value={formData.color_theme || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">
@@ -462,8 +469,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Venue Time:</p>
                 {editMode ? (
@@ -472,7 +480,7 @@ export default function EventsViewer() {
                     type="text"
                     name="venue_time"
                     value={formData.venue_time || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">{formData.venue_time}</span>
@@ -480,8 +488,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Venue Type:</p>
                 {editMode ? (
@@ -490,7 +499,7 @@ export default function EventsViewer() {
                     type="text"
                     name="venue_type"
                     value={formData.venue_type || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">{formData.venue_type}</span>
@@ -498,8 +507,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Venue Floor:</p>
                 {editMode ? (
@@ -508,7 +518,7 @@ export default function EventsViewer() {
                     type="text"
                     name="venue_floor"
                     value={formData.venue_floor || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">
@@ -518,8 +528,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Venue Address:</p>
                 {editMode ? (
@@ -528,7 +539,7 @@ export default function EventsViewer() {
                     type="text"
                     name="venue_address"
                     value={formData.venue_address || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">
@@ -538,8 +549,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Venue Location:</p>
                 {editMode ? (
@@ -548,7 +560,7 @@ export default function EventsViewer() {
                     type="text"
                     name="venue_location"
                     value={formData.venue_location || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   />
                 ) : (
                   <span className="font-normal p-1">
@@ -558,8 +570,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Dish 1:</p>
                 {editMode ? (
@@ -567,7 +580,7 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="dish_1"
                     value={formData.dish_1 || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   >
                     <option value="">Select Dish</option>
                     {dishOptions.map((dish, index) => (
@@ -586,8 +599,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Dish 2:</p>
                 {editMode ? (
@@ -595,7 +609,7 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="dish_2"
                     value={formData.dish_2 || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   >
                     <option value="">Select Dish</option>
                     {dishOptions.map((dish, index) => (
@@ -614,8 +628,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Pasta:</p>
                 {editMode ? (
@@ -623,7 +638,7 @@ export default function EventsViewer() {
                     className="font-normal border-2 p-1"
                     name="pasta"
                     value={formData.pasta || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   >
                     <option value="">Select Pasta</option>
                     {pastaOptions.map((pasta, index) => (
@@ -638,8 +653,9 @@ export default function EventsViewer() {
               </label>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Dessert:</p>
                 {editMode ? (
@@ -648,7 +664,7 @@ export default function EventsViewer() {
                     type="text"
                     name="dessert"
                     value={formData.dessert || ""}
-                  // onChange={handleModify}
+                    // onChange={handleModify}
                   >
                     <option value="">Select Dessert</option>
                     {dessertOptions.map((dessert, index) => (
@@ -692,8 +708,9 @@ export default function EventsViewer() {
             <br></br>
 
             <label
-              className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                } `}
+              className={`flex justify-between items-center ${
+                editMode ? "" : "border-b-2"
+              } `}
             >
               <p className="font-bold text-lg">Reservation Fee</p>
               {editMode ? (
@@ -708,8 +725,9 @@ export default function EventsViewer() {
               )}
             </label>
             <label
-              className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                } `}
+              className={`flex justify-between items-center ${
+                editMode ? "" : "border-b-2"
+              } `}
             >
               <p className="font-bold text-lg">{invoiceData.pax_count} Pax</p>
               {editMode ? (
@@ -739,8 +757,9 @@ export default function EventsViewer() {
             <br></br>
             <br></br>
             <label
-              className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                } `}
+              className={`flex justify-between items-center ${
+                editMode ? "" : "border-b-2"
+              } `}
             >
               <p className="font-bold text-2xl"> Total</p>
 
@@ -781,8 +800,9 @@ export default function EventsViewer() {
 
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Date: </p>
                 {editMode ? (
@@ -798,8 +818,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Time: </p>
                 {editMode ? (
@@ -816,8 +837,9 @@ export default function EventsViewer() {
               </label>
               <br></br>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Recipient Name: </p>
                 {editMode ? (
@@ -833,8 +855,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Contact Number: </p>
                 {editMode ? (
@@ -852,8 +875,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Address: </p>
                 {editMode ? (
@@ -871,8 +895,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Google Pin Location: </p>
                 {editMode ? (
@@ -892,8 +917,9 @@ export default function EventsViewer() {
               <br></br>
 
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Dishes </p>
                 {editMode ? (
@@ -909,7 +935,7 @@ export default function EventsViewer() {
                 )}
               </label>
             </form>
-            {editMode &&
+            {editMode && (
               <button
                 onClick={handleSaveFoodForm}
                 type="submit"
@@ -918,7 +944,7 @@ export default function EventsViewer() {
               >
                 Submit
               </button>
-            }
+            )}
           </div>
         </div>
       </CustomTabPanel>
@@ -946,8 +972,9 @@ export default function EventsViewer() {
           <div className=" relative pb-20 ">
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Date: </p>
                 {editMode ? (
@@ -963,8 +990,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Time: </p>
                 {editMode ? (
@@ -980,8 +1008,9 @@ export default function EventsViewer() {
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${
+                  editMode ? "" : "border-b-2"
+                } `}
               >
                 <p>Notes: </p>
                 {editMode ? (
@@ -1072,15 +1101,16 @@ export default function EventsViewer() {
                 </ul>
               </li>
             </ul>
-            {editMode && <button
-              onClick={handleSaveMeeting}
-              type="submit"
-              style={{ backgroundColor: ["#3B9BDC"] }}
-              className="font-bold text-xl text-white px-5 py-3 rounded-md absolute bottom-0 right-0"
-            >
-              Submit
-            </button>
-            }
+            {editMode && (
+              <button
+                onClick={handleSaveMeeting}
+                type="submit"
+                style={{ backgroundColor: ["#3B9BDC"] }}
+                className="font-bold text-xl text-white px-5 py-3 rounded-md absolute bottom-0 right-0"
+              >
+                Submit
+              </button>
+            )}
           </div>
         </div>
       </CustomTabPanel>
