@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
-import { Divider } from "@mui/material";
 import SelectButton from "../../../components/SelectButton";
 import { useEffect } from "react";
-import Cookies from "js-cookie";
 import axios from "axios";
 import { getFetchFT, getFetchMeeting } from "../../../services/getFetchEvent";
 
@@ -11,6 +9,7 @@ function ClientHome({ name }) {
   const EventID = localStorage.getItem("eventID");
   const [eventDetails, setEventDetails] = useState({});
   const [foodTastingDate, setFoodTastingDate] = useState("");
+  const [onlineMeet, setOnlineMeet] = useState({})
   const [onlineMeetingDate, setOnlineMeetingDate] = useState("");
 
   useEffect(() => {
@@ -61,7 +60,8 @@ function ClientHome({ name }) {
           const response = await getFetchMeeting(EventID);
           setOnlineMeetingDate(response.FetchMeeting.date);
 
-          console.log(response.FetchMeeting);
+          setOnlineMeet(response.FetchMeeting);
+          console.log(response.FetchMeeting)
         } catch (error) {
           console.error("Error:", error.message);
           window.alert(
@@ -206,7 +206,7 @@ function ClientHome({ name }) {
                 </p>
                 <div className="flex flex-col font-bold">
                   <p className="text-md capitalize text-black">
-                    {eventDetails}
+                    {onlineMeet.notes}
                   </p>
                   <p className="text-md capitalize text-black">
                     Deluxe Package
