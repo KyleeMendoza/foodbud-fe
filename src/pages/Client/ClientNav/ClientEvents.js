@@ -38,7 +38,6 @@ function ClientEvents({ cookies }) {
       } catch (error) {
         console.error("Error:", error.message);
         // window.alert(
-        //   "An error occurred while fetching the bet history. Please try again later."
         // );
       }
     };

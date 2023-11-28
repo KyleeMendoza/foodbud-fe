@@ -192,7 +192,7 @@ export default function EventsViewer() {
       } catch (error) {
         console.error("Error:", error.message);
         window.alert(
-          "An error occurred while fetching the bet history. Please try again later."
+          "An error occurred. Please try again later."
         );
       }
     };
