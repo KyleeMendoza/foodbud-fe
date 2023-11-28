@@ -184,8 +184,8 @@ function HomeTestimonials() {
               </div>
             </div>
           </div>
-          <a className="text-xl font-bold text-sky-400 underline capitalize">
-            read more 
+          <a className="text-xl font-bold text-sky-400 underline capitalize" href="https:https://www.facebook.com/foodbudevents/reviews_given">
+              Read more
           </a>
         </div>
       </div>

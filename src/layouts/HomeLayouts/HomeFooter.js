@@ -5,6 +5,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
+
 function HomeFooter() {
   return (
     <div
@@ -26,7 +27,7 @@ function HomeFooter() {
           <div className="flex flex-col gap-4 text-white">
             <p className="font-bold text-3xl capitalize">quick links</p>
             <div className="flex flex-col gap-2 capitalize">
-              <a href="/">home</a>
+              <a href="">home</a>
               <a href="/aboutUs">about us</a>
               <a href="/packages">packages</a>
               <a href="/gallery">gallery</a>
@@ -38,23 +39,29 @@ function HomeFooter() {
             <p className="hidden lg:block font-bold text-3xl capitalize">
               contact us
             </p>
-            <div className="flex flex-col items-center lg:items-start gap-2 capitalize">
+            <div className="flex flex-col items-center lg:items-start gap-2">
               <p>
                 Queensville Subd., Blk 11 Lot 12 Victoria St., Caloocan City PHL
               </p>
               <p>foodbudevents@gmail.com</p>
               <p>0915 175 8015</p>
               <div className="flex gap-4">
-                {<FacebookIcon />}
-                {<InstagramIcon />}
-                {<TwitterIcon />}
+              <a href="https://www.facebook.com/foodbudevents" target="_blank" rel="noopener noreferrer">
+                  <FacebookIcon />
+                </a>
+                <a href="https:www.instagram.com/foodbudevents" target="_blank" rel="noopener noreferrer">
+                  <InstagramIcon />
+                </a>
+                <a href="https:www.tiktok.com/@foodbudevents" target="_blank" rel="noopener noreferrer">
+                  <TwitterIcon />
+                </a>
               </div>
             </div>
           </div>
         </div>
         <div className="flex justify-center items-center py-3 bg-pink-primary-400 h-[10%] w-full">
           <p className="text-sm text-white">
-            Copyright © 2023 Foodbud Events & Catering | All Rights Reserved
+            Copyright © 2023 Foodbud Events & Catering Services | All Rights Reserved
           </p>
         </div>
       </div>

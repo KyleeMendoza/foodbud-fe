@@ -52,7 +52,6 @@ function NavBar() {
               <div className="z-20 flex lg:hidden lg:items-center">
                 <a
                   href="http://www.facebook.com"
-                  download="Mendoza, Kyle Dominic L. - Resume.pdf"
                   className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-sm font-semibold  text-primary-500 shadow-middle rounded-md bg-white"
                 >
                   Sign in
@@ -83,7 +82,6 @@ function NavBar() {
             <div className="hidden lg:flex lg:items-center">
               {/* <a
                 onClick={goToClientPage}
-                // download="Mendoza, Kyle Dominic L. - Resume.pdf"
                 className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
               >
                 Sign in

@@ -1,5 +1,4 @@
 import React from "react";
-
 import NavBar from "../../components/NavBar";
 import cw_hero from "../../assets/CW-Hero.png";
 
@@ -29,7 +28,7 @@ function Hero() {
           </p>
           <div className=" flex justify-center lg:justify-normal items-center ">
             <a
-              
+              href="https://www.messenger.com/t/103596451974308/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0"
               className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-7 py-3 text-lg font-semibold  text-white shadow-middle rounded-md bg-primary-500"
             >
               Book Now!
