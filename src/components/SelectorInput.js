@@ -28,6 +28,11 @@ export default function SelectorInput({
           value={state}
           label={title}
           onChange={handleChange}
+          MenuProps={{
+            style: {
+              maxHeight: 400,
+            },
+          }}
         >
           {data.map((data, key) => (
             <MenuItem key={key} value={data}>
