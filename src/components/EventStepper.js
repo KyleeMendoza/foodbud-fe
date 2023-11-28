@@ -95,6 +95,7 @@ export default function EventStepper({
   handleModify,
   handleSave,
   handleSelectorChange,
+  eventId
 }) {
   // const location = useLocation();
   // const formData = location.state.formData;
@@ -212,6 +213,7 @@ export default function EventStepper({
               <AdditionalDetails
                 formData={formData}
                 handleModify={handleModify}
+                eventId={eventId}
               />
             ) : null}
           </div>

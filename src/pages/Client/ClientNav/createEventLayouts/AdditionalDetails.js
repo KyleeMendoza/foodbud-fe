@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import SelectorInput from "../../../../components/SelectorInput";
+import AddIcon from '@mui/icons-material/Add';
+import IconButton from '@mui/material/IconButton';
+import axios from "axios";
 
-function AdditionalDetails({ formData, handleModify }) {
+function AdditionalDetails({ formData, handleModify, eventId }) {
   const [startTime, setStartTime] = React.useState("");
   const [fromTime, setFromTime] = React.useState("");
   const [toTime, setToTime] = React.useState("");
   const [set, setSet] = React.useState("");
+  const [selectedService, setSelectedService] = React.useState('');
+  const [displayedServices, setDisplayedServices] = React.useState([]);
+
+  // useEffect (() =>{
+  //   console.log( eventId)
+
+  // }, [eventId])
 
   const setData = [
     "Pancake (Chocolate or maple syrup)",
@@ -21,6 +31,56 @@ function AdditionalDetails({ formData, handleModify }) {
     "Unlimited Cotton candy",
     "Unlimited Popcorn",
   ];
+
+  const serviceOptions = [
+    'Host Magician',
+    'Bubble Show',
+    'Face Painting',
+    'Mascots',
+    'Lights and Sounds',
+    'Lights & Sounds Adult',
+    'Cake & Cupcakes',
+    'Photobooth Standee',
+    'Photobooth Magnetic',
+    'Photo Coverage',
+    'Photo Coverage + Church',
+    'Photo & Video Coverage',
+    'Photo & Video Coverage + Church',
+    '4 pcs Food Carts 50 pax',
+    '4 pcs Food Carts 100 pax',
+    'Lighted Number',
+    'Food Warmer',
+    'Kiddie Table & Chair',
+    'Lighted Entrance Arch',
+    'Backdrop Panel',
+    'Ceiling Balloons (300 pcs)',
+    'Peacock Chair'
+  ];
+
+  const handleServiceChange = (event) => {
+    setSelectedService(event.target.value);
+  };
+
+  const addService = () => {
+    if (selectedService !== '') {
+      setDisplayedServices([...displayedServices, selectedService]);
+      setSelectedService('');
+
+      axios.post('https://3.27.163.46/api/additional/food', {
+        event_id: eventId,
+        addons: selectedService
+      })
+      .then(response => {
+        console.log('POST request successful:', response.data);
+      })
+      .catch(error => {
+        console.error('Error making POST request:', error);
+      });
+
+      setSelectedService('');
+    }
+  };
+
 
   const startTimeData = [
     "12:00 AM",
@@ -54,27 +114,56 @@ function AdditionalDetails({ formData, handleModify }) {
     "12:30 PM",
     "1:00 PM",
     "1:30 PM",
-    // Add more times as needed
   ];
 
   return (
     <div className="flex flex-col gap-4 ">
       <div>
-        <p className="text-primary-400 font-bold text-2xl">Addtional Details</p>
+        <p className="text-primary-400 font-bold text-2xl">Additional Details</p>
       </div>
       <div className="flex flex-col w-[70%] gap-4">
         <div className="flex flex-col gap-4 p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">
             Services included in the package:
           </p>
-          <div className="px-10">
-            <ul className="list-disc text-lg font-bold flex flex-col gap-2">
-              <li>Host Magician</li>
-              <li>Photobooth</li>
-            </ul>
+          <div className="border-2">
+            <div className="px-10 flex py-5 justify-around items-center">
+              <div className="flex gap-2">
+                <select
+                  id="services"
+                  name="services"
+                  value={selectedService}
+                  onChange={handleServiceChange}
+                  className="p-2 rounded-lg border-2 text-lg"
+                >
+                  <option value="">Select a service</option>
+                  {serviceOptions
+                    .filter(option => !displayedServices.includes(option)) // Filter out selected options
+                    .map((service, index) => (
+                      <option key={index} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                </select>
+                <IconButton onClick={addService} color="primary" aria-label="Add service">
+                  <AddIcon />
+                </IconButton>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-lg">Selected Services:</h3>
+                <ul style={{ listStyleType: 'disc', paddingLeft: '20px' }}>
+                  {displayedServices.map((service, index) => (
+                    <li key={index}>{service}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
           </div>
+
         </div>
-        <div className="flex flex-col p-4 rounded-lg border-2 ">
+        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Photobooth:</p>
           <div className="w-[80%]">
             <label className="flex items-center justify-between">
@@ -91,8 +180,8 @@ function AdditionalDetails({ formData, handleModify }) {
               </div>
             </label>{" "}
           </div>
-        </div>
-        <div className="flex flex-col p-4 rounded-lg border-2 ">
+        </div> */}
+        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Church Coverage:</p>
           <div className="w-[80%] flex flex-col gap-4">
             <label className="flex items-center justify-between">
@@ -134,7 +223,7 @@ function AdditionalDetails({ formData, handleModify }) {
               </div>
             </label>{" "}
           </div>
-        </div>
+        </div> */}
         <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Cake:</p>
           <div className="w-[80%]">
@@ -143,12 +232,12 @@ function AdditionalDetails({ formData, handleModify }) {
               <input
                 className="font-normal border-2 p-2 rounded-md w-[50%]"
                 type="string"
-                placeholder="Enter Address"
+                placeholder="Enter Cake Theme"
               />
             </label>
           </div>
         </div>
-        <div className="flex flex-col p-4 rounded-lg border-2 ">
+        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Food Cart Choices:</p>
           <div className="w-[80%] flex flex-col gap-4">
             <label className="flex items-center justify-between">
@@ -196,7 +285,7 @@ function AdditionalDetails({ formData, handleModify }) {
               </div>
             </label>
           </div>
-        </div>
+        </div> */}
       </div>
       <FormControlLabel
         required

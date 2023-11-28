@@ -103,7 +103,7 @@ function EventDetails({ formData, handleModify, handleSelectorChange }) {
             onChange={handleModify}
           />
         </label>
-        <label className="flex items-center justify-between">
+        {/* <label className="flex items-center justify-between">
           <p className="font-semibold">Adults Count:</p>
           <div className=" w-[50%] flex flex-start">
             <input
@@ -122,7 +122,7 @@ function EventDetails({ formData, handleModify, handleSelectorChange }) {
               placeholder="Kids"
             />
           </div>
-        </label>
+        </label> */}
       </div>
     </div>
   );

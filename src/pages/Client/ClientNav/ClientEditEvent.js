@@ -87,6 +87,7 @@ function ClientEditEvent() {
             handleModify={handleModify}
             handleSave={handleSave}
             handleSelectorChange={handleSelectorChange}
+            eventId={eventId}
           />
         </div>
       </div>
