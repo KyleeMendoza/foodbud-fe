@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 import AppointmentTable from "./AppointmentTable";
+import AccountTab from "./AccountTable";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -57,18 +58,10 @@ export default function AccountsTab() {
           className="  w-[32%] p-2 ml-6 "
         >
           <Tab label="Event 1" {...a11yProps(0)} />
-          <Tab label="Event 2" {...a11yProps(1)} />
-          <Tab label="Event 3" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        <AppointmentTable />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        <AppointmentTable />
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        <AppointmentTable />
+        <AccountsTab />
       </CustomTabPanel>
     </Box>
   );
