@@ -19,7 +19,7 @@ function HomeDeals() {
             our deals
           </p>
           <div className="w-full lg:w-[80%] font-['Poppins'] flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10 ">
-            <div className="lg:w-[25%] lg:h-full w-[18rem] h-[14rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+            <div className="lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cs_aikp}
                 alt="Picture"
@@ -29,7 +29,7 @@ function HomeDeals() {
                 all in party package
               </p>
             </div>
-            <div className="lg:w-[25%] lg:h-full w-[18rem] h-[14rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+            <div className="lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cw_fvs}
                 alt="Picture"
@@ -39,7 +39,7 @@ function HomeDeals() {
                 full venue styling
               </p>
             </div>
-            <div className="lg:w-[25%] lg:h-full w-[18rem] h-[14rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
+            <div className="lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
               <img
                 src={cw_as}
                 alt="Picture"

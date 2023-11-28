@@ -109,7 +109,7 @@ function HomeTestimonials() {
           </div>
         </div>
       </div> */}
-      <div className=" flex justify-center items-center  py-10">
+      <div className=" flex justify-center items-center py-10 px-10 lg:px-0">
         <div className=" flex flex-col justify-around items-center font-['Poppins']">
           <p className="text-2xl lg:text-4xl font-bold text-sky-500 uppercase">
             client testimonials

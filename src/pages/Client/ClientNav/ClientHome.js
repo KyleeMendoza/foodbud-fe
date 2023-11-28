@@ -206,7 +206,7 @@ function ClientHome({ name }) {
                 </p>
                 <div className="flex flex-col font-bold">
                   <p className="text-md capitalize text-black">
-                    {eventDetails}
+                    {/* {eventDetails} */}
                   </p>
                   <p className="text-md capitalize text-black">
                     Deluxe Package
