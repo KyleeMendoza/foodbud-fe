@@ -5,7 +5,7 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { randomTraderName, randomEmail } from "@mui/x-data-grid-generator";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Switch from "@mui/material/Switch";
-import NavBar from "../components/NavBar";
+import NavBar from "./NavBar";
 import { useEffect } from "react";
 // import { getTransactionTable } from "../services/getTransactionTable";
 

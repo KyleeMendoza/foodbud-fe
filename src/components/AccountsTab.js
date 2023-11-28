@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
 import AppointmentTable from "./AppointmentTable";
-import AccountTab from "./AccountTable";
+import AccountTab from "./AccountsTable";
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
