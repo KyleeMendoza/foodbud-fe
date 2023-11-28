@@ -220,7 +220,6 @@ export default function EventsViewer() {
       try {
         const response = await getFetchMeeting(eventId);
         setMeetingData(response.FetchMeeting);
-        // console.log(response.fetchFT)
       } catch (error) {
         console.error("Error:", error.message);
         window.alert("An error occurred. Please try again later.");
