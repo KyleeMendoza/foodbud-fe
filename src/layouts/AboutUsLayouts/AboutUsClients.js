@@ -14,21 +14,38 @@ import client8 from "../../assets/client8.png";
 function AboutUsClients() {
   return (
     <div className="h-full ">
-      <div className="flex flex-col gap-10  px-20 py-10">
-        <div className="flex flex-col-reverse lg:flex-row ">
-          <div className="flex flex-col text-start flex-1 gap-4 font-['Poppins']">
-            <p className="font-bold text-2xl italic">Servicing since 2021</p>
-            <p>
-            Welcome to Food Bud Events and Catering Services, where we specialize in crafting unforgettable moments for your little ones and beyond. Our diverse party packages ensure a fun-filled experience for every occasion, from kiddie parties to corporate events. Committed to excellence, our mission is to surpass client expectations by giving our best in every event.
+      <div className="flex flex-col gap-10 lg:px-40 lg:py-20 px-10 py-10">
+        <div className="flex w-full flex-col-reverse lg:flex-row ">
+          <div className="flex flex-col text-justify flex-1 gap-4 font-['Poppins']">
+            <p className="font-bold text-2xl text-center lg:text-start italic">
+              Servicing since 2021
             </p>
             <p>
-            Founded by Ms. Myka Roque and Mr. Ruben Lumagbas, Food Bud Events and Catering Services has proudly operated for 2 years, experiencing notable growth and earning an impressive Facebook page rating of 4.9.With an average daily engagement of 85 individuals, our business has become a trusted choice for clients seeking top-notch event services.
+              Welcome to Food Bud Events and Catering Services, where we
+              specialize in crafting unforgettable moments for your little ones
+              and beyond. Our diverse party packages ensure a fun-filled
+              experience for every occasion, from kiddie parties to corporate
+              events. Committed to excellence, our mission is to surpass client
+              expectations by giving our best in every event.
             </p>
             <p>
-            Beyond our expertise in catering and services, we also offer equipment rentals for stylish event designs and excel in event management for various celebrations, including birthdays, baptisms, debuts, and corporate events.
+              Founded by Ms. Myka Roque and Mr. Ruben Lumagbas, Food Bud Events
+              and Catering Services has proudly operated for 2 years,
+              experiencing notable growth and earning an impressive Facebook
+              page rating of 4.9.With an average daily engagement of 85
+              individuals, our business has become a trusted choice for clients
+              seeking top-notch event services.
             </p>
             <p>
-            Join us on this journey at our offices in North Caloocan and let's create lasting memories together. Your celebration is special, and so are we.
+              Beyond our expertise in catering and services, we also offer
+              equipment rentals for stylish event designs and excel in event
+              management for various celebrations, including birthdays,
+              baptisms, debuts, and corporate events.
+            </p>
+            <p>
+              Join us on this journey at our offices in North Caloocan and let's
+              create lasting memories together. Your celebration is special, and
+              so are we.
             </p>
           </div>
           <div className="flex-1 flex justify-center">
@@ -37,7 +54,7 @@ function AboutUsClients() {
         </div>
         <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center ">
           <p className="font-bold text-2xl">Past &amp; Present Clients</p>
-          <div className="grid grid-cols-4 grid-rows-2 gap-2 lg:gap-10">
+          <div className="grid grid-cols-2 grid-rows-2 gap-5 lg:grid-cols-4 lg:gap-10">
             <img src={client1} alt="" className="lg:w-52 lg:h-52" />
             <img src={client2} alt="" className="lg:w-52 lg:h-52" />
             <img src={client3} alt="" className="lg:w-52 lg:h-52" />

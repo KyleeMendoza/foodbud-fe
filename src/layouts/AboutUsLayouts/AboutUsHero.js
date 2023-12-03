@@ -7,17 +7,22 @@ import custdriven from "../../assets/cwau-custdriven.png";
 
 function AboutUsHero() {
   return (
-    <div className="h-full ">
-      <div className="flex flex-col gap-8 items-center justify-around  py-10">
-        <div className="flex flex-col gap-2 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] px-8 lg:px-0 font-['Poppins'] text-center ">
-          <p className="text-black font-bold text-4xl capitalize">about us</p>
+    <div className="h-fit lg:h-screen">
+      <div className="flex flex-col items-center justify-start py-20 gap-20 h-full">
+        {/* About Us Opening Statement */}
+        <div className="flex flex-col p-10 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] lg:px-0 font-['Poppins'] text-center ">
+          <p className="text-black mb-5 font-bold text-4xl capitalize">
+            about us
+          </p>
           <p className="text-md w-[98%] lg:w-full">
-              Step into a world of culinary delight and seamless events with Food Bud – your gateway to 
-              memorable celebrations. Discover why our touch makes all the difference.
+            Step into a world of culinary delight and seamless events with Food
+            Bud – your gateway to memorable celebrations. Discover why our touch
+            makes all the difference.
           </p>
         </div>
-        <div className="w-full px-8 lg:px-0 lg:w-[80%] font-['Poppins'] ">
-          <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row justify-between">
+        {/* Mission Vision */}
+        <div className="w-full lg:px-0 lg:w-[80%] font-['Poppins'] ">
+          <div className="flex flex-col px-10 gap-10 justify-evenly lg:gap-0 lg:px-0 lg:flex-row">
             <div className="flex flex-col lg:flex-row text-center lg:text-start w-full lg:w-[45%] p-5 gap-5 lg:gap-12 border-2 border-black rounded-2xl">
               <p className="text-black font-bold text-3xl capitalize">
                 mission
