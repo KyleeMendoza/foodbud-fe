@@ -1,5 +1,6 @@
 import React from "react";
 import clp_login from "../../assets/clp-login.png";
+import StarIcon from "@mui/icons-material/Star";
 
 function HomeTestimonials() {
   const names = ["juan dela cruz", "cardo dalisay", "agimat"];
@@ -126,7 +127,13 @@ function HomeTestimonials() {
                     August 2023
                   </p>
                 </div>
-                <div className="stars">stars</div>
+                <div className=" text-yellow-400">
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                </div>
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
@@ -157,7 +164,13 @@ function HomeTestimonials() {
                     September 2023
                   </p>
                 </div>
-                <div className="stars">stars</div>
+                <div className=" text-yellow-400">
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                </div>
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
@@ -187,7 +200,13 @@ function HomeTestimonials() {
                     September 2023
                   </p>
                 </div>
-                <div className="stars">stars</div>
+                <div className=" text-yellow-400">
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                </div>
               </div>
               <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
                 <p>
