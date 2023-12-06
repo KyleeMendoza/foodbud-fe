@@ -8,45 +8,48 @@ import cw_as from "../../assets/CW-AS.png";
 function HomeDeals() {
   return (
     <div className="h-full">
-      <div className="h-full flex flex-col justify-center items-center bg-secondary-50 relative">
+      <div className="h-full flex flex-col justify-center items-center bg-secondary200 relative py-10">
         <img
           src={cw_deal}
           alt="Picture"
           className="h-full w-full object-cover absolute"
         />
-        <div className="z-10 flex flex-col gap-5 h-full py-10 justify-center items-center">
+        <div className="z-10 flex flex-col gap-20 w-full h-full py-10 justify-center items-center">
           <p className="text-3xl lg:text-4xl font-bold text-white uppercase">
             our deals
           </p>
-          <div className="w-full lg:w-[80%] font-['Poppins'] flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10">
-            <Link to="/packages" className="hover-float-effect lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
-              <img
-                src={cs_aikp}
-                alt="Picture"
-                className="rounded-xl w-full h-full blur-[1px] transition-transform transform hover:scale-105"
-              />
-              <p className="font-semibold text-white text-2xl lg:text-lg absolute capitalize w-[50%]">
-                all in party package
+          <div className="w-full lg:w-[80%] font-heading flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10">
+            <Link
+              to="/packages"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              style={{ backgroundImage: `url(${cs_aikp})` }}
+            >
+              <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
+                <span class="">All In Party</span>
+                <br />
+                <span class="">Package</span>
               </p>
             </Link>
-            <Link to="/packages" className="hover-float-effect lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
-              <img
-                src={cw_fvs}
-                alt="Picture"
-                className="rounded-xl w-full h-full blur-[1px] transition-transform transform hover:scale-105"
-              />
-              <p className="font-semibold text-white text-2xl lg:text-lg absolute capitalize w-[50%]">
-                full venue styling
+            <Link
+              to="/packages"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              style={{ backgroundImage: `url(${cw_fvs})` }}
+            >
+              <p class="monitor:text-title13 font-tbc font-bold text-body text-black text-center">
+                <span class="">Full Venue</span>
+                <br />
+                <span class="">Styling</span>
               </p>
             </Link>
-            <Link to="/packages" className="hover-float-effect lg:w-[25%] lg:h-full w-[15rem] h-[12rem] rounded-xl border-2 border-white flex justify-center items-center text-center relative">
-              <img
-                src={cw_as}
-                alt="Picture"
-                className="rounded-xl w-full h-full blur-[1px] transition-transform transform hover:scale-105"
-              />
-              <p className="font-semibold text-white text-2xl lg:text-lg absolute capitalize w-[50%]">
-                additional services
+            <Link
+              to="/packages"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              style={{ backgroundImage: `url(${cw_as})` }}
+            >
+              <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
+                <span class="">Additional</span>
+                <br />
+                <span class="">Services</span>
               </p>
             </Link>
           </div>
@@ -57,4 +60,3 @@ function HomeDeals() {
 }
 
 export default HomeDeals;
-

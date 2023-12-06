@@ -40,10 +40,10 @@ function NavBar() {
 
   return (
     <>
-      <div className="flex justify-center items-center py-5 px-4 lg:py-3 bg-primary-400 lg:bg-white">
+      <div className="flex justify-center items-center py-5 px-4 lg:py-3 bg-primary500 lg:bg-white">
         <div className="flex w-full lg:max-w-[80%] justify-between ">
           <div className="w-full lg:w-auto flex justify-between flex-row-reverse items-center ">
-            <div className="flex items-center text-3xl cursor-pointe">
+            <div className="flex items-center text-3xl cursor-pointer">
               <img
                 src={Logo}
                 alt="logo"
@@ -52,7 +52,7 @@ function NavBar() {
               <div className="z-20 flex lg:hidden lg:items-center">
                 <a
                   href="http://www.facebook.com"
-                  className=" transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-sm font-semibold  text-primary-500 shadow-middle rounded-md bg-white"
+                  className=" transition-all delay-50 cursor-pointer font-tbc px-4 py-2 text-sm font-semibold text-primary500 shadow-middle rounded-md bg-white"
                 >
                   Sign in
                 </a>
@@ -70,10 +70,10 @@ function NavBar() {
                 to={item.path}
                 key={index}
                 onClick={() => handleButtonClick(item.path)}
-                className={`btn-hover font-['DM_Sans'] font-semibold ${
+                className={`btn-hover font-tbc font-semibold ${
                   item.path === selectedButton
-                    ? "text-primary-500"
-                    : "text-secondary-500"
+                    ? "text-primary500"
+                    : "text-secondary500"
                 } hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue`}
               >
                 {item.name}
@@ -88,7 +88,7 @@ function NavBar() {
               </a> */}
               <Link
                 to="/login"
-                className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
+                className="transition-all delay-50 cursor-pointer font-tbc px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary300 hover:bg-primary400"
               >
                 Sign in
               </Link>

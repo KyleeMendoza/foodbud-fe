@@ -17,9 +17,9 @@ function HomePackages() {
         <div className="w-[104%] lg:w-[70%] lg:h-[25rem] 2xl:h-[30rem]">
           <Carousel />
         </div>
-        <div className="w-[100%] overflow-x-auto lg:flex lg:justify-center lg:items-center">
-          <div className="flex w-[200%] lg:w-3/4 overflow-x-auto gap-5 py-2 justify-around px-4 items-center lg:h-[16rem] xl:h-[18rem] 2xl:h-[21rem]">
-            <div className="h-[14rem] w-[17rem] lg:w-full lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white ">
+        <div className="w-full py-10 overflow-x-auto lg:flex lg:justify-center lg:items-center">
+          <div className="flex w-[200%] lg:w-3/4 overflow-x-auto justify-center gap-10 items-center lg:h-[16rem] xl:h-[18rem] 2xl:h-[23rem]">
+            <div className="h-[14rem] w-[14rem] lg:w-1/5 lg:h-[90%] my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white hover:-translate-y-5 ease-in-out duration-500">
               <Link to="/gallery">
                 {/* <img
                   src={cw_ebox1}
@@ -30,12 +30,12 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox1})` }}
                 ></div>
-                <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
                   Baptismal
                 </p>
               </Link>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-full lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[14rem] lg:w-1/5 lg:h-[90%] my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white hover:-translate-y-5 ease-in-out duration-500">
               <Link to="/gallery">
                 {/* <img
                   src={cw_ebox2}
@@ -46,12 +46,12 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox2})` }}
                 ></div>
-                <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
                   Kid's Party
                 </p>
               </Link>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-full lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[14rem] lg:w-1/5 lg:h-[90%] my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white hover:-translate-y-5 ease-in-out duration-500">
               <Link to="/gallery">
                 {/* <img
                   src={cw_ebox3}
@@ -62,12 +62,12 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox3})` }}
                 ></div>
-                <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
                   Adult's Party
                 </p>
               </Link>
             </div>
-            <div className="h-[14rem] w-[17rem] lg:w-full lg:h-full my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white">
+            <div className="h-[14rem] w-[14rem] lg:w-1/5 lg:h-[90%] my-5 lg:my-0 text-center rounded-xl drop-shadow-lg bg-white hover:-translate-y-5 ease-in-out duration-500">
               <Link to="/gallery">
                 {/* <img
                   src={cw_ebox4}
@@ -78,7 +78,7 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox4})` }}
                 ></div>
-                <p className="text-lg capitalize font-['Poppins'] my-2 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
                   Corporate
                 </p>
               </Link>
@@ -86,12 +86,12 @@ function HomePackages() {
           </div>
         </div>
         <Link to="https://www.messenger.com/t/103596451974308/?messaging_source=source%3Apages%3Amessage_shortlink&source_id=1441792&recurring_notification=0">
-          <Button
+          <button
             variant="contained"
-            className="bg-pink-primary-400 text-white text-md lg:text-lg font-semibold font-['Poppins'] capitalize py-3 px-6 rounded-lg"
+            className="bg-primary300 hover:bg-primary400 text-white text-md lg:text-heading25 font-semibold font-heading capitalize py-4 px-10 rounded-lg"
           >
             start planning your event!
-          </Button>
+          </button>
         </Link>
       </div>
     </div>
