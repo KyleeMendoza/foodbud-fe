@@ -1,6 +1,7 @@
 import React from "react";
 import clp_login from "../../assets/clp-login.png";
 import StarIcon from "@mui/icons-material/Star";
+import { Link } from "react-router-dom";
 
 function HomeTestimonials() {
   const names = ["juan dela cruz", "cardo dalisay", "agimat"];
@@ -28,13 +29,13 @@ function HomeTestimonials() {
                     <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400 text-sm lg:text-md">
+                    <p className="text-slate-400 text-body lg:text-title24">
                       September 2023
                     </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+                <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -55,13 +56,13 @@ function HomeTestimonials() {
                     <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400 text-sm lg:text-md">
+                    <p className="text-slate-400 text-body lg:text-title24">
                       September 2023
                     </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+                <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -82,13 +83,13 @@ function HomeTestimonials() {
                     <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                       cardo dalisay
                     </p>
-                    <p className="text-slate-400 text-sm lg:text-md">
+                    <p className="text-slate-400 text-body lg:text-title24">
                       September 2023
                     </p>
                   </div>
                   <div className="stars">stars</div>
                 </div>
-                <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+                <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Perspiciatis voluptas corporis quos facilis nihil excepturi
@@ -117,13 +118,16 @@ function HomeTestimonials() {
           </p>
           <div className="flex flex-col flex-1 my-6 gap-10 lg:gap-5 justify-center items-center ">
             {/* Card No 1 */}
-            <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]">
+            <Link
+              to="/review"
+              className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]"
+            >
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                     Kristel Ann Tuscano
                   </p>
-                  <p className="text-slate-400 text-sm lg:text-md">
+                  <p className="text-slate-400 text-body lg:text-title24">
                     August 2023
                   </p>
                 </div>
@@ -135,7 +139,7 @@ function HomeTestimonials() {
                   <StarIcon></StarIcon>
                 </div>
               </div>
-              <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+              <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                 <p>
                   We had the most incredible experience with (Food Bud Events &
                   Catering Services) at my little sister’s 7th birthday party!
@@ -151,16 +155,19 @@ function HomeTestimonials() {
                   more na talaga!
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Card No 2 */}
-            <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]">
+            <Link
+              to={"/review"}
+              className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]"
+            >
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                     Djlord Sucat
                   </p>
-                  <p className="text-slate-400 text-sm lg:text-md">
+                  <p className="text-slate-400 text-body lg:text-title24">
                     September 2023
                   </p>
                 </div>
@@ -172,7 +179,7 @@ function HomeTestimonials() {
                   <StarIcon></StarIcon>
                 </div>
               </div>
-              <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+              <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                 <p>
                   We had an event last September 22 with Food Bud Events and
                   Catering Services for my nephew’s 7th Birtday, and they have
@@ -187,16 +194,19 @@ function HomeTestimonials() {
                   distribution of meals.
                 </p>
               </div>
-            </div>
+            </Link>
 
             {/* Card No 3 */}
-            <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]">
+            <Link
+              to={"/review"}
+              className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]"
+            >
               <div className="flex justify-between ">
                 <div className="flex flex-col gap-2 ">
                   <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
                     Jongko Janina
                   </p>
-                  <p className="text-slate-400 text-sm lg:text-md">
+                  <p className="text-slate-400 text-body lg:text-title24">
                     September 2023
                   </p>
                 </div>
@@ -208,7 +218,7 @@ function HomeTestimonials() {
                   <StarIcon></StarIcon>
                 </div>
               </div>
-              <div className="flex flex-col gap-5 mt-8 text-sm lg:text-md">
+              <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
                 <p>
                   Hello po. I just wanted to provide feedback po regarding our
                   event last September 23 for my son’s 4th birthday celebration.
@@ -220,11 +230,45 @@ function HomeTestimonials() {
                   was also mentioned by most of our guests during that day.
                 </p>
               </div>
-            </div>
+            </Link>
+
+            {/* Card No 4 */}
+            <Link
+              to={"/review"}
+              className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]"
+            >
+              <div className="flex justify-between ">
+                <div className="flex flex-col gap-2 ">
+                  <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
+                    Bea Yuvienco
+                  </p>
+                  <p className="text-slate-400 text-body lg:text-title24">
+                    September 2023
+                  </p>
+                </div>
+                <div className=" text-yellow-400">
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                  <StarIcon></StarIcon>
+                </div>
+              </div>
+              <div className="flex flex-col gap-5 mt-8 text-body lg:text-title24">
+                <p>
+                  I had the pleasure of hiring Food Bud Events and Catering
+                  Services for my son Jaden’s birthday, and I must say, despite
+                  a few ups and downs during the planning process, the end
+                  result was truly remarkable. This journey had its fair share
+                  of challenges, but Food Bud Events showed their dedication and
+                  professionalism throughout.
+                </p>
+              </div>
+            </Link>
           </div>
           <a
             className="text-xl font-bold text-sky-400 underline capitalize"
-            href="https:https://www.facebook.com/foodbudevents/reviews_given"
+            href="https://www.facebook.com/foodbudevents/reviews"
           >
             Read more
           </a>

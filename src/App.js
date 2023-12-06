@@ -15,6 +15,7 @@ import GalleryPage from "./pages/GalleryPage";
 import FaqsPage from "./pages/FaqsPage";
 import ContactUsPage from "./pages/ContactUsPage";
 import NavBar from "./components/NavBar";
+import ReviewPage from "./pages/ReviewPage";
 
 //CLIENT PAGES
 import ClientPage from "./pages/Client/ClientPage";
@@ -46,6 +47,7 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/faqs" element={<FaqsPage />} />
             <Route path="/contactUs" element={<ContactUsPage />} />
+            <Route path="/review" element={<ReviewPage />} />
             <Route
               path="/client*"
               element={
@@ -54,7 +56,7 @@ function App() {
             />
             <Route
               path="/login"
-              element={<LoginClientPage setCookie={setCookie}  />}
+              element={<LoginClientPage setCookie={setCookie} />}
             />
           </Routes>
         </div>
