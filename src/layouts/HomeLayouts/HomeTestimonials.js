@@ -168,7 +168,7 @@ function HomeTestimonials() {
                     Djlord Sucat
                   </p>
                   <p className="text-slate-400 text-body lg:text-title24">
-                    September 2023
+                    October 2023
                   </p>
                 </div>
                 <div className=" text-yellow-400">
