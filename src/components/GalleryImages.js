@@ -74,11 +74,13 @@ function GalleryImages() {
           </button>
           {/* Add more buttons based on your actual categories */}
         </div>
-        {filteredImages.map((image) => (
-          <div key={image.gallery_id}>
-            <img src={image.image} alt={`${image.package_type}`} />
-          </div>
-        ))}
+        <div className="grid grid-cols-4 gap-10">
+          {filteredImages.map((image) => (
+            <div className="bg-green" key={image.gallery_id}>
+              <img src={image.image} alt={`${image.package_type}`} />
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
