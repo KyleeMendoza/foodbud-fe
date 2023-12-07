@@ -2,7 +2,41 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const Search = ({ setSearch }) => {
+  return (
+    <input
+      type="text"
+      className="w-full bg-black text-white"
+      placeholder="search"
+      onChange={({ currentTarget: input }) => setSearch(input.value)}
+    />
+  );
+};
+
 function GalleryImages() {
+  const [obj, setObj] = useState({});
+  const [sort, setSort] = useState({ order: "desc" });
+  const [filter, setFilter] = useState([]);
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState([]);
+
+  // try page filter
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const url = ``;
+        const response = await axios.get(API_ENDPOINT);
+        const result = response.data.AllPictures;
+        setImages(result);
+        console.log("Here it is: ", result);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   // Trial Images from database
   const API_ENDPOINT = "http://localhost:9000/api/all/gallery";
   const [images, setImages] = useState([]);
@@ -50,8 +84,10 @@ function GalleryImages() {
   console.log(filteredImages);
   return (
     <div>
-      {" "}
       <div>
+        <div className="flex justify-center">
+          <Search setSearch={(search) => setSearch(search)} />
+        </div>
         <div>
           <button
             onClick={() => handleFilterChange("all")}
