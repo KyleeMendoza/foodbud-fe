@@ -1,14 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
+import axios from "axios";
 
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import facebook from "../../assets/contact-fb.png";
+import instagram from "../../assets/contact-ig.png";
+import tiktok from "../../assets/contact-tiktok.png";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 
 function ContactHero() {
+  const [fbInfo, setFbInfo] = useState({});
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:9000/api/all/fb_info"
+        );
+        const fetchedFbInfo = response.data.fb_info[0];
+        setFbInfo(fetchedFbInfo);
+        console.log(fetchedFbInfo);
+        console.log(fbInfo);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []); // Empty dependency array ensures useEffect runs only once when the component mounts
+
+  // // Check if data is an array, otherwise display a loading message or handle accordingly
+  // if (!Array.isArray(data)) {
+  //   return <p>Loading...</p>; // or handle the loading state differently
+  // }
+
   return (
     <div className="h-full">
       <div className="flex flex-col justify-center items-start gap-10 font-['Poppins']  py-10 px-20">
@@ -17,12 +43,10 @@ function ContactHero() {
         </p>
         <div className="grid grid-cols-2 grid-rows-3 grid-flow-col gap-5">
           <div className="flex items-center gap-2">
-            <FacebookIcon
-              style={{
-                fontSize: "3rem",
-                color: "#E6479F",
-                padding: 2,
-              }}
+            <img
+              src={facebook}
+              alt="Picture"
+              //   className="absolute inset-0 w-full h-full object-cover lg:hidden"
             />
             <a
               href="https://www.facebook.com/foodbudevents"
@@ -33,12 +57,10 @@ function ContactHero() {
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <InstagramIcon
-              style={{
-                fontSize: "3rem",
-                color: "#E6479F",
-                padding: 2,
-              }}
+            <img
+              src={instagram}
+              alt="Picture"
+              //   className="absolute inset-0 w-full h-full object-cover lg:hidden"
             />
             <a
               href="https://www.instagram.com/foodbudevents"
@@ -49,12 +71,10 @@ function ContactHero() {
             </a>
           </div>
           <div className="flex items-center gap-2">
-            <TwitterIcon
-              style={{
-                fontSize: "3rem",
-                color: "#E6479F",
-                padding: 2,
-              }}
+            <img
+              src={tiktok}
+              alt="Picture"
+              //   className="absolute inset-0 w-full h-full object-cover lg:hidden"
             />
             <a
               href="https://www.tiktok.com/@foodbudevents"
@@ -72,7 +92,7 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>0915 175 8015</p>
+            <p>{fbInfo.contactnum}</p>
           </div>
           <div className="flex items-center gap-2">
             <AlternateEmailIcon
@@ -87,7 +107,7 @@ function ContactHero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              foodbudevents@gmail.com
+              {fbInfo.email}
             </a>
           </div>
           <div className="flex items-center gap-2">
@@ -98,20 +118,17 @@ function ContactHero() {
                 padding: 2,
               }}
             />
-            <p>
-              Blk 11 Lot 12 Victoria St., Queensville Subdivision, Caloocan
-              City PHL
-            </p>
+            <p>{fbInfo.address}</p>
           </div>
         </div>
         <iframe
-            className="w-full md:w-1/2 h-50"
-            title="Google Map"
-            frameBorder="0"
-            style={{ border: 0 }}
-            height="410px"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.21064249175!2d121.04404007487588!3d14.757159385747995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1861a86a23d%3A0xce46a4900158d747!2sFood%20Bud%20Events%20and%20Catering%20(Main%20Office)!5e0!3m2!1sen!2sph!4v1701195655574!5m2!1sen!2sph"
-          ></iframe>
+          className="w-full md:w-1/2 h-50"
+          title="Google Map"
+          frameBorder="0"
+          style={{ border: 0 }}
+          height="410px"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.21064249175!2d121.04404007487588!3d14.757159385747995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1861a86a23d%3A0xce46a4900158d747!2sFood%20Bud%20Events%20and%20Catering%20(Main%20Office)!5e0!3m2!1sen!2sph!4v1701195655574!5m2!1sen!2sph"
+        ></iframe>
 
         <Button variant="contained" size="large">
           Visit Us
@@ -122,4 +139,3 @@ function ContactHero() {
 }
 
 export default ContactHero;
-

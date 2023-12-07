@@ -15,6 +15,7 @@ function CustomTabPanel(props) {
   return (
     <div
       role="tabpanel"
+      className="bg-red"
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -122,7 +123,7 @@ export default function GalleryViewer() {
     <Box sx={{ width: "100%" }} className=" h-full">
       <Box
         sx={{ borderBottom: 1, borderColor: "divider" }}
-        className="flex justify-center items-center"
+        className="flex justify-center bg-green items-center"
       >
         <Tabs
           value={value}
@@ -148,7 +149,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-4 gap-8">
           {genderImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
