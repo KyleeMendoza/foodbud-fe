@@ -64,18 +64,18 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography
-            className="text-primary-500"
-            style={{ fontWeight: "bold", fontSize: "1.2rem" }}
+            className="text-xl font-bold text-[#e91e63]"
+            style={{ fontWeight: "bold", fontSize: "1.2rem", }}
           >
             How to Book?
           </Typography>
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          <p>To book our catering services, follow these easy steps: </p>
-          <p><br />• Read FIRST the terms & conditions. And Pay a reservation fee of ₱5,000 to secure your date.</p>
-          <p><br />• Fill out our reservation form and send it to us.</p>
-          <p><br />• We'll schedule a meeting to discuss and clarify details, as well as arrange a convenient time for a food tasting (delivery only).</p>
+          <p style={{ marginLeft: "50px" }}> • To book our catering services, follow these easy steps: </p>
+          <p style={{ marginLeft: "50px" }}> <br />• Read FIRST the terms & conditions. And Pay a reservation fee of ₱5,000 to secure your date.</p>
+          <p style={{ marginLeft: "50px" }}> <br />• Fill out our reservation form and send it to us.</p>
+          <p style={{ marginLeft: "50px" }}> <br />• We'll schedule a meeting to discuss and clarify details, as well as arrange a convenient time for a food tasting (delivery only).</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -85,7 +85,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             What is your cancellation policy or can I ask for a refund?
@@ -93,8 +93,9 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          Our cancellation policy / no refund is outlined in our contract. 
+          <p style={{ marginLeft: "50px" }}> Our cancellation policy / no refund is outlined in our contract. 
           Please refer to our terms and conditions or contact us for more information.
+          </p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -104,7 +105,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel3d-content" id="panel3d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             What types of events do you cater to?
@@ -112,7 +113,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          We cater to a wide range of events, including weddings, corporate gatherings, birthdays, and more.
+          <p style={{ marginLeft: "50px" }}> We cater to a wide range of events, including weddings, corporate gatherings, birthdays, and more.
+          </p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -122,7 +124,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel4d-content" id="panel4d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             Where is your office located?
@@ -130,9 +132,9 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
         <Typography className="text-[#1261A6]">
-    Food Bud Events and Catering (Main Office)1423 Caloocan, Philippines 
-    <p><br />Note: Office visit is strictly for contract signing, clarifications about the package and payments only and by appointment basis.</p>
-  </Typography>
+        <p style={{ marginLeft: "50px" }}> Food Bud Events and Catering (Main Office)1423 Caloocan, Philippines 
+     <br />Note: Office visit is strictly for contract signing, clarifications about the package and payments only and by appointment basis.</p>
+        </Typography>
         </AccordionDetails>
       </Accordion>
       <Accordion
@@ -141,7 +143,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel5d-content" id="panel5d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             Which areas do you cover for event catering?
@@ -149,7 +151,7 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          We can cater any events within NCR and nearby provinces
+          <p style={{ marginLeft: "50px" }}> We can cater any events within NCR and nearby provinces</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -159,7 +161,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel6d-content" id="panel6d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             How can I get in touch with you for inquiries or to discuss my event
@@ -168,8 +170,9 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
+          <p style={{ marginLeft: "50px" }}>   
           For inquiries or to discuss your event catering needs, feel free to send us a message on our Facebook page. 
-          We strive to respond promptly and look forward to assisting you with your event plans
+          We strive to respond promptly and look forward to assisting you with your event plans</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -179,7 +182,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel7d-content" id="panel7d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             Do you provide a tasting session before finalizing the menu?
@@ -187,8 +190,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          Yes, we offer tasting sessions to help you choose the perfect menu for your event. 
-          Contact us so we can set an appointment with you
+          <p style={{ marginLeft: "50px" }}> Yes, we offer tasting sessions to help you choose the perfect menu for your event. 
+          Contact us so we can set an appointment with you</p>
           </Typography>
         </AccordionDetails>
       </Accordion>
@@ -198,7 +201,7 @@ export default function AccordionFaqs() {
       >
         <AccordionSummary aria-controls="panel8d-content" id="panel8d-header">
           <Typography
-            className="text-primary-500"
+            className="text-xl font-bold text-[#e91e63]"
             style={{ fontWeight: "bold", fontSize: "1.2rem" }}
           >
             How far in advance should I book your catering services for my
@@ -207,8 +210,8 @@ export default function AccordionFaqs() {
         </AccordionSummary>
         <AccordionDetails className="bg-[#F9E5F2]">
           <Typography className="text-[#1261A6]">
-          It's recommended to book our services as early as possible to ensure availability, especially for peak seasons. 
-          Contact us to check our current schedule and secure your date.
+          <p style={{ marginLeft: "50px" }}> It's recommended to book our services as early as possible to ensure availability, especially for peak seasons. 
+          Contact us to check our current schedule and secure your date.</p>
           </Typography>
         </AccordionDetails>
       </Accordion>

@@ -11,7 +11,7 @@ function AboutUsHero() {
       <div className="flex flex-col items-center justify-start py-20 gap-20 h-full">
         {/* About Us Opening Statement */}
         <div className="flex flex-col p-10 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] lg:px-0 font-['Poppins'] text-center ">
-          <p className="text-black mb-5 font-bold text-4xl capitalize">
+          <p className="text-[#e91e63] mb-5 font-bold text-4xl capitalize ">
             about us
           </p>
           <p className="text-md w-[98%] lg:w-full">
@@ -24,7 +24,7 @@ function AboutUsHero() {
         <div className="w-full lg:px-0 lg:w-[80%] font-['Poppins'] ">
           <div className="flex flex-col px-10 gap-10 justify-evenly lg:gap-0 lg:px-0 lg:flex-row">
             <div className="flex flex-col lg:flex-row text-center lg:text-start w-full lg:w-[45%] p-5 gap-5 lg:gap-12 border-2 border-black rounded-2xl">
-              <p className="text-black font-bold text-3xl capitalize">
+              <p className="text-[#e91e63] font-bold text-3xl capitalize">
                 mission
               </p>
               <p className="text-md">
@@ -33,7 +33,7 @@ function AboutUsHero() {
               </p>
             </div>
             <div className="flex flex-col lg:flex-row text-center lg:text-start w-full lg:w-[45%] p-5  gap-5 lg:gap-12 border-2 border-black rounded-2xl">
-              <p className="text-black font-bold text-3xl capitalize">vision</p>
+              <p className="text-[#e91e63] font-bold text-3xl capitalize">vision</p>
               <p className="text-md">
                 To be one of Metro Manila's best known for event and party
                 organizer, by providing a quality service for a reasonable

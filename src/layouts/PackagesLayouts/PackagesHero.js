@@ -17,8 +17,8 @@ function PackagesHero() {
       <div className="flex flex-col gap-10 h-full py-10 ">
         <div className="flex flex-col gap-10 items-center justify-center ">
           <div className="flex flex-col lg:w-[70%] xl:w-[60%] 2xl:w-[55%] text-center gap-10 justify-center items-center font-['Poppins'] ">
-            <p className="text-3xl font-bold capitalize">our packages</p>
-            <p className="xl:text-6xl lg:text-5xl font-bold capitalize leading-normal">
+            <p className="text-3xl font-bold capitalize text-sky-600">our packages</p>
+            <p className="xl:text-6xl lg:text-5xl font-bold capitalize leading-normal text-[#e91e63]">
               Celebrate in Style with Our Range of Event Packages
             </p>
             <p>

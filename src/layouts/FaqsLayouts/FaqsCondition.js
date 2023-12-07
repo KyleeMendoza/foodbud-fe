@@ -4,14 +4,14 @@ function FaqsCondition() {
   return (
     <div className=" bg-[#F9E5F2] h-full ">
       <div className="flex flex-col gap-10   font-['Poppins'] py-20 px-32 ">
-        <p className="text-4xl font-bold text-primary-500">
+        <p className="text-4xl font-bold text-[#e91e63]">
           TERMS AND CONDITIONS
         </p>
-        <p className="text-xl font-bold text-primary-500">
+        <p className="text-xl font-bold text-[#e91e63]">
           FOR STYLING PACKAGES
         </p>
         <div className="text-[#1261A6]">
-          <ul style={{ listStyleType: "disc", marginLeft: "1.5em" }}>
+          <ul style={{ listStyleType: "disc", marginLeft: "3.5em" }}>
             <li>- 50% down payment 75-30 days before the event</li>
             <li>
               Remaining balance must be settled 7 days before the event. We
@@ -59,7 +59,7 @@ function FaqsCondition() {
             </li>
           </ul>
         </div>
-        <p className="text-xl font-bold text-primary-500">
+        <p className="text-xl font-bold text-[#e91e63]">
           FOR ALL W/ CATERING PACKAGES
         </p>
         <div className="text-[#1261A6]">

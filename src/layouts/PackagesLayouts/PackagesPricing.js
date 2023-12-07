@@ -32,7 +32,7 @@ function PackagesPricing() {
   return (
     <div className="h-full ">
       <div className="flex flex-col justify-center items-center gap-10 font-heading py-10">
-        <p className="font-bold text-heading14 capitalize">
+        <p className="font-bold text-heading14 capitalize text-sky-600 ">
           additional services
         </p>
         <ul className="text-center pl-4">
