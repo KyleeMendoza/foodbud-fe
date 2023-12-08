@@ -32,7 +32,7 @@ function HomeFooter() {
               <a href="/packages">packages</a>
               <a href="/gallery">gallery</a>
               <a href="/faqs">faqs</a>
-              <a href="/contactUs">contactus</a>
+              <a href="/contactUs">contact us</a>
             </div>
           </div>
           <div className="flex flex-col gap-4 text-white">
