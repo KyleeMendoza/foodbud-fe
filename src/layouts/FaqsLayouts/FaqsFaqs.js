@@ -4,8 +4,8 @@ import AccordionFaqs from "../../components/AccordionFaqs";
 function FaqsFaqs() {
   return (
     <div className=" h-full">
-      <div className="flex flex-col gap-10  px-32 py-20 font-['Poppins']">
-        <p className="text-4xl font-bold text-[#e91e63]"> 
+      <div className="flex flex-col gap-10 px-10 md:px-32 py-20 font-['Poppins']">
+        <p className="text-4xl font-bold text-[#e91e63]">
           Frequently Asked Questions
         </p>
         {/* <div className=" grid grid-cols-2 gap-10">
