@@ -156,7 +156,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        <div className="grid grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {genderImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -165,7 +165,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {typeOfEventsImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -174,7 +174,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {themeImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -183,7 +183,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -192,7 +192,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {packageBgArray.map((packageId, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -201,7 +201,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {foodImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
@@ -210,7 +210,7 @@ export default function GalleryViewer() {
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
-        <div className=" grid grid-cols-4 gap-8">
+        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
           {othersImages.map((packageBg, index) => (
             <div key={index} className="">
               <img src={packageBg} alt="" className="w-full h-full" />
