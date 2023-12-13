@@ -14,7 +14,7 @@ function HomePackages() {
         <p className="w-[95%] lg:w-full text-xl lg:text-xl capitalize font-['Poppins'] text-sky-400 font-semibold">
           Crafting unforgettable moments, one moment at a time.
         </p>
-        <div className="w-[104%] lg:w-[70%]  lg:h-[25rem] 2xl:h-fit">
+        <div className="w-[104%] lg:w-[70%]  lg:h-fit ">
           <Carousel />
         </div>
         <div className="w-full py-10 overflow-x-auto lg:flex lg:justify-center lg:items-center">
