@@ -32,8 +32,12 @@ const PackageCarousel = () => {
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">All-In Packages</p>
-                <p className="text-5xl font-bold capitalize text-[#e91e63]">budget package</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  All-In Packages
+                </p>
+                <p className="text-5xl font-bold capitalize text-[#e91e63]">
+                  budget package
+                </p>
                 <p className="text-lg">
                   Unleash the celebration without breaking the bank!
                 </p>
@@ -57,7 +61,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 h-full">
+            <div className="hidden md:flex flex-1 h-full">
               <div>
                 <img src={budget_pack} alt="" className="h-full rounded-2xl" />
               </div>
@@ -68,8 +72,12 @@ const PackageCarousel = () => {
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">All-In Packages</p>
-                <p className="text-5xl font-bold capitalize text-[#e91e63]">deluxe package</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  All-In Packages
+                </p>
+                <p className="text-5xl font-bold capitalize text-[#e91e63]">
+                  deluxe package
+                </p>
                 <p className="text-lg">
                   Unleash the celebration without breaking the bank!
                 </p>
@@ -93,7 +101,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1  h-full">
+            <div className="hidden md:flex flex-1  h-full">
               <div>
                 <img src={delux_pack} alt="" className="h-full rounded-2xl" />
               </div>
@@ -104,8 +112,12 @@ const PackageCarousel = () => {
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">All-In Packages</p>
-                <p className="text-5xl font-bold capitalize text-[#e91e63]">deluxe debut</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  All-In Packages
+                </p>
+                <p className="text-5xl font-bold capitalize text-[#e91e63]">
+                  deluxe debut
+                </p>
                 <p className="text-lg">
                   Unleash the celebration without breaking the bank!
                 </p>
@@ -129,7 +141,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1  h-full">
+            <div className="hidden md:flex flex-1  h-full">
               <div>
                 <img src={delux_debut} alt="" className="h-full rounded-2xl" />
               </div>
@@ -140,7 +152,9 @@ const PackageCarousel = () => {
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">All-In Packages</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  All-In Packages
+                </p>
                 <p className="text-[2.4rem] font-bold capitalize text-[#e91e63]">
                   diamond package
                 </p>
@@ -167,7 +181,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1  h-full">
+            <div className="hidden md:flex flex-1  h-full">
               <div>
                 <img src={diamond} alt="" className="h-full rounded-2xl" />
               </div>
@@ -178,8 +192,12 @@ const PackageCarousel = () => {
           <div className="flex  items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10 ">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">All-In Packages</p>
-                <p className="text-5xl font-bold capitalize text-[#e91e63]">luxury package</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  All-In Packages
+                </p>
+                <p className="text-5xl font-bold capitalize text-[#e91e63]">
+                  luxury package
+                </p>
                 <p className="text-lg">
                   Unleash the celebration without breaking the bank!
                 </p>
@@ -203,7 +221,7 @@ const PackageCarousel = () => {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1  h-full">
+            <div className="hidden md:flex flex-1  h-full">
               <div>
                 <img src={luxury} alt="" className="h-full rounded-2xl" />
               </div>

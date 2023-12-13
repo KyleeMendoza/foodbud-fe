@@ -37,11 +37,11 @@ function ContactHero() {
 
   return (
     <div className="h-full">
-      <div className="flex flex-col justify-center items-start gap-10 font-['Poppins']  py-10 px-20">
-        <p className="text-4xl font-bold uppercase text-primary-500 w-[50%]">
+      <div className="flex flex-col justify-center items-start gap-10 font-['Poppins']  py-10 px-10 md:px-20">
+        <p className="text-4xl font-bold uppercase text-primary-500 w-[90%] md:w-[50%] text-[#e91e63]">
           CONTACT DETAILS AND OFFICE LOCATION
         </p>
-        <div className="grid grid-cols-2 grid-rows-3 grid-flow-col gap-5">
+        <div className="flex flex-col md:grid grid-cols-2 grid-rows-3 grid-flow-col gap-5">
           <div className="flex items-center gap-2">
             <img
               src={facebook}

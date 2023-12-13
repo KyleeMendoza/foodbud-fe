@@ -7,7 +7,7 @@ import PackageCarousel from "../../components/PackageCarousel";
 function PackagesList() {
   return (
     <div className="h-full ">
-      <div className=" flex flex-col gap-10 py-10 px-40">
+      <div className=" flex flex-col gap-10 py-10 px-5 md:px-40">
         <div className=" h-1/2 flex justify-center items-center ">
           <PackageCarousel />
         </div>
@@ -15,7 +15,9 @@ function PackagesList() {
           <div className="flex items-center border-2 border-black rounded-2xl h-full pr-5">
             <div className="flex flex-col gap-5 flex-1 font-['Poppins'] p-10">
               <div className="flex flex-col gap-8 ">
-                <p className="text-2xl font-bold text-sky-600">Full Venue Styling</p>
+                <p className="text-2xl font-bold text-sky-600">
+                  Full Venue Styling
+                </p>
                 <p className="text-5xl font-bold capitalize text-[#e91e63]">
                   Venue Perfection
                 </p>
@@ -43,7 +45,7 @@ function PackagesList() {
                 </div>
               </div>
             </div>
-            <div className="flex flex-1 h-full rounded-2xl">
+            <div className="hidden md:flex  flex-1 h-full rounded-2xl">
               <div>
                 <img src={fullVenue} alt="" className="h-full rounded-2xl" />
               </div>
