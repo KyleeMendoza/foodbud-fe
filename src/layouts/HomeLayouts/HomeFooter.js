@@ -5,7 +5,6 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
-
 function HomeFooter() {
   return (
     <div
@@ -46,22 +45,35 @@ function HomeFooter() {
               <p>foodbudevents@gmail.com</p>
               <p>0915 175 8015</p>
               <div className="flex gap-4">
-              <a href="https://www.facebook.com/foodbudevents" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https://www.facebook.com/foodbudevents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <FacebookIcon />
                 </a>
-                <a href="https:www.instagram.com/foodbudevents" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https:www.instagram.com/foodbudevents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <InstagramIcon />
                 </a>
-                <a href="https:www.tiktok.com/@foodbudevents" target="_blank" rel="noopener noreferrer">
+                <a
+                  href="https:www.tiktok.com/@foodbudevents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <TwitterIcon />
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center py-3 bg-pink-primary-400 h-[10%] w-full">
+        <div className="flex justify-center items-center py-3 bg-primary400 h-[10%] w-full">
           <p className="text-sm text-white">
-            Copyright © 2023 Foodbud Events & Catering Services | All Rights Reserved
+            Copyright © 2023 Foodbud Events & Catering Services | All Rights
+            Reserved
           </p>
         </div>
       </div>

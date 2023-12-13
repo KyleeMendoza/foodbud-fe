@@ -2,6 +2,7 @@ import React from "react";
 import clp_login from "../../assets/clp-login.png";
 import StarIcon from "@mui/icons-material/Star";
 import { Link } from "react-router-dom";
+import cw_review from "../../assets/CW-ReviewBG.png";
 
 function HomeTestimonials() {
   const names = ["juan dela cruz", "cardo dalisay", "agimat"];
@@ -111,9 +112,12 @@ function HomeTestimonials() {
           </div>
         </div>
       </div> */}
-      <div className=" flex justify-center items-center py-10 px-10 lg:px-0">
-        <div className=" flex flex-col justify-around items-center font-['Poppins']">
-          <p className="text-2xl lg:text-4xl font-bold text-sky-500 uppercase">
+      <div
+        className=" flex justify-center items-center bg-cover bg-no-repeat py-10 px-10 lg:px-0"
+        style={{ backgroundImage: `url(${cw_review})` }}
+      >
+        <div className=" flex flex-col justify-around items-center font-heading">
+          <p className="text-2xl lg:text-4xl font-bold py-10 text-sky-500 uppercase">
             client testimonials
           </p>
           <div className="flex flex-col flex-1 my-6 gap-10 lg:gap-5 justify-center items-center ">
@@ -267,10 +271,10 @@ function HomeTestimonials() {
             </Link>
           </div>
           <a
-            className="text-xl font-bold text-sky-400 underline capitalize"
+            className="font-heading text-heading25 font-extrabold text-secondary400 py-5 underline"
             href="https://www.facebook.com/foodbudevents/reviews"
           >
-            Read more
+            Read More
           </a>
         </div>
       </div>

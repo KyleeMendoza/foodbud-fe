@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Logo from "../assets/foodBudLogo.png";
+import Logo from "../assets/H-FoodbudLogo.png";
 import { HamburgerMenu } from "./framer-menu/HamburgerMenu";
 
 //IMPORT PAGES

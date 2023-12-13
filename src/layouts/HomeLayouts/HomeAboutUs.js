@@ -36,7 +36,7 @@ function HomeAboutUs() {
             </p>
             {/* Use Link for "Read More" */}
             <Link to="/aboutUs" className="font-semibold">
-              Read More...
+              Read More
             </Link>
           </div>
         </div>
