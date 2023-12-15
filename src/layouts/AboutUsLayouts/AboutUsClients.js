@@ -16,7 +16,7 @@ function AboutUsClients() {
     <div className="h-full ">
       <div className="flex flex-col gap-10 lg:px-40 lg:py-20 px-10 py-10">
         <div className="flex w-full flex-col-reverse lg:flex-row ">
-          <div className="flex flex-col text-justify flex-1 gap-4 font-['Poppins']">
+          <div className="flex flex-col text-justify flex-1 gap-4 font-heading">
             <p className="font-bold text-2xl text-center lg:text-start italic text-[#e91e63]">
               Servicing since 2021
             </p>
@@ -52,9 +52,11 @@ function AboutUsClients() {
             <img src={logo} alt="" className="lg:w-96 lg:h-96" />
           </div>
         </div>
-        <div className="flex flex-col font-['Poppins'] gap-4 items-center justify-center ">
-          <p className="font-bold text-2xl text-[#e91e63]">Past &amp; Present Clients</p>
-          <div className="grid grid-cols-2 grid-rows-2 gap-5 lg:grid-cols-4 lg:gap-10">
+        <div className="flex flex-col font-heading gap-4 items-center justify-center ">
+          <p className="font-bold text-heading36 text-primary500 py-5 text-center monitor:pt-20 monitor:text-heading14">
+            Past &amp; Present Clients
+          </p>
+          <div className="grid grid-cols-2 grid-rows-2 gap-5 lg:grid-cols-4 lg:gap-20">
             <img src={client1} alt="" className="lg:w-52 lg:h-52" />
             <img src={client2} alt="" className="lg:w-52 lg:h-52" />
             <img src={client3} alt="" className="lg:w-52 lg:h-52" />

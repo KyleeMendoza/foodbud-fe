@@ -8,9 +8,9 @@ import custdriven from "../../assets/cwau-custdriven.png";
 function AboutUsHero() {
   return (
     <div className="h-fit lg:h-screen">
-      <div className="flex flex-col items-center justify-start py-20 gap-20 h-full">
+      <div className="flex flex-col items-center justify-start py-10 gap-10 2xl:py-20 2xl:gap-20 h-full">
         {/* About Us Opening Statement */}
-        <div className="flex flex-col p-10 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] lg:px-0 font-['Poppins'] text-center ">
+        <div className="flex flex-col p-10 lg:gap-0 justify-center items-center lg:block w-full lg:w-[60%] lg:px-0 font-heading text-center ">
           <p className="text-[#e91e63] mb-5 font-bold text-4xl capitalize ">
             about us
           </p>
@@ -21,7 +21,7 @@ function AboutUsHero() {
           </p>
         </div>
         {/* Mission Vision */}
-        <div className="w-full lg:px-0 lg:w-[80%] font-['Poppins'] ">
+        <div className="w-full lg:px-0 lg:w-[80%] font-heading ">
           <div className="flex flex-col px-10 gap-10 justify-evenly lg:gap-0 lg:px-0 lg:flex-row">
             <div className="flex flex-col lg:flex-row text-center lg:text-start w-full lg:w-[45%] p-5 gap-5 lg:gap-12 border-2 border-black rounded-2xl">
               <p className="text-[#e91e63] font-bold text-3xl capitalize">
@@ -33,7 +33,9 @@ function AboutUsHero() {
               </p>
             </div>
             <div className="flex flex-col lg:flex-row text-center lg:text-start w-full lg:w-[45%] p-5  gap-5 lg:gap-12 border-2 border-black rounded-2xl">
-              <p className="text-[#e91e63] font-bold text-3xl capitalize">vision</p>
+              <p className="text-[#e91e63] font-bold text-3xl capitalize">
+                vision
+              </p>
               <p className="text-md">
                 To be one of Metro Manila's best known for event and party
                 organizer, by providing a quality service for a reasonable
@@ -42,8 +44,8 @@ function AboutUsHero() {
             </div>
           </div>
         </div>
-        <div className="w-full lg:w-[70%] font-['Poppins'] ">
-          <div className="lg:flex justify-between text-black font-bold capitalize grid grid-rows-2 grid-cols-2">
+        <div className="w-full lg:w-[70%] font-heading">
+          <div className="lg:flex justify-between text-black font-bold capitalize grid grid-rows-2 grid-cols-2 gap-5">
             <div className="flex flex-col items-center gap-4 text-center ">
               <img
                 src={teamwork}
