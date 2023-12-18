@@ -24,8 +24,10 @@ function HomeFooter() {
             <img src={logo} alt="Picture" />
           </div>
           <div className="flex flex-col gap-4 text-white">
-            <p className="font-bold text-3xl capitalize">quick links</p>
-            <div className="flex flex-col gap-2 capitalize">
+            <p className="font-bold text-3xl capitalize text-title13 monitor:text-heading14">
+              quick links
+            </p>
+            <div className="flex flex-col gap-2 capitalize text-body monitor:text-title24">
               <a href="">home</a>
               <a href="/aboutUs">about us</a>
               <a href="/packages">packages</a>
@@ -35,12 +37,13 @@ function HomeFooter() {
             </div>
           </div>
           <div className="flex flex-col gap-4 text-white">
-            <p className="hidden lg:block font-bold text-3xl capitalize">
+            <p className="hidden lg:block font-bold text-heading14 capitalize">
               contact us
             </p>
-            <div className="flex flex-col items-center lg:items-start gap-2">
+            <div className="flex flex-col items-center text-body monitor:text-title24 lg:items-start gap-2 px-5 monitor:px-0">
               <p>
-                Queensville Subd., Blk 11 Lot 12 Victoria St., Caloocan City PHL
+                Maligaya Park Subdivision, Blk 12 Lot 5 St.. Bernadette,
+                Barangay 177, Caloocan, 1423 Metro Manila
               </p>
               <p>foodbudevents@gmail.com</p>
               <p>0915 175 8015</p>
@@ -71,7 +74,7 @@ function HomeFooter() {
           </div>
         </div>
         <div className="flex justify-center items-center py-3 bg-primary400 h-[10%] w-full">
-          <p className="text-sm text-white">
+          <p className="text-caption monitor:text-body text-white">
             Copyright © 2023 Foodbud Events & Catering Services | All Rights
             Reserved
           </p>

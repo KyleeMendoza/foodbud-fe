@@ -38,10 +38,10 @@ function ContactHero() {
   return (
     <div className="h-full">
       <div className="flex flex-col justify-center items-start gap-10 font-['Poppins']  py-10 px-10 md:px-20">
-        <p className="text-4xl font-bold uppercase text-primary-500 w-[90%] md:w-[50%] text-[#e91e63]">
+        <p className="text-title13 font-bold uppercase text-primary500 text-center monitor:text-heading14 monitor:text-left">
           CONTACT DETAILS AND OFFICE LOCATION
         </p>
-        <div className="flex flex-col md:grid grid-cols-2 grid-rows-3 grid-flow-col gap-5">
+        <div className="flex flex-col md:grid grid-cols-2 grid-rows-3 grid-flow-col gap-5 text-body monitor:text-title13">
           <div className="flex items-center gap-2">
             <img
               src={facebook}
@@ -130,9 +130,13 @@ function ContactHero() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.21064249175!2d121.04404007487588!3d14.757159385747995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b1861a86a23d%3A0xce46a4900158d747!2sFood%20Bud%20Events%20and%20Catering%20(Main%20Office)!5e0!3m2!1sen!2sph!4v1701195655574!5m2!1sen!2sph"
         ></iframe>
 
-        <Button variant="contained" size="large">
-          Visit Us
-        </Button>
+        <div className="flex justify-center w-full monitor:justify-start">
+          <a href="https://maps.app.goo.gl/tzb7615dtmpZoo4p9">
+            <button className="bg-secondary400 px-10 py-3 rounded-xl font-heading text-title24 font-semibold text-white">
+              Visit Us
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   );
