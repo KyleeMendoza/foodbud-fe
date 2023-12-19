@@ -19,7 +19,7 @@ function HomeFooter() {
     >
       {/* <div className="absolute inset-0 z-10 bg-[#1E89DD] opacity-60 filter"></div> */}
       <div className=" z-20">
-        <div className="flex flex-col gap-10 lg:gap-0 lg:flex-row text-center lg:text-start items-center lg:items-start py-10 lg:pt-10 flex-1 w-full lg:justify-around px-5 lg:px-0 ">
+        <div className="w-1/2 flex flex-col gap-10 lg:gap-0 lg:flex-row text-center lg:text-start items-center lg:items-start py-10 lg:pt-10 flex-1  lg:justify-around px-5 lg:px-0 ">
           <div className="hidden lg:block">
             <img src={logo} alt="Picture" />
           </div>
@@ -73,7 +73,7 @@ function HomeFooter() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center items-center py-3 bg-primary400 h-[10%] w-full">
+        <div className="flex justify-center items-center py-3 bg-primary400 h-[10%] w-1/2">
           <p className="text-caption monitor:text-body text-white">
             Copyright © 2023 Foodbud Events & Catering Services | All Rights
             Reserved

@@ -8,10 +8,52 @@ import debut from "../../assets/Packages/debut.png";
 import corporate from "../../assets/Packages/Corporate.jpg";
 import adult from "../../assets/Packages/Adult.jpg";
 import fvs from "../../assets/Packages/fvs.jpg";
+import fvspdf from "../../assets/docu/Fv_styling.pdf";
+import aippdf from "../../assets/docu/Allin_package.pdf";
 
 import { Link } from "react-router-dom";
 
 function PackagesList() {
+  const handleFvsDownload = () => {
+    const blob = new Blob([fvspdf], { type: "docu/pdf" });
+
+    // Create a link element
+    const link = document.createElement("a");
+    link.href = fvspdf;
+    link.download = "Full Venue Styling";
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Trigger the click event to start the download
+    link.click();
+
+    // Remove the link from the DOM
+    document.body.removeChild(link);
+
+    console.log("This is it:", link);
+  };
+
+  const handleAipDownload = () => {
+    const blob = new Blob([aippdf], { type: "docu/pdf" });
+
+    // Create a link element
+    const link = document.createElement("a");
+    link.href = aippdf;
+    link.download = "All-in Package";
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Trigger the click event to start the download
+    link.click();
+
+    // Remove the link from the DOM
+    document.body.removeChild(link);
+
+    console.log("This is it:", link);
+  };
+
   return (
     <div className="h-full ">
       <div className=" flex flex-col gap-10 py-10 px-5 md:px-40">
@@ -32,7 +74,10 @@ function PackagesList() {
               </div>
               <div>
                 <div className="flex justify-between monitor:justify-normal monitor:gap-8">
-                  <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                  <button
+                    onClick={handleAipDownload}
+                    className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200"
+                  >
                     Get a quote
                   </button>
                   <Link to="/gallery">
@@ -71,9 +116,13 @@ function PackagesList() {
               </div>
               <div>
                 <div className="flex justify-between monitor:justify-normal monitor:gap-8">
-                  <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                  <button
+                    onClick={handleAipDownload}
+                    className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200"
+                  >
                     Get a quote
                   </button>
+
                   <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
@@ -110,9 +159,13 @@ function PackagesList() {
               </div>
               <div>
                 <div className="flex justify-between monitor:justify-normal monitor:gap-8">
-                  <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                  <button
+                    onClick={handleAipDownload}
+                    className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200"
+                  >
                     Get a quote
                   </button>
+
                   <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
@@ -149,9 +202,13 @@ function PackagesList() {
               </div>
               <div>
                 <div className="flex justify-between monitor:justify-normal monitor:gap-8">
-                  <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                  <button
+                    onClick={handleAipDownload}
+                    className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200"
+                  >
                     Get a quote
                   </button>
+
                   <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
@@ -188,9 +245,13 @@ function PackagesList() {
               </div>
               <div>
                 <div className="flex justify-between monitor:justify-normal monitor:gap-8">
-                  <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                  <button
+                    onClick={handleFvsDownload}
+                    className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200"
+                  >
                     Get a quote
                   </button>
+
                   <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
