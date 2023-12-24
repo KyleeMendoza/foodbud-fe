@@ -4,6 +4,7 @@ import logo from "../../assets/G-FoodbudFooterLogo.png";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import BacktoTop from "../../components/BacktoTop";
 
 function HomeFooter() {
   return (
@@ -34,6 +35,7 @@ function HomeFooter() {
               <a href="/gallery">gallery</a>
               <a href="/faqs">faqs</a>
               <a href="/contactUs">contact us</a>
+              <BacktoTop></BacktoTop>
             </div>
           </div>
           <div className="flex flex-col gap-4 text-white">
