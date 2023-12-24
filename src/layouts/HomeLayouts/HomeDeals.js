@@ -21,36 +21,42 @@ function HomeDeals() {
           <div className="w-full lg:w-[80%] font-heading flex flex-col items-center lg:items-start lg:flex-row flex-1 justify-center gap-10">
             <Link
               to="/packages"
-              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-2xl bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
               style={{ backgroundImage: `url(${cs_aikp})` }}
             >
-              <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
-                <span class="">All In Party</span>
-                <br />
-                <span class="">Package</span>
-              </p>
+              <div className="bg-gray bg-opacity-0 hover:bg-opacity-30 duration-100 w-full h-full flex justify-center items-center rounded-2xl">
+                <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
+                  <span class="">All In Party</span>
+                  <br />
+                  <span class="">Package</span>
+                </p>
+              </div>
             </Link>
             <Link
               to="/packages"
-              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-2xl bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
               style={{ backgroundImage: `url(${cw_fvs})` }}
             >
-              <p class="monitor:text-title13 font-tbc font-bold text-body text-black text-center">
-                <span class="">Full Venue</span>
-                <br />
-                <span class="">Styling</span>
-              </p>
+              <div className="bg-gray bg-opacity-0 hover:bg-opacity-30 duration-100 w-full h-full flex justify-center items-center rounded-2xl">
+                <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
+                  <span class="">Full Venue</span>
+                  <br />
+                  <span class="">Styling</span>
+                </p>
+              </div>
             </Link>
             <Link
               to="/packages"
-              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-[20px] bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
+              className="lg:w-[256px] lg:h-[256px] w-[15rem] h-[12rem] bg-gray bg-blend-screen flex flex-col justify-center items-center rounded-2xl bg-cover bg-no-repeat bg-center border-2 border-[#e9f5fe] hover:w-80 hover:h-80 duration-500 ease-in-out"
               style={{ backgroundImage: `url(${cw_as})` }}
             >
-              <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
-                <span class="">Additional</span>
-                <br />
-                <span class="">Services</span>
-              </p>
+              <div className="bg-gray bg-opacity-0 hover:bg-opacity-30 duration-100 w-full h-full flex justify-center items-center rounded-2xl">
+                <p class="monitor:text-title13 font-tbc font-bold text-body text-white text-center">
+                  <span class="">Additional</span>
+                  <br />
+                  <span class="">Services</span>
+                </p>
+              </div>
             </Link>
           </div>
         </div>

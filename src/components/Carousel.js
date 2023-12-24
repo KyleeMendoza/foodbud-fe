@@ -22,35 +22,35 @@ const SimpleSlider = () => {
   return (
     <div className="h-fit">
       <Slider {...settings} className=" h-fit">
-        <div className="lg:h-[35rem] 2xl:h-[50rem]">
+        <div className="h-[15rem] monitor:h-[35rem] 2xl:h-[50rem]">
           <img
             src={package1}
             alt="Picture"
             className=" object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[35rem] 2xl:h-[50rem]">
+        <div className="h-[15rem] monitor:h-[35rem] 2xl:h-[50rem]">
           <img
             src={package2}
             alt="Picture"
             className=" object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[35rem] 2xl:h-[50rem]">
+        <div className="h-[15rem] monitor:h-[35rem] 2xl:h-[50rem]">
           <img
             src={package3}
             alt="Picture"
             className=" object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[35rem] 2xl:h-[50rem]">
+        <div className="h-[15rem] monitor:h-[35rem] 2xl:h-[50rem]">
           <img
             src={package4}
             alt="Picture"
             className=" object-cover h-full w-full"
           />
         </div>
-        <div className="lg:h-[35rem] 2xl:h-[50rem]">
+        <div className="h-[15rem] monitor:h-[35rem] 2xl:h-[50rem]">
           <img
             src={package5}
             alt="Picture"

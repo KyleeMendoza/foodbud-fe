@@ -11,10 +11,10 @@ function HomePackages() {
   return (
     <div className="h-full">
       <div className="flex flex-col py-10 gap-10 text-center items-center">
-        <p className="w-[95%] lg:w-full text-xl lg:text-xl capitalize font-['Poppins'] text-sky-400 font-semibold">
+        <p className="w-[95%] lg:w-full text-title13 lg:text-heading25 capitalize font-heading text-secondary400 font-semibold">
           Crafting unforgettable moments, one moment at a time.
         </p>
-        <div className="w-[104%] lg:w-[70%]  lg:h-fit ">
+        <div className="w-[75%] lg:w-[70%]  lg:h-fit ">
           <Carousel />
         </div>
         <div className="w-full py-10 overflow-x-auto lg:flex lg:justify-center lg:items-center">
@@ -30,7 +30,7 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox1})` }}
                 ></div>
-                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-secondary400 font-semibold">
                   Baptismal
                 </p>
               </Link>
@@ -46,7 +46,7 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox2})` }}
                 ></div>
-                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-secondary400 font-semibold">
                   Kid's Party
                 </p>
               </Link>
@@ -62,7 +62,7 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox3})` }}
                 ></div>
-                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-secondary400 font-semibold">
                   Adult's Party
                 </p>
               </Link>
@@ -78,7 +78,7 @@ function HomePackages() {
                   className="w-full h-[80%] bg-cover bg-center bg-no-repeat rounded-t-xl"
                   style={{ backgroundImage: `url(${cw_ebox4})` }}
                 ></div>
-                <p className="text-lg capitalize font-heading my-5 text-sky-400 font-semibold">
+                <p className="text-lg capitalize font-heading my-5 text-secondary400 font-semibold">
                   Corporate
                 </p>
               </Link>
