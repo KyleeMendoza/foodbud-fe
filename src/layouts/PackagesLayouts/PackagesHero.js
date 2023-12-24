@@ -4,16 +4,22 @@ import CardMedia from "@mui/material/CardMedia";
 import cs_aikp from "../../assets/CW-AIKP.png";
 import cw_fvs from "../../assets/CW-FVS.jpg";
 import cw_as from "../../assets/CW-AS.png";
+import "../../css/packagehover.css";
 
 import promo from "../../assets/packageBg.png";
 import PackageHeroCarousel from "../../components/PackageHeroCarousel";
+import { transform } from "framer-motion";
 
 function PackagesHero() {
+  const [aiphover, setAipHover] = useState(false);
+  const [fvshover, setFvsHover] = useState(false);
+  const [ashover, Hover] = useState(false);
+
   const [pic1, setPic1] = useState(false);
   const [pic2, setPic2] = useState(false);
   const [pic3, setPic3] = useState(false);
   return (
-    <div className="h-fit monitor:h-screen flex flex-col justify-center">
+    <div className={`h-fit monitor:h-screen flex flex-col justify-center`}>
       <div className="w-full h-full flex flex-col justify-center items-center">
         {/* Main Box Content */}
         <div className="flex flex-col border py-10 gap-6 w-full monitor:w-1/2">
@@ -40,15 +46,21 @@ function PackagesHero() {
         </div>
         {/* Button Area */}
         <div className="flex flex-col md:flex-row gap-5 md:gap-10 justify-between 2xl:justify-center items-center w-full pt-20">
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+          <button
+            className={`border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 ${
+              aiphover ? `transform scale-110` : ""
+            }`}
+            onMouseEnter={() => setAipHover(true)}
+            onMouseLeave={() => setAipHover(false)}
+          >
             All-In Packages
           </button>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
             Full Venue Styling
           </button>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
             Additional Services
           </button>
         </div>
