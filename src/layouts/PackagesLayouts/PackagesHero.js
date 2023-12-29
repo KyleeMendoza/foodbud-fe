@@ -18,6 +18,7 @@ function PackagesHero() {
   const [pic1, setPic1] = useState(false);
   const [pic2, setPic2] = useState(false);
   const [pic3, setPic3] = useState(false);
+
   return (
     <div className={`h-fit monitor:h-screen flex flex-col justify-center`}>
       <div className="w-full h-full flex flex-col justify-center items-center">
@@ -45,8 +46,9 @@ function PackagesHero() {
           </div>
         </div>
         {/* Button Area */}
-        <div className="flex flex-col md:flex-row gap-5 md:gap-10 justify-between 2xl:justify-center items-center w-full pt-20">
-          <button
+        <div className="flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center w-full pt-20">
+          <a
+            href="#allIn"
             className={`border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 ${
               aiphover ? `transform scale-110` : ""
             }`}
@@ -54,15 +56,21 @@ function PackagesHero() {
             onMouseLeave={() => setAipHover(false)}
           >
             All-In Packages
-          </button>
+          </a>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
+          <a
+            href="#fullVenue"
+            className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110"
+          >
             Full Venue Styling
-          </button>
+          </a>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
+          <a
+            href="#additional"
+            className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110"
+          >
             Additional Services
-          </button>
+          </a>
         </div>
       </div>
     </div>

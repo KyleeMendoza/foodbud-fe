@@ -58,7 +58,7 @@ function PackagesList() {
     <div className="h-full ">
       <div className=" flex flex-col gap-10 py-10 px-5 md:px-40">
         {/* Get quote Kiddie & Adult Package */}
-        <div className="">
+        <div className="" id="allIn">
           <div className="flex items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-heading p-10 ">
               <div className="flex flex-col gap-8 text-center monitor:text-left">
@@ -229,7 +229,7 @@ function PackagesList() {
         </div>
 
         {/* Get quote Full venue stylist */}
-        <div className="">
+        <div className="" id="fullVenue">
           <div className="flex items-center  h-full">
             <div className="flex flex-col gap-5 flex-1 font-heading p-10 ">
               <div className="flex flex-col gap-8 text-center monitor:text-left">
