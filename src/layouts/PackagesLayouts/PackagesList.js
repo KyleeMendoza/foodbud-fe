@@ -80,11 +80,16 @@ function PackagesList() {
                   >
                     Get a quote
                   </button>
-                  <Link to="/gallery">
+                  {/* <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
                     </button>
-                  </Link>
+                  </Link> */}
+                  <a href="/gallery">
+                    <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                      See photos
+                    </button>
+                  </a>
                 </div>
               </div>
               <div className="monitor:hidden">
@@ -123,11 +128,16 @@ function PackagesList() {
                     Get a quote
                   </button>
 
-                  <Link to="/gallery">
+                  {/* <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
                     </button>
-                  </Link>
+                  </Link> */}
+                  <a href="/gallery">
+                    <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                      See photos
+                    </button>
+                  </a>
                 </div>
               </div>
               <div className="monitor:hidden">
@@ -166,11 +176,16 @@ function PackagesList() {
                     Get a quote
                   </button>
 
-                  <Link to="/gallery">
+                  {/* <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
                     </button>
-                  </Link>
+                  </Link> */}
+                  <a href="/gallery">
+                    <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                      See photos
+                    </button>
+                  </a>
                 </div>
               </div>
               <div className="monitor:hidden">
@@ -209,11 +224,16 @@ function PackagesList() {
                     Get a quote
                   </button>
 
-                  <Link to="/gallery">
+                  {/* <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
                     </button>
-                  </Link>
+                  </Link> */}
+                  <a href="/gallery">
+                    <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                      See photos
+                    </button>
+                  </a>
                 </div>
               </div>
               <div className="monitor:hidden">
@@ -252,11 +272,16 @@ function PackagesList() {
                     Get a quote
                   </button>
 
-                  <Link to="/gallery">
+                  {/* <Link to="/gallery">
                     <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
                       See photos
                     </button>
-                  </Link>
+                  </Link> */}
+                  <a href="/gallery">
+                    <button className="border-2 px-7 py-3 w-fit font-tbc font-semibold text-body 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200">
+                      See photos
+                    </button>
+                  </a>
                 </div>
               </div>
               <div className="monitor:hidden">
