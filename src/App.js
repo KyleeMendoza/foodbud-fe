@@ -49,7 +49,7 @@ function App() {
             <Route path="/contactUs" element={<ContactUsPage />} />
             <Route path="/review" element={<ReviewPage />} />
             <Route
-              path="/client*"
+              path="/client/*"
               element={
                 <ProtectedRoute cookies={cookies} setCookie={setCookie} />
               }
