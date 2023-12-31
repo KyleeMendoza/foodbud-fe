@@ -59,6 +59,18 @@ function App() {
               path="/login"
               element={<LoginClientPage setCookie={setCookie} />}
             />
+            <Route
+              path="/setEmail"
+              element={<UserIdentificationPage />}
+            />
+            <Route
+              path="/changePassword"
+              element={<ChangePasswordPage />}
+            />
+            <Route
+              path="/email/sent"
+              element={<SendResetEmailPage />}
+            />
           </Routes>
         </div>
       </CookiesProvider>

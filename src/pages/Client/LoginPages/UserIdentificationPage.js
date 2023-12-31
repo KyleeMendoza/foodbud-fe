@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import G_FoodbudLogo from "../../../assets/G-FoodbudLogo.png";
 import clp_loginclip from "../../../assets/clp-loginclip.png";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function UserIdentificationPage() {
+  const [email, setEmail] = useState("")
+  const navigate = useNavigate()
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      // Make a POST request to the backend API
+      const response = await axios.post(`https://3.27.163.46/api/user/forgot?email=${email}`, { email });
+      console.log(response)
+      navigate("/email/sent")
+
+    } catch (error) {
+      console.error('Error making API request:', error);
+    }
+  };
+
   return (
     <>
       <section class="grid h-screen w-full absolute inset-0">
@@ -35,11 +54,15 @@ function UserIdentificationPage() {
                     class="mb-20 bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="juandelacruz@gmail.com"
                     required=""
+                    onChange={(e) =>{
+                      setEmail(e.target.value)
+                    }}
                   />
                 </div>
                 <button
                   type="submit"
-                  class="w-full text-white bg-pink-primary-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover-bg-primary-700 dark:focus:ring-primary-800"
+                  onClick={handleSubmit}
+                  class="w-full text-white bg-pink-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover-bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Confirm Email
                 </button>

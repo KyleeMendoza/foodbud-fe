@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import G_FoodbudLogo from "../../../assets/G-FoodbudLogo.png";
 import clp_loginclip from "../../../assets/clp-loginclip.png";
+import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 function ChangePasswordPage() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmVisible, setIsConfirmVisible] = useState(false);
+  const resetToken = new URLSearchParams(window.location.search).get('token');
+  const navigate = useNavigate();
+
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setConfirmPassword] = useState("")
 
   function togglePasswordVisibility() {
     setIsPasswordVisible((prevState) => !prevState);
@@ -12,6 +19,33 @@ function ChangePasswordPage() {
   function toggleConfirmVisibility() {
     setIsConfirmVisible((prevState) => !prevState);
   }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      if (password !== confirmPassword) {
+        // Handle password mismatch
+        console.error('Passwords do not match');
+        alert("password don't match")
+        return;
+      }
+
+      // Make a POST request to the backend API
+      const response = await axios.post(`https://3.27.163.46/api/user/reset-password?resetToken=${resetToken}&newPassword=${password}&confirmNewPassword=${confirmPassword}`, {
+        resetToken,
+        newPassword: password,
+        confirmNewPassword: confirmPassword,
+      });
+
+      // Handle the response from the backend
+      console.log('Password reset:', response.data.message);
+      alert("Password changed successfully")
+      navigate('/');
+    } catch (error) {
+      console.error('Error resetting password:', error);
+    }
+  };
 
   return (
     <>
@@ -38,6 +72,9 @@ function ChangePasswordPage() {
                     name="password"
                     id="password"
                     placeholder="Enter a new password"
+                    onChange={(e) => {
+                      setPassword(e.target.value)
+                    }}
                     className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required=""
                   />
@@ -90,6 +127,9 @@ function ChangePasswordPage() {
                     name="confirmpassword"
                     id="confirmpassword"
                     placeholder="Enter a new password"
+                    onChange={(e) => {
+                      setConfirmPassword(e.target.value)
+                    }}
                     className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500 mb-16"
                     required=""
                   />
@@ -138,7 +178,8 @@ function ChangePasswordPage() {
                 </div>
                 <button
                   type="submit"
-                  class="w-full text-white bg-pink-primary-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover-bg-primary-700 dark:focus:ring-primary-800"
+                  onClick={handleSubmit}
+                  class="w-full text-white bg-pink-400 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover-bg-primary-700 dark:focus:ring-primary-800"
                 >
                   Confirm
                 </button>

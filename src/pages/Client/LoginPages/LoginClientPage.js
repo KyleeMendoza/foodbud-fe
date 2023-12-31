@@ -126,7 +126,7 @@ function LoginClientPage({ setCookie }) {
                 <div className="flex items-center justify-between">
                   <div className="flex items-start">
                     <a
-                      href="/changePassword"
+                      href="/setEmail"
                       className="text-sm font-medium text-primary-600 hover:underline dark:text-black"
                     >
                       Forgot your{" "}

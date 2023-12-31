@@ -163,8 +163,26 @@ export default function EventsViewer() {
     setFoodFormData((prevData) => ({
       ...prevData,
       date: date,
-      time: '', // Reset time when date changes
     }));
+    
+
+    // Fetch available times for the selected date
+    axios.get(`https://3.27.163.46/api/time/available?date=${date}`)
+      .then(response => {
+        setAvailableTimes(response.data.availableTimes);
+      })
+      .catch(error => {
+        console.error('Error fetching available times:', error);
+        setAvailableTimes([]);
+      });
+  };
+
+  const handleDateChange2 = (date) => {
+    setMeetingData((prevData) => ({
+      ...prevData,
+      date: date,
+    }));
+    
 
     // Fetch available times for the selected date
     axios.get(`https://3.27.163.46/api/time/available?date=${date}`)
@@ -200,6 +218,13 @@ export default function EventsViewer() {
     }));
   };
 
+  const handleTimeChange2 = (time) => {
+    setMeetingData((prevData) => ({
+      ...prevData,
+      time: time,
+    }));
+  };
+
   const saveFoodForm = async () => {
     try {
       const response = await postEditFoodForm(eventId, foodFormData);
@@ -213,6 +238,7 @@ export default function EventsViewer() {
     try {
       const response = await postEditMeetingForm(eventId, meetingData);
       console.log(response);
+      window.location.reload()
     } catch (error) {
       console.error("Error:", error.message);
     }
@@ -983,36 +1009,38 @@ export default function EventsViewer() {
           </div>
           <div className=" relative pb-20 ">
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
-              <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+            <label
+                className={`flex justify-between items-center ${editMode ? '' : 'border-b-2'}`}
               >
                 <p>Date: </p>
                 {editMode ? (
-                  <input
-                    className="font-normal border-2 p-1"
-                    type="text"
-                    name="date"
-                    value={meetingData.date}
-                    onChange={handleModify3}
+                  <AvailableDatesCalendar
+                    availableDates={availableDates}
+                    onDateChange={handleDateChange2}
+                    onTimeChange={handleTimeChange2}
                   />
                 ) : (
                   <span className="font-normal p-1 ">{meetingData.date}</span>
                 )}
               </label>
               <label
-                className={`flex justify-between items-center ${editMode ? "" : "border-b-2"
-                  } `}
+                className={`flex justify-between items-center ${editMode ? '' : 'border-b-2'}`}
               >
                 <p>Time: </p>
                 {editMode ? (
-                  <input
+                  <select
                     className="font-normal border-2 p-1"
-                    type="text"
                     name="time"
                     value={meetingData.time}
-                    onChange={handleModify3}
-                  />
+                    onChange={(e) => handleTimeChange2(e.target.value)}
+                  >
+                    <option value="">Select Time</option>
+                    {availableTimes.map((timeOption) => (
+                      <option key={timeOption} value={timeOption}>
+                        {timeOption}
+                      </option>
+                    ))}
+                  </select>
                 ) : (
                   <span className="font-normal p-1 ">{meetingData.time}</span>
                 )}
