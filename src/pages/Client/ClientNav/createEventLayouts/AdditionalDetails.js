@@ -13,6 +13,7 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
   const [set, setSet] = React.useState("");
   const [selectedService, setSelectedService] = React.useState("");
   const [displayedServices, setDisplayedServices] = React.useState([]);
+  const [displayedServicesPackage, setDisplayedServicesPackage] = React.useState([]);
 
   // useEffect (() =>{
   //   console.log( eventId)
@@ -57,9 +58,15 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
     "Peacock Chair",
   ];
 
+  const filteredServiceOptions = serviceOptions.filter(
+    (service) => !displayedServicesPackage.includes(service) && !displayedServices.includes(service)
+  );
+
   const handleServiceChange = (event) => {
     setSelectedService(event.target.value);
   };
+
+
 
   const addService = () => {
     if (selectedService !== "") {
@@ -81,6 +88,26 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
       setSelectedService("");
     }
   };
+
+  useEffect(() => {
+    // Fetch addon services based on the event ID
+    axios
+      .get(`https://3.27.163.46/api/get/client/package?eventId=${eventId}`)
+      .then((response) => {
+        console.log(response.data);
+        const responseData = response.data;
+
+        if (responseData && Array.isArray(responseData.addons)) {
+          setDisplayedServicesPackage(responseData.addons);
+        } else {
+          console.error('Invalid response format for addons:', responseData);
+          setDisplayedServicesPackage([]); // Set to an empty array
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching addon services:', error);
+      });
+  }, [eventId]);
 
   const startTimeData = [
     "12:00 AM",
@@ -258,13 +285,11 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
                   className="p-2 rounded-lg border-2 text-lg"
                 >
                   <option value="">Select a service</option>
-                  {serviceOptions
-                    .filter((option) => !displayedServices.includes(option)) // Filter out selected options
-                    .map((service, index) => (
-                      <option key={index} value={service}>
-                        {service}
-                      </option>
-                    ))}
+                  {filteredServiceOptions.map((service, index) => (
+                    <option key={index} value={service}>
+                      {service}
+                    </option>
+                  ))}
                 </select>
                 <IconButton
                   onClick={addService}
@@ -277,76 +302,24 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
 
               <div>
                 <h3 className="font-bold text-lg">Selected Services:</h3>
-                <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
-                  {displayedServices.map((service, index) => (
-                    <li key={index}>{service}</li>
-                  ))}
-                </ul>
+                <div>
+                  <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+                    {displayedServices.map((service, index) => (
+                      <li key={index}>{service}</li>
+                    ))}
+                  </ul>
+                  <ul style={{ listStyleType: "disc", paddingLeft: "20px" }}>
+                    {displayedServicesPackage.map((services, index) => (
+                      <li key={index}>{services}</li>
+                    ))}
+                  </ul>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
-          <p className="text-[#E7238B] text-xl font-bold">Photobooth:</p>
-          <div className="w-[80%]">
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Photobooth Start Time:</p>
-              <div className=" w-[50%] flex flex-start">
-                <div className=" w-[50%] ">
-                  <SelectorInput
-                    data={startTimeData}
-                    state={startTime}
-                    setter={setStartTime}
-                    title={"Start"}
-                  />
-                </div>
-              </div>
-            </label>{" "}
-          </div>
-        </div> */}
-        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
-          <p className="text-[#E7238B] text-xl font-bold">Church Coverage:</p>
-          <div className="w-[80%] flex flex-col gap-4">
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Church Name:</p>
-              <input
-                className="font-normal border-2 p-2 rounded-md w-[50%]"
-                type="string"
-                placeholder="Enter Address"
-              />
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Church Location:</p>
-              <input
-                className="font-normal border-2 p-2 rounded-md w-[50%]"
-                type="string"
-                placeholder="Enter Address"
-              />
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Photobooth Start Time:</p>
-              <div className=" w-[50%] flex flex-start items-center gap-2">
-                <div className=" w-[50%] ">
-                  <SelectorInput
-                    data={from}
-                    state={fromTime}
-                    setter={setFromTime}
-                    title={"From"}
-                  />
-                </div>
-                <p>to</p>
-                <div className=" w-[50%] ">
-                  <SelectorInput
-                    data={to}
-                    state={toTime}
-                    setter={setToTime}
-                    title={"To"}
-                  />
-                </div>
-              </div>
-            </label>{" "}
-          </div>
-        </div> */}
+      
         <div className="flex flex-col p-4 rounded-lg border-2 ">
           <p className="text-[#E7238B] text-xl font-bold">Cake:</p>
           <div className="w-[80%]">
@@ -360,55 +333,7 @@ function AdditionalDetails({ formData, handleModify, eventId }) {
             </label>
           </div>
         </div>
-        {/* <div className="flex flex-col p-4 rounded-lg border-2 ">
-          <p className="text-[#E7238B] text-xl font-bold">Food Cart Choices:</p>
-          <div className="w-[80%] flex flex-col gap-4">
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Choice #1:</p>
-              <div className=" w-[50%] flex flex-start">
-                <SelectorInput
-                  data={setData}
-                  state={set}
-                  setter={setSet}
-                  title={"Select Here"}
-                />
-              </div>
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Choice #2:</p>
-              <div className=" w-[50%] flex flex-start">
-                <SelectorInput
-                  data={setData}
-                  state={set}
-                  setter={setSet}
-                  title={"Select Here"}
-                />
-              </div>
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Choice #3:</p>
-              <div className=" w-[50%] flex flex-start">
-                <SelectorInput
-                  data={setData}
-                  state={set}
-                  setter={setSet}
-                  title={"Select Here"}
-                />
-              </div>
-            </label>
-            <label className="flex items-center justify-between">
-              <p className="font-semibold">Choice #4:</p>
-              <div className=" w-[50%] flex flex-start">
-                <SelectorInput
-                  data={setData}
-                  state={set}
-                  setter={setSet}
-                  title={"Select Here"}
-                />
-              </div>
-            </label>
-          </div>
-        </div> */}
+      
       </div>
       <FormControlLabel
         required
