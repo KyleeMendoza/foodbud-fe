@@ -45,7 +45,7 @@ function ReviewBody() {
         </div>
 
         {/* Middle Section */}
-        <div className="w-1/2"></div>
+        <div className="w-1/2 bg-red">hello</div>
 
         {/* Other Stories */}
         <div className="flex items-end w-1/4">
