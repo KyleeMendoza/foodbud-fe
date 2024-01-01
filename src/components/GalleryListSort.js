@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import ListSubheader from "@mui/material/ListSubheader";
 import List from "@mui/material/List";
@@ -14,7 +15,11 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import StarBorder from "@mui/icons-material/StarBorder";
 import TuneIcon from "@mui/icons-material/Tune";
 
-export default function GalleryListSort() {
+export default function GalleryListSort({
+  handleGalleryType,
+  handleCelebrantGender,
+  handleEventType,
+}) {
   const [openPackages, setOpenPackages] = React.useState(false);
   const [openGender, setOpenGender] = React.useState(false);
   const [openToe, setOpenToe] = React.useState(false);
@@ -56,7 +61,7 @@ export default function GalleryListSort() {
     "Diamond Package",
     "Luxury Package",
   ];
-  const genderArray = ["Male", "Female"];
+  const genderArray = ["Male", "Female", "None"];
   const typeOfEventArray = [
     "Baptismal",
     "Kids Party",
@@ -64,11 +69,11 @@ export default function GalleryListSort() {
     "Debut",
     "Corporate",
   ];
-  const themeArray = ["Bear", "Avengers"];
-  const colorArray = ["Blue", "Pink"];
-  const stylingArray = ["Styling1", "Styling2"];
-  const foodArray = ["Meat", "Fish"];
-  const othersArray = ["Others1", "Others2"];
+  const themeArray = []; //"Bear", "Avengers"
+  const colorArray = []; //"Blue", "Pink"
+  const stylingArray = []; //"Styling1", "Styling2"
+  const foodArray = []; //"Meat", "Fish"
+  const othersArray = []; //"Others1", "Others2"
 
   return (
     <List
@@ -99,7 +104,9 @@ export default function GalleryListSort() {
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  // checked={/* Add your checked logic here */}
+                  onChange={() => {
+                    handleGalleryType(item);
+                  }}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ "aria-labelledby": index.toString() }}
@@ -124,7 +131,9 @@ export default function GalleryListSort() {
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  // checked={/* Add your checked logic here */}
+                  onChange={() => {
+                    handleCelebrantGender(item);
+                  }}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ "aria-labelledby": index.toString() }}
@@ -149,7 +158,9 @@ export default function GalleryListSort() {
               <ListItemIcon>
                 <Checkbox
                   edge="start"
-                  // checked={/* Add your checked logic here */}
+                  onChange={() => {
+                    handleEventType(item);
+                  }}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ "aria-labelledby": index.toString() }}
