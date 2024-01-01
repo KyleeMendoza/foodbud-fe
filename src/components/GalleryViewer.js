@@ -141,9 +141,9 @@ export default function GalleryViewer() {
     setValue(newValue);
   };
 
-  useEffect(() => {
-    console.log("isLoading: ", isLoading);
-  }, [isLoading]);
+  // useEffect(() => {
+  //   console.log("isLoading: ", isLoading);
+  // }, [isLoading]);
 
   return (
     <Box sx={{ width: "100%" }} className=" h-full">
