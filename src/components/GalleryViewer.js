@@ -7,6 +7,7 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import packageBg from "../assets/packageBg.png";
+import GalleryImageModal from "./GalleryImageModal";
 
 //IMPORT IMG
 // import packages from "../assets/Gender/BOY";
@@ -46,55 +47,75 @@ function a11yProps(index) {
 
 export default function GalleryViewer() {
   const [value, setValue] = React.useState(0);
-  const importAll = (context) => context.keys().map(context);
+  const [isLoading, setIsLoading] = useState(true);
+  const [packageImages, setPackageImages] = useState();
+  const [genderImages, setGenderImages] = useState();
+  const [typeOfEventsImages, setTypeOfEventsImages] = useState();
+  const [themeImages, setThemeImages] = useState();
+  const [foodImages, setFoodImages] = useState();
+  const [othersImages, setOthersImages] = useState();
 
-  //IMPORT PACKAGES for subfolder budgetPackage
-  const packageImagesContext = require.context(
-    "../assets/Packages/budgetPackage",
-    false,
-    /\.png$/
-  );
-  const packageImages = importAll(packageImagesContext);
+  useEffect(() => {
+    setIsLoading(true);
+    const importAll = (context, setState) => {
+      const images = context.keys().map(context);
+      setState(images);
+    };
 
-  //IMPORT gender for subfolder boy
-  const genderImagesContext = require.context(
-    "../assets/Gender/boy",
-    false,
-    /\.png$/
-  );
-  const genderImages = importAll(genderImagesContext);
+    //IMPORT PACKAGES for subfolder budgetPackage
+    const packageImagesContext = require.context(
+      "../assets/Packages/budgetPackage",
+      false,
+      /\.png$/
+    );
+    importAll(packageImagesContext, setPackageImages);
 
-  //IMPORT typeOfEvents for subfolder Wedding
-  const typeOfEventsImagesContext = require.context(
-    "../assets/typeOfEvents/Wedding",
-    false,
-    /\.png$/
-  );
-  const typeOfEventsImages = importAll(typeOfEventsImagesContext);
+    //IMPORT gender for subfolder boy
+    const genderImagesContext = require.context(
+      "../assets/Gender/boy",
+      false,
+      /\.png$/
+    );
+    importAll(genderImagesContext, setGenderImages);
 
-  //IMPORT theme for subfolder unicorn
-  const themeImagesContext = require.context(
-    "../assets/theme/unicorn",
-    false,
-    /\.png$/
-  );
-  const themeImages = importAll(themeImagesContext);
+    //IMPORT typeOfEvents for subfolder Wedding
+    const typeOfEventsImagesContext = require.context(
+      "../assets/typeOfEvents/Wedding",
+      false,
+      /\.png$/
+    );
+    importAll(typeOfEventsImagesContext, setTypeOfEventsImages);
 
-  //IMPORT food
-  const foodImagesContext = require.context("../assets/Food", false, /\.png$/);
-  const foodImages = importAll(foodImagesContext);
+    //IMPORT theme for subfolder unicorn
+    const themeImagesContext = require.context(
+      "../assets/theme/unicorn",
+      false,
+      /\.png$/
+    );
+    importAll(themeImagesContext, setThemeImages);
 
-  //IMPORT others for subfolder candyCorner
-  const othersImagesContext = require.context(
-    "../assets/others/candyCorner",
-    false,
-    /\.png$/
-  );
-  const othersImages = importAll(othersImagesContext);
+    //IMPORT food
+    const foodImagesContext = require.context(
+      "../assets/Food",
+      false,
+      /\.png$/
+    );
+    importAll(foodImagesContext, setFoodImages);
 
-  React.useEffect(() => {
-    console.log(othersImages);
-  }, [othersImages]);
+    //IMPORT others for subfolder candyCorner
+    const othersImagesContext = require.context(
+      "../assets/others/candyCorner",
+      false,
+      /\.png$/
+    );
+    importAll(othersImagesContext, setOthersImages);
+
+    setIsLoading(false);
+  }, []);
+
+  // React.useEffect(() => {
+  //   console.log(othersImages);
+  // }, [othersImages]);
 
   //ARRAY OF IMAGES
   const packageBgArray = [
@@ -119,6 +140,10 @@ export default function GalleryViewer() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    console.log("isLoading: ", isLoading);
+  }, [isLoading]);
 
   return (
     <Box sx={{ width: "100%" }} className=" h-full">
@@ -147,75 +172,107 @@ export default function GalleryViewer() {
         index={0}
         className="overflow-y-auto h-[40rem]"
       >
-        <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {packageImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {isLoading
+            ? null
+            : packageImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={packageImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {genderImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : genderImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={genderImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {typeOfEventsImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : typeOfEventsImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={typeOfEventsImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={3}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {themeImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : themeImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={themeImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={4}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : packageBgArray.map((packageId, index) => (
+                <GalleryImageModal
+                  data={packageBgArray}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={5}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {packageBgArray.map((packageId, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : packageBgArray.map((packageId, index) => (
+                <GalleryImageModal
+                  data={packageBgArray}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={6}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {foodImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : foodImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={foodImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
       <CustomTabPanel value={value} index={7}>
         <div className=" grid grid-cols-1 md:grid-cols-4 gap-8">
-          {othersImages.map((packageBg, index) => (
-            <div key={index} className="">
-              <img src={packageBg} alt="" className="w-full h-full" />
-            </div>
-          ))}
+          {isLoading
+            ? null
+            : othersImages.map((packageBg, index) => (
+                <GalleryImageModal
+                  data={othersImages}
+                  item={packageBg}
+                  key={index}
+                />
+              ))}
         </div>
       </CustomTabPanel>
     </Box>

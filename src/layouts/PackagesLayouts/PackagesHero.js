@@ -18,8 +18,23 @@ function PackagesHero() {
   const [pic1, setPic1] = useState(false);
   const [pic2, setPic2] = useState(false);
   const [pic3, setPic3] = useState(false);
+
+  const [bgImage, setBgImage] = useState(cs_aikp);
+
   return (
-    <div className={`h-fit monitor:h-screen flex flex-col justify-center`}>
+    <div className="h-fit monitor:h-screen flex flex-col justify-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 -z-50"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center center",
+          opacity: 0.4, //Adjust this
+          transition: "background-image 0.5s ease-in-out",
+        }}
+      ></div>
       <div className="w-full h-full flex flex-col justify-center items-center">
         {/* Main Box Content */}
         <div className="flex flex-col border py-10 gap-6 w-full monitor:w-1/2">
@@ -45,24 +60,49 @@ function PackagesHero() {
           </div>
         </div>
         {/* Button Area */}
-        <div className="flex flex-col md:flex-row gap-5 md:gap-10 justify-between 2xl:justify-center items-center w-full pt-20">
-          <button
+        <div className="flex flex-col md:flex-row gap-5 md:gap-10 justify-center items-center w-full pt-20">
+          <a
+            href="#allIn"
             className={`border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 ${
               aiphover ? `transform scale-110` : ""
             }`}
-            onMouseEnter={() => setAipHover(true)}
-            onMouseLeave={() => setAipHover(false)}
+            onMouseEnter={() => {
+              setAipHover(true);
+              setBgImage(cs_aikp);
+            }}
+            onMouseLeave={() => {
+              setAipHover(false);
+              setBgImage(cs_aikp);
+            }}
           >
             All-In Packages
-          </button>
+          </a>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
+          <a
+            href="#fullVenue"
+            className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110"
+            onMouseEnter={() => {
+              setBgImage(cw_fvs);
+            }}
+            onMouseLeave={() => {
+              setBgImage(cs_aikp);
+            }}
+          >
             Full Venue Styling
-          </button>
+          </a>
 
-          <button className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110">
+          <a
+            href="#additional"
+            className="border-2 px-7 py-4 w-fit font-tbc font-semibold text-title13 2xl:text-heading36 text-secondary400 rounded-xl hover:text-white hover:bg-secondary500 duration-200 hover:transform hover:scale-110"
+            onMouseEnter={() => {
+              setBgImage(cw_as);
+            }}
+            onMouseLeave={() => {
+              setBgImage(cs_aikp);
+            }}
+          >
             Additional Services
-          </button>
+          </a>
         </div>
       </div>
     </div>

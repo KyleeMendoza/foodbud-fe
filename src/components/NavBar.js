@@ -8,13 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 function NavBar() {
   const navigate = useNavigate();
-  const [selectedButton, setSelectedButton] = useState("/");
-
-  const handleButtonClick = (path) => {
-    setSelectedButton(path);
-    // Save the selected path to localStorage
-    localStorage.setItem("selectedButton", path);
-  };
 
   // Function to handle navigation to the client page
   const goToClientPage = () => {
@@ -30,13 +23,9 @@ function NavBar() {
     { path: "/contactUs", name: "Contact Us" },
   ];
 
-  useEffect(() => {
-    // Retrieve the selected path from localStorage on component mount
-    const storedSelectedButton = localStorage.getItem("selectedButton");
-    if (storedSelectedButton) {
-      setSelectedButton(storedSelectedButton);
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log("location: ", window.location.pathname);
+  // }, [window.location.pathname]);
 
   return (
     <>
@@ -69,14 +58,76 @@ function NavBar() {
               <Link
                 to={item.path}
                 key={index}
-                onClick={() => handleButtonClick(item.path)}
-                className={`btn-hover font-tbc font-semibold ${
-                  item.path === selectedButton
-                    ? "text-primary500"
-                    : "text-secondary500"
-                } hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue`}
+                isActive={() => window.location.pathname === item.path}
               >
-                {item.name}
+                {index === 0 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color: window.location.pathname === "/" ? "#E7238B" : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : index === 1 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color:
+                        window.location.pathname === "/aboutUs"
+                          ? "#E7238B"
+                          : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : index === 2 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color:
+                        window.location.pathname === "/packages"
+                          ? "#E7238B"
+                          : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : index === 3 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color:
+                        window.location.pathname === "/gallery"
+                          ? "#E7238B"
+                          : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : index === 4 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color:
+                        window.location.pathname === "/faqs" ? "#E7238B" : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : index === 5 ? (
+                  <p
+                    className="text-secondary500 btn-hover font-tbc font-semibold hover:text-primary-500 transition-all ease-in-out lg:text-darkBlue"
+                    style={{
+                      color:
+                        window.location.pathname === "/contactUs"
+                          ? "#E7238B"
+                          : "",
+                    }}
+                  >
+                    {item.name}
+                  </p>
+                ) : null}
               </Link>
             ))}
             <div className="hidden lg:flex lg:items-center">

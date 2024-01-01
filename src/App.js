@@ -2,6 +2,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import Cookies from "js-cookie";
@@ -49,7 +50,7 @@ function App() {
             <Route path="/contactUs" element={<ContactUsPage />} />
             <Route path="/review" element={<ReviewPage />} />
             <Route
-              path="/client*"
+              path="/client/*"
               element={
                 <ProtectedRoute cookies={cookies} setCookie={setCookie} />
               }
@@ -57,6 +58,18 @@ function App() {
             <Route
               path="/login"
               element={<LoginClientPage setCookie={setCookie} />}
+            />
+            <Route
+              path="/setEmail"
+              element={<UserIdentificationPage />}
+            />
+            <Route
+              path="/changePassword"
+              element={<ChangePasswordPage />}
+            />
+            <Route
+              path="/email/sent"
+              element={<SendResetEmailPage />}
             />
           </Routes>
         </div>

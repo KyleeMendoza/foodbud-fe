@@ -35,9 +35,12 @@ function HomeAboutUs() {
               services at reasonable prices.
             </p>
             {/* Use Link for "Read More" */}
-            <Link to="/aboutUs" className="font-semibold">
+            {/* <Link to="/aboutUs" className="font-semibold">
               Read More
-            </Link>
+            </Link> */}
+            <a href="/aboutUs" className="font-semibold">
+              Read More
+            </a>
           </div>
         </div>
       </div>

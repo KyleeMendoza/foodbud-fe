@@ -31,7 +31,10 @@ function PackagesPricing() {
   console.log("Here it is addons:", addons);
   return (
     <div className="h-full ">
-      <div className="flex flex-col justify-center items-center gap-10 font-heading py-10">
+      <div
+        className="flex flex-col justify-center items-center gap-10 font-heading py-10"
+        id="additional"
+      >
         <p className="font-bold text-heading14 capitalize text-sky-600 ">
           additional services
         </p>
