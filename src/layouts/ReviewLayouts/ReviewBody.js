@@ -16,12 +16,12 @@ function ReviewBody() {
   // }, []);
 
   return (
-    <div className="flex flex-col items-center w-full h-fit mb-20">
+    <div className="flex flex-col items-center w-full h-fit mb-10  relative">
       <div
         className="w-full h-[40vh] bg-contain lg:bg-cover bg-no-repeat"
         style={{ backgroundImage: `url(${cwreview1})` }}
       ></div>
-      <div className="flex w-full h-fit py-10 text-center">
+      <div className="flex justify-between w-full h-fit text-center mt-10">
         {/* First Section */}
         <div className="w-1/4 px-2 py-32">
           <div className="flex flex-col items-end gap-10">
@@ -54,9 +54,11 @@ function ReviewBody() {
         </div>
 
         {/* Middle Section */}
-        {/* NOTE: Edit nyo nalang po ito according sa inyong liking na design. sundan nyo lang po yung pattern. */}
-        <div className="w-1/2 border-2 border-red-600 flex justify-center">
-          <div className="bg-white lg:w-[70%] p-5 rounded-3xl drop-shadow-lg hover:cursor-pointer hover:bg-[#f8b9ce]">
+        <div className="w-1/2 h-[80%] flex justify-center absolute left-1/4 bottom-0 rounded-xl">
+          <div
+            className="bg-white w-[95%] p-5 rounded-xl drop-shadow-lg hover:cursor-pointer"
+            style={{ boxShadow: " 0px 0px 16px 0px rgba(0,0,0,0.5)" }}
+          >
             <div className="flex justify-between ">
               <div className="flex flex-col gap-2 ">
                 <p className="text-xl lg:text-2xl font-bold text-sky-600 capitalize">
