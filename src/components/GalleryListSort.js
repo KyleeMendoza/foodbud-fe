@@ -8,12 +8,8 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Collapse from "@mui/material/Collapse";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
-import DraftsIcon from "@mui/icons-material/Drafts";
-import SendIcon from "@mui/icons-material/Send";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
-import StarBorder from "@mui/icons-material/StarBorder";
-import TuneIcon from "@mui/icons-material/Tune";
 
 export default function GalleryListSort({
   handleGalleryType,
@@ -92,6 +88,7 @@ export default function GalleryListSort({
     >
       <ListItemButton onClick={handleClickPackages}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Packages" />
@@ -119,6 +116,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickGender}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Gender" />
@@ -146,6 +144,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickToe}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Type of Event" />
@@ -173,6 +172,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickTheme}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Theme" />
@@ -198,6 +198,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickColor}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Color" />
@@ -223,6 +224,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickStyling}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Styling" />
@@ -248,6 +250,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickFood}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Food" />
@@ -273,6 +276,7 @@ export default function GalleryListSort({
       ))}
       <ListItemButton onClick={handleClickOthers}>
         <ListItemIcon>
+          {/* change this icon according to the item */}
           <InboxIcon />
         </ListItemIcon>
         <ListItemText primary="Others" />

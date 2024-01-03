@@ -5,6 +5,12 @@ import GalleryViewer from "../../components/GalleryViewer";
 import { getGallerySort } from "../../services/getGallerySort";
 import GalleryListSort from "../../components/GalleryListSort";
 import GalleryImageModal2 from "../../components/GalleryImageModal2";
+import SearchIcon from "@mui/icons-material/Search";
+import {
+  Search,
+  SearchIconWrapper,
+  StyledInputBase,
+} from "../../components/SearchGallery";
 
 function GalleryCollections() {
   const [imagesData, setImagesData] = useState([]);
@@ -14,6 +20,7 @@ function GalleryCollections() {
   const [galleryType, setGalleryType] = useState([]);
   const [celebrantGender, setCelebrantGender] = useState([]);
   const [eventType, setEventType] = useState([]);
+  const [search, setSearch] = useState([]);
 
   // Packages
   const handleGalleryType = (data) => {
@@ -48,6 +55,11 @@ function GalleryCollections() {
     setEventType(newFilterData);
   };
 
+  //Search
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
   useEffect(() => {
     const fetchSortGallery = async () => {
       try {
@@ -55,11 +67,11 @@ function GalleryCollections() {
         const result = await getGallerySort(
           galleryType,
           celebrantGender,
-          eventType
+          eventType,
+          search
         );
 
         // Set the new data, replacing the old data
-        // setImagesData(result.images.map((images) => images.image));
         setImagesData(result.images);
 
         setIsLoading(false);
@@ -71,7 +83,7 @@ function GalleryCollections() {
     };
 
     fetchSortGallery();
-  }, [galleryType, celebrantGender, eventType]);
+  }, [galleryType, celebrantGender, eventType, search]);
 
   // useEffect(() => {
   //   console.log("Event: ", eventType);
@@ -79,6 +91,9 @@ function GalleryCollections() {
   // useEffect(() => {
   //   console.log("imageData: ", imagesData);
   // }, [imagesData]);
+  // useEffect(() => {
+  //   console.log("Input: ", search);
+  // }, [search]);
 
   return (
     <div className="h-[50rem]">
@@ -97,27 +112,42 @@ function GalleryCollections() {
               handleEventType={handleEventType}
             />
           </div>
-          <div className="flex-1 bg-white grid grid-cols-1 md:grid-cols-4 gap-8 p-5 overflow-y-auto">
-            {isLoading
-              ? Array.from({ length: 8 }).map((_, index) => (
-                  <Skeleton
-                    key={index}
-                    variant="rounded"
-                    width={250}
-                    height={400}
-                    sx={{ borderRadius: 2, marginBottom: 2 }}
-                  />
-                ))
-              : imagesData.map((item, index) => (
-                  <div key={index} className="h-auto rounded-lg">
-                    {/* <img
-                      src={item}
-                      alt={`Image ${index}`}
-                      className="rounded-lg"
-                    /> */}
-                    <GalleryImageModal2 item={item} />
-                  </div>
-                ))}
+          <div className="flex-1 flex flex-col gap-2 bg-white p-5">
+            <div className="border-2 border-black rounded-lg">
+              <Search>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase
+                  placeholder="Search…"
+                  inputProps={{ "aria-label": "search" }}
+                  value={search}
+                  onChange={handleSearch}
+                />
+              </Search>
+            </div>
+            <div className="  grid grid-cols-1 md:grid-cols-4 gap-8  overflow-y-auto">
+              {isLoading
+                ? Array.from({ length: 8 }).map((_, index) => (
+                    <Skeleton
+                      key={index}
+                      variant="rounded"
+                      width={250}
+                      height={400}
+                      sx={{ borderRadius: 2, marginBottom: 2 }}
+                    />
+                  ))
+                : imagesData.map((item, index) => (
+                    <div key={index} className="h-auto rounded-lg">
+                      {/* <img
+                        src={item}
+                        alt={`Image ${index}`}
+                        className="rounded-lg"
+                      /> */}
+                      <GalleryImageModal2 item={item} />
+                    </div>
+                  ))}
+            </div>
           </div>
         </div>
       </div>
