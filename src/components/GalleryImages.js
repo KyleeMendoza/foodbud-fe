@@ -38,7 +38,7 @@ function GalleryImages() {
   }, []);
 
   // Trial Images from database
-  const API_ENDPOINT = "http://localhost:9000/api/all/gallery";
+  const API_ENDPOINT = "https://3.27.163.46/api/all/gallery";
   const [images, setImages] = useState([]);
   const [selectedFilter, setSelectedFilter] = useState({
     package_type: "all",

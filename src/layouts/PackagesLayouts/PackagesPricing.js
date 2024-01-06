@@ -11,7 +11,7 @@ function PackagesPricing() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9000/api/all/addons"
+          "https://3.27.163.46/api/all/addons"
         );
         const addonsinfo = response.data;
         const filteredaddons = addonsinfo.filter(

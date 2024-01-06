@@ -11,18 +11,13 @@ function ClientAccounts() {
         <div className="flex justify-between items-center gap-5  ">
           <div className="flex font-['Poppins']  w-[30rem] h-[4rem] rounded-2xl bg-white">
             <div className="flex items-center justify-center text-xl font-bold bg-white rounded-l-2xl capitalize flex-1 px-2 py-2">
-              <p>celebrant's name</p>
+              <p>Event/s </p>
             </div>
-            <div className="flex items-center justify-center text-xl capitalize flex-1 bg-blue-200 rounded-2xl px-2 py-2">
-              <p>December 25, 2023</p>
+            <div className="flex items-center justify-center text-xl capitalize flex-1 bg-blue-500 rounded-2xl px-2 py-2">
+              <p className="font-bold text-white">Payments</p>
             </div>
           </div>
-          <Button to="/client/editEvent" variant="contained" size="large">
-            Add
-          </Button>
-          {/* <div>
-          <AppointmentTable />
-        </div> */}
+
         </div>
         <div>
           <AccountsTab />

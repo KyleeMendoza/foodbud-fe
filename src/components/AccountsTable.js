@@ -2,239 +2,244 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { randomTraderName, randomEmail } from "@mui/x-data-grid-generator";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
-import NavBar from "./NavBar";
+import { Button } from '@mui/material';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import { useState, useEffect } from "react";
-// import { getTransactionTable } from "../services/getTransactionTable";
+import { getInvoice } from "../services/getInvoice";
+import axios from "axios"
 
-const VISIBLE_FIELDS = [
-  "event_id",
-  "payment_description",
-  "payment_paid",
-  "payment_receipt",
-  "createdAt",
-];
+export default function AccountsTable(event_id) {
+  const [addsonData, setAddsData] = useState([])
+  const [invoiceData, setInvoiceData] = useState([])
+  const [file, setFile] = useState(null);
+  const [transactions, setTransactions] = useState([])
 
-const COLUMN_LABELS = {
-  event_id: "Event ID",
-  payment_description: "Payment Description",
-  payment_paid: "Payment Paid",
-  payment_receipt: "Payment Receipt",
-  createdAt: "Date & Time",
-};
-
-// const columns = [
-//   { field: "date", headerName: "Date & Time", width: 300 },
-//   { field: "description", headerName: "Desciption", width: 500 },
-//   { field: "services", headerName: "Services", width: 250 },
-//   { field: "status", headerName: "Status", width: 250 },
-//   { field: "action", headerName: "Action", width: 200 },
-// ];
-
-// const rows = [
-//   {
-//     id: 1,
-//     date: "2023-11-13 10:30 AM",
-//     description: "Meeting",
-//     services: "Consultation",
-//     status: "Pending",
-//     action: "Edit",
-//   },
-//   {
-//     id: 2,
-//     date: "2023-11-14 02:00 PM",
-//     description: "Appointment",
-//     services: "Treatment",
-//     status: "Completed",
-//     action: "Delete",
-//   },
-//   {
-//     id: 3,
-//     date: "2023-11-15 09:00 AM",
-//     description: "Checkup",
-//     services: "Examination",
-//     status: "Scheduled",
-//     action: "View",
-//   },
-//   {
-//     id: 4,
-//     date: "2023-11-16 03:45 PM",
-//     description: "Conference",
-//     services: "Presentation",
-//     status: "In Progress",
-//     action: "Edit",
-//   },
-//   {
-//     id: 5,
-//     date: "2023-11-17 11:15 AM",
-//     description: "Training",
-//     services: "Workshop",
-//     status: "Completed",
-//     action: "Delete",
-//   },
-//   {
-//     id: 6,
-//     date: "2023-11-18 01:30 PM",
-//     description: "Interview",
-//     services: "Recruitment",
-//     status: "Pending",
-//     action: "View",
-//   },
-//   {
-//     id: 7,
-//     date: "2023-11-19 10:00 AM",
-//     description: "Seminar",
-//     services: "Education",
-//     status: "Scheduled",
-//     action: "Edit",
-//   },
-//   {
-//     id: 8,
-//     date: "2023-11-20 04:30 PM",
-//     description: "Review",
-//     services: "Feedback",
-//     status: "In Progress",
-//     action: "Delete",
-//   },
-//   {
-//     id: 9,
-//     date: "2023-11-21 02:45 PM",
-//     description: "Product Launch",
-//     services: "Marketing",
-//     status: "Completed",
-//     action: "View",
-//   },
-//   {
-//     id: 10,
-//     date: "2023-11-22 09:45 AM",
-//     description: "Networking",
-//     services: "Connection",
-//     status: "Pending",
-//     action: "Edit",
-//   },
-// ];
-
-export default function AccountsTable() {
-  const [data, setData] = useState([]);
-
-  // Get all the payment
-  // const API_ENDPOINT = "http://localhost:9000/api/all/payments/2";
-  const API_ENDPOINT = "https://3.27.163.46/api/all/payments/2";
-
-  // Transaction tab
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(API_ENDPOINT);
-        const result = await response.json();
-        setData(result.clients);
-        const filteredData = result.payments.filter(
-          (row) => row.payment_paid !== null
-        );
-
-        console.log(filteredData);
-
-        setData(filteredData);
+        const response = await axios.get(`https://3.27.163.46/api/get/transactions?event_id=${event_id.event_id}`);
+        setTransactions(response.data.transactions); 
+        console.log(response.data.transactions)
       } catch (error) {
-        console.error("Error fetching data:", error);
+        // Handle error, e.g., set error state or log the error
+        console.error('Error fetching data:', error);
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, []);
-
+  }, [event_id.event_id]);
+  
+  const handleUpload = async (description, file) => {
+    try {
+      const formData = new FormData();
+      formData.append('receipt', file);
+      const query = `?event_id=${event_id.event_id}&description=${description}`;
+      const response = await axios.post(`https://3.27.163.46/api/add/transaction${query}`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+  
+      window.location.reload()
+    } catch (error) {
+      console.error('Upload failed:', error.message);
+     
+    }
+  };
+  
   const columns = [
-    ...VISIBLE_FIELDS.map((field) => ({
-      field,
-      headerClassName:
-        "bg-secondary200 font-heading font-semibold text-title13",
-      cellClassName: "text-title24",
-      headerName: COLUMN_LABELS[field],
-      flex: 1,
-    })),
+    { field: 'paymentDescription', headerName: 'Payment Description', width: 200 },
+    { field: 'paymentAmount', headerName: 'Payment Amount', width: 200 },
+    { field: 'paymentStatus', headerName: 'Payment Status', width: 200 },
+    { field: 'date', headerName: 'Date', width: 200},
+    {
+      field: 'action',
+      headerName: 'Action',
+      width: 300,
+      renderCell: (params) => {
+        if (params.row.action) {
+          console.log(params.row.action)
+          // Display the transaction receipt image if available
+          return ( 
+            <img
+              src={`https://3.27.163.46/uploads/${params.row.action}`}
+              alt="Receipt"
+              style={{ width: '100px', height: 'auto' }}
+              className="cursor-pointer"
+            />
+          );
+        } else {
+        
+          const fileInputRef = React.createRef();
+    
+          const handleButtonClick = () => {
+            fileInputRef.current.click(); // Trigger file input click when the button is clicked
+          };
+    
+          const handleFileChange = (event) => {
+            const selectedFile = event.target.files[0]; // Get the selected file
+            handleUpload(params.row.paymentDescription, selectedFile); // Handle the upload with the selected file
+          };
+    
+          return (
+            <div className="flex flex-col justify-center items-center" style={{ paddingInline: '10px' }}>
+              <input
+                ref={fileInputRef}
+                type="file"
+                className="custom-file-input"
+                onChange={handleFileChange}
+                style={{ display: 'none' }}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                startIcon={<CloudUploadIcon />}
+                onClick={handleButtonClick}
+              >
+                Upload
+              </Button>
+            </div>
+          );
+        }
+      },
+    }
+
   ];
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        // console.log(event_id.event_id)
+        const response = await getInvoice(event_id.event_id);
+        // console.log(response)
+        setAddsData(response.addonDetails);
+        // console.log(response.addonDetails)
+        setInvoiceData(response.packageRate);
+      } catch (error) {
+        console.error("Error:", error.message);
+      }
+    };
+    fetchData();
+  }, [event_id.event_id]);
 
-  const [filterModel, setFilterModel] = React.useState({
-    items: [],
-    quickFilterExcludeHiddenColumns: true,
-    quickFilterValues: [""],
-  });
+  const rows = [];
 
-  const [columnVisibilityModel, setColumnVisibilityModel] = React.useState({});
-  //   const [data, setData] = React.useState([]);
 
-  //   useEffect(() => {
-  //     const getAllData = async () => {
-  //       try {
-  //         const { result } = await getTransactionTable();
-  //         setData(result);
-  //         // console.log(userList);
-  //       } catch (error) {
-  //         console.error("Error:", error.message);
-  //         window.alert("An error occurred. Please try again later.");
-  //       }
-  //     };
-  //     getAllData();
-  //   }, []);
+  if (invoiceData.package_name && !rows.some(row => row.paymentDescription === invoiceData.package_name)) {
+    // Check for a match between invoiceData.package_name and transaction.description
+    const matchedTransaction = transactions.find(transaction => transaction.description === invoiceData.package_name);
+    console.log(matchedTransaction)
+    if (matchedTransaction) {
+      // Parse the date string
+      const parsedDate = new Date(matchedTransaction.createdAt);
+    
+      // Convert the parsed date to a worded date (e.g., January 6, 2024)
+      const wordedDate = parsedDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    
+      rows.push({
+        id: 'package-name',
+        paymentDescription: invoiceData.package_name,
+        paymentAmount: invoiceData.rate,
+        paymentStatus: matchedTransaction.status,
+        date: wordedDate, 
+        action:matchedTransaction.Receipt
+      });
+    } else {
+      rows.push({
+        id: 'package-name',
+        paymentDescription: invoiceData.package_name,
+        paymentAmount: invoiceData.rate,
+        paymentStatus: 'Not Paid',
+        date: '',
+      });
+    }
+    
+  }
+
+  const reservationRow = {
+    id: 'reservation',
+    paymentDescription: 'Reservation Fee',
+    paymentAmount: 5000,
+    paymentStatus: 'Not Paid',
+    date: '',
+  };
+  
+  const matchedReservationTransaction = transactions.find(transaction => transaction.description === 'Reservation Fee');
+  
+  if (matchedReservationTransaction) {
+    // Parse the date string from matchedTransaction
+    const parsedDate = new Date(matchedReservationTransaction.createdAt);
+    const wordedDate = parsedDate.toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  
+    // Update the paymentStatus and date in the reservationRow
+    reservationRow.paymentStatus = matchedReservationTransaction.status;
+    reservationRow.date = wordedDate;
+    reservationRow.action = matchedReservationTransaction.Receipt
+  }
+  
+  // Push the updated reservationRow into rows
+  rows.push(reservationRow);
+
+  for (let i = 0; i < addsonData.length; i++) {
+    const addon = addsonData[i];
+
+    rows.push({
+      id: i + 1,
+      paymentDescription: `${addon.addons_name}`,
+      paymentAmount: `${addon.addons_price}`,
+      paymentStatus: 'Not Paid',
+      date:''
+    });
+
+  }
+  for (let i = 0; i < transactions.length; i++) {
+    const transaction = transactions[i];
+  
+    for (let j = 0; j < addsonData.length; j++) {
+      const addon = addsonData[j];
+  
+      if (transaction.description === addon.addons_name ) {
+        // Match found, update the paymentStatus in rows based on the status from transactions
+        const matchedRow = rows.find(row => row.paymentDescription === transaction.description);
+  
+        if (matchedRow) {
+          matchedRow.paymentStatus = transaction.status;
+          const parsedDate = new Date(transaction.createdAt);
+
+          // Convert the parsed date to a worded date
+          const wordedDate = parsedDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+          });
+        
+          matchedRow.date = wordedDate;
+          matchedRow.action = transaction.Receipt
+          break;
+        }
+      }
+    }
+  }
+
+
 
   return (
     <>
       <div className="flex items-center justify-center rounded-2xl p-5 bg-white">
-        <div className="w-full">
-          {/* <h1 className=" w-full text-3xl font-semibold text-center uppercase underline">
-            transaction history table
-          </h1> */}
-          <Box sx={{ width: 1 }}>
-            {/* <FormControlLabel
-              checked={columnVisibilityModel.id !== false}
-              onChange={(event) =>
-                setColumnVisibilityModel(() => ({ id: event.target.checked }))
-              }
-              control={<Switch color="primary" size="large" />}
-              label="Show ID column"
-            />
-            <FormControlLabel
-              checked={filterModel.quickFilterExcludeHiddenColumns}
-              onChange={(event) =>
-                setFilterModel((model) => ({
-                  ...model,
-                  quickFilterExcludeHiddenColumns: event.target.checked,
-                }))
-              }
-              control={<Switch color="primary" size="large" />}
-              label="Exclude hidden columns"
-            /> */}
-            {/* Client Table */}
-            <DataGrid
-              className="text-lg"
-              slots={{
-                toolbar: GridToolbar,
-              }}
-              rows={data} // Pass the API data as rows
-              columns={columns}
-              getRowId={(row) => row.event_id}
-              component={{ Toolbar: GridToolbar }}
-            />
+        <div className="w-[70vw]">
 
-            {/* <Box sx={{ height: 700 }}>
-              <DataGrid
-                columns={columns}
-                rows={rows}
-                disableColumnFilter
-                disableDensitySelector
-                slots={{ toolbar: GridToolbar }}
-                filterModel={filterModel}
-                onFilterModelChange={(newModel) => setFilterModel(newModel)}
-                slotProps={{ toolbar: { showQuickFilter: true } }}
-                columnVisibilityModel={columnVisibilityModel}
-                onColumnVisibilityModelChange={(newModel) =>
-                  setColumnVisibilityModel(newModel)
-                }
-              />
-            </Box> */}
-          </Box>
+          <DataGrid rows={rows} columns={columns} pageSize={5} />
+
         </div>
       </div>
     </>
