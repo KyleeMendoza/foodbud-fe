@@ -16,7 +16,7 @@ function ContactHero() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:9000/api/all/fb_info"
+          "https://3.27.163.46/api/all/fb_info"
         );
         const fetchedFbInfo = response.data.fb_info[0];
         setFbInfo(fetchedFbInfo);
