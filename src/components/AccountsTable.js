@@ -2,7 +2,7 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
-import { Button, Dialog, DialogContent} from '@mui/material';
+import { Button, Dialog, DialogContent } from '@mui/material';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 import { useState, useEffect } from "react";
@@ -257,6 +257,18 @@ export default function AccountsTable(event_id) {
     }
   }
 
+  const paymentAmountSum = rows.reduce((sum, row) => sum + parseFloat(row.paymentAmount), 0);
+
+  const acceptedPaymentAmountSum = rows.reduce((sum, row) => {
+    if (row.paymentStatus === 'Accepted') {
+      const amount = parseFloat(row.paymentAmount);
+      return sum + amount;
+    }
+    return sum;
+  }, 0);
+
+  const remainingBalance = paymentAmountSum - acceptedPaymentAmountSum
+
 
 
   return (
@@ -265,6 +277,18 @@ export default function AccountsTable(event_id) {
         <div className="w-[70vw]">
 
           <DataGrid rows={rows} columns={columns} pageSize={5} />
+
+          <div className="flex flex-row gap-2 border-[1px] border-blue-500 p-4 bg-white">
+            <div className="w-1/3 pl-[10px]">
+              <span className="span-text font-bold text-xl">Total Balance: </span> <span className="font-bold">{paymentAmountSum} </span>
+            </div>
+            <div className="w-1/3 border-left border-gray-600">
+              <span className="span-text font-bold text-xl">Paid Balance:</span> <span className="text-[#006400] font-bold">{acceptedPaymentAmountSum}</span>
+            </div>
+            <div className="w-1/3 border-left">
+              <span className="span-text font-bold text-xl">Remaining Balance:</span> <span className="text-red font-bold">{remainingBalance}</span>
+            </div>
+          </div>
 
           <Dialog open={modalOpen} onClose={handleCloseModal}>
             <DialogContent>
