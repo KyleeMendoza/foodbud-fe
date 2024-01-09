@@ -65,7 +65,7 @@ function LoginClientPage({ setCookie }) {
           <div className="w-full h-full bg-white p-8 ">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <img className="w-48 h-16" src={H_FoodbudLogo} alt="" />
-              <h1 className="text-xl font-bold leading-tight tracking-normal  md:text-2xl dark:text-pink-primary-400">
+              <h1 className="text-xl font-bold leading-tight tracking-normal md:text-2xl dark:text-primary400">
                 User Login
               </h1>
               <h1 className="text-black text-lg">
@@ -77,14 +77,14 @@ function LoginClientPage({ setCookie }) {
                     for="email"
                     className="block mb-2 text-sm font-medium text-black"
                   >
-                    Username
+                    Email
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
                     className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="juandelacruz@gmail.com"
+                    placeholder="juandelacruz@gmail.com - Nakaname parin siya sa login"
                     required=""
                     onChange={(e) => {
                       setUsername(e.target.value);
@@ -127,12 +127,10 @@ function LoginClientPage({ setCookie }) {
                   <div className="flex items-start">
                     <a
                       href="/setEmail"
-                      className="text-sm font-medium text-primary-600 hover:underline dark:text-black"
+                      className="text-sm font-medium text-primary600 hover:underline dark:text-black"
                     >
                       Forgot your{" "}
-                      <span className="dark:text-pink-primary-400">
-                        password?
-                      </span>
+                      <span className="dark:text-primary400">password?</span>
                     </a>
                   </div>
                 </div>
@@ -145,14 +143,14 @@ function LoginClientPage({ setCookie }) {
                 <div>
                   {/* <Link
                     to="/client/home"
-                    className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
+                    className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary400"
                   >
                     Login
                   </Link> */}
                   <button
                     type="submit"
                     onClick={handleLogin}
-                    className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary-400"
+                    className="transition-all delay-50 cursor-pointer font-['DM_Sans'] px-4 py-2 text-md font-semibold text-white shadow-middle rounded-md bg-primary400"
                   >
                     Login
                   </button>
@@ -160,19 +158,17 @@ function LoginClientPage({ setCookie }) {
                 <div>
                   <a
                     href="https://www.facebook.com/foodbudevents"
-                    className="text-sm font-medium text-primary-600 hover:underline dark:text-black"
+                    className="text-sm font-medium text-primary600 hover:underline dark:text-black"
                   >
                     No account yet?{" "}
-                    <span className="dark:text-pink-primary-400">
-                      Book Now!
-                    </span>
+                    <span className="dark:text-primary400">Book Now!</span>
                   </a>
                 </div>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Are you an admin?{" "}
                   <a
                     href="https://foodbud-admin.vercel.app/"
-                    className="font-medium text-primary-600 hover:underline text-secondary-500"
+                    className="font-medium text-primary600 hover:underline text-secondary-500"
                   >
                     Login Here
                   </a>
