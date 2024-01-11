@@ -77,14 +77,14 @@ function LoginClientPage({ setCookie }) {
                     for="email"
                     className="block mb-2 text-sm font-medium text-black"
                   >
-                    Email
+                    Name
                   </label>
                   <input
                     type="email"
                     name="email"
                     id="email"
                     className="bg-gray-50 border border-gray-300 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="juandelacruz@gmail.com - Nakaname parin siya sa login"
+                    placeholder="Juan Dela Cruz"
                     required=""
                     onChange={(e) => {
                       setUsername(e.target.value);
