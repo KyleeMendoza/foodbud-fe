@@ -25,7 +25,7 @@ export default function SelectButton() {
           }
         );
         setEventIds(response.data.map((item) => item.event_id));
-        console.log(response.data.map((item) => item.event_id));
+        // console.log(response.data.map((item) => item.event_id));
       } catch (error) {
         console.error("Error fetching data:", error);
       }

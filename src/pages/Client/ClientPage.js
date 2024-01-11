@@ -173,14 +173,14 @@ export default function ClientPage({ setCookie }) {
             >
               {/* Dashboard */}
             </Typography>
-            <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton color="inherit" onClick={handleLogout}>
-              <ExitToAppIcon />
-            </IconButton>
+            <div className="flex justify-center items-center gap-2">
+              <NavLink to="/client/profile">
+                <AccountCircleIcon />
+              </NavLink>
+              <IconButton color="inherit" onClick={handleLogout}>
+                <ExitToAppIcon />
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
 

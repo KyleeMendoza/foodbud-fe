@@ -17,12 +17,12 @@ function GalleryPage() {
         <div className="flex flex-col">
           <GalleryCollections />
         </div>
-        <div
+        {/* <div
           className="flex flex-col"
           // id="footer"
         >
           <GalleryImages />
-        </div>
+        </div> */}
         <div
           className="flex flex-col"
           // id="footer"
