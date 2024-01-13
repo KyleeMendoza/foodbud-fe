@@ -1,25 +1,42 @@
 import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import EditIcon from "@mui/icons-material/Edit";
+import Cookies from "js-cookie";
+import { getClientProfile } from "../../../services/getClientProfile";
 
-function ClientProfile() {
-  const personalDetails = [
-    {
-      name: "Bruce Wayne",
-      username: "Batman123",
-    },
-  ];
-
+function ClientProfile({ cookies }) {
+  const clientId = cookies.username;
+  const [userInfo, setUserInfo] = useState([]);
   const [isEditablePersonal, setIsEditablePersonal] = useState(false);
   const [editedValuesPersonality, setEditedValuesPersonality] = useState({});
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      const result = await getClientProfile(clientId);
+      console.log(result.ClientProfile);
+
+      const { client_name, client_address, client_contact, client_email } =
+        result.ClientProfile;
+
+      const formattedClientProfile = {
+        Name: client_name,
+        Address: client_address,
+        Contact: client_contact,
+        Email: client_email,
+      };
+
+      setUserInfo([formattedClientProfile]);
+    };
+    fetchProfile();
+  }, []);
 
   const handleEditInfo = () => {
     setIsEditablePersonal(!isEditablePersonal);
   };
 
   useEffect(() => {
-    setEditedValuesPersonality(Object.assign({}, ...personalDetails));
-  }, []);
+    setEditedValuesPersonality(Object.assign({}, ...userInfo));
+  }, [userInfo]);
 
   const handleInputChangePersonality = (key, event) => {
     const newValue = event.target.value;
@@ -30,7 +47,7 @@ function ClientProfile() {
   };
 
   const handleSavePersonality = async () => {
-    const originalPersonality = Object.assign({}, ...personalDetails);
+    const originalPersonality = Object.assign({}, ...userInfo);
 
     // Find and create an object with the keys and their different values
     const differentKeysObject = {};
@@ -56,13 +73,6 @@ function ClientProfile() {
     // }
   };
 
-  //   useEffect(() => {
-  //     console.log(editedValuesPersonality);
-  //   }, [editedValuesPersonality]);
-  //   useEffect(() => {
-  //     console.log(personalDetails);
-  //   }, []);
-
   return (
     <div className=" h-full py-10">
       <div className=" h-full bg-white rounded-lg flex flex-col gap-5 p-10">
@@ -70,6 +80,7 @@ function ClientProfile() {
           <p className="text-3xl text-secondary500 font-bold font-['Poppins'] capitalize">
             my profile
           </p>
+          <p>waiting for updater route from backend. </p>
           <div>
             <Button
               component="label"
@@ -89,7 +100,7 @@ function ClientProfile() {
         <div className=" flex flex-col gap-5">
           <div className="w-full flex justify-between ">
             <div className="w-[80%] flex flex-col gap-2 ">
-              {personalDetails.map((data, index) => {
+              {userInfo.map((data, index) => {
                 return (
                   <div key={index} className="flex flex-col">
                     {Object.entries(data).map(([key, value]) => {

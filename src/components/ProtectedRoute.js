@@ -36,7 +36,7 @@ const ProtectedRoute = ({ cookies, setCookie }) => {
         <Route path="editEvent" element={<ClientEditEvent />} />
         <Route path="appointments" element={<ClientAppointments />} />
         <Route path="accounts" element={<ClientAccounts />} />
-        <Route path="profile" element={<ClientProfile />} />
+        <Route path="profile" element={<ClientProfile cookies={cookies} />} />
       </Route>
     </Routes>
   );
