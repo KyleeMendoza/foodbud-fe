@@ -4,6 +4,7 @@ import SelectButton from "../../../components/SelectButton";
 import { useEffect } from "react";
 import axios from "axios";
 import { getFetchFT, getFetchMeeting } from "../../../services/getFetchEvent";
+import { getInvoice } from "../../../services/getInvoice";
 
 function ClientHome({ name }) {
   const EventID = localStorage.getItem("eventID");
@@ -11,6 +12,8 @@ function ClientHome({ name }) {
   const [foodTastingDate, setFoodTastingDate] = useState("");
   const [onlineMeet, setOnlineMeet] = useState({});
   const [onlineMeetingDate, setOnlineMeetingDate] = useState("");
+  const [invoiceData, setInvoiceData] = React.useState({});
+  const [addsData, setAddsData] = React.useState([]);
 
   useEffect(() => {
     const fetchEventDetails = async () => {
@@ -33,6 +36,21 @@ function ClientHome({ name }) {
     if (EventID) {
       fetchEventDetails();
     }
+  }, [EventID]);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await getInvoice(EventID);
+        // setFormData(response);
+        setInvoiceData(response.packageRate);
+        setAddsData(response.addonDetails);
+      } catch (error) {
+        console.error("Error:", error.message);
+        window.alert("An error occurred. Please try again later.");
+      }
+    };
+    fetchData();
   }, [EventID]);
 
   useEffect(() => {
@@ -84,6 +102,11 @@ function ClientHome({ name }) {
   const isUpcomingFT = currentDate < FtDate;
 
   const isUpcomingOL = currentDate < onlineDate;
+
+  const total = addsData.reduce(
+    (accumulator, addon) => accumulator + addon.addons_price,
+    invoiceData.rate + 5000
+  );
 
   return (
     <div className="h-full py-10">
@@ -206,21 +229,17 @@ function ClientHome({ name }) {
                 </p>
                 <div className="flex flex-col font-bold">
                   <p className="text-md capitalize text-black">
-                    {onlineMeet.notes}
+                    IMPORTANT NOTICE: <br></br><span className="font-normal">{onlineMeet.notes}</span>
                   </p>
+                  
                   <p className="text-md capitalize text-black">
-                    Deluxe Package
+                    {onlineMeetingDate}
                   </p>
-                  <p className="text-md capitalize text-black">
-                    Deluxe Package
-                  </p>
-                  <p className="text-md capitalize text-black">
-                    Deluxe Package
-                  </p>
+                  
                 </div>
               </div>
               <div className="flex items-center justify-center flex-1 border-t-2 border-white px-10">
-                <p className="text-xl capitalize ">Join Meeting</p>
+                <p className="text-xl capitalize cursor-pointer" > <a href={onlineMeet.meeting_link}>Join Meeting</a> </p>
               </div>
             </div>
           </div>
@@ -292,45 +311,44 @@ function ClientHome({ name }) {
             <div className="flex flex-col gap-2 h-full flex-1 p-8 rounded-xl bg-white text-black relative">
               <div className="h-[80%] ">
                 <p className="text-2xl text-blue-400 font-bold">Accounts</p>
-                <div className="flex flex-col justify-between h-[80%] font-bold">
-                  <div className="flex justify-between">
-                    <p>Total Availed</p>
-                    <p>xxxxx</p>
-                  </div>
-                  <div className="flex flex-col">
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                  </div>
-                </div>
+                <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
+        
+          <div className=" relative pb-20 ">
+
+            <label
+              className={`flex justify-between items-center `}
+            >
+              <p className="font-bold text-lg">Reservation Fee</p>
+
+                <span className="font-normal p-1 text-lg">₱ 5000</span>
+    
+            </label>
+            <label
+              className={`flex justify-between items-center `}
+            >
+              <p className="font-bold text-lg">{invoiceData.pax_count} Pax</p>
+ 
+                <span className="font-normal p-1 text-lg">
+                  ₱ {invoiceData.rate}
+                </span>
+            
+            </label>
+            {addsData.map((addon, index) => (
+              <div
+                key={index}
+                className="flex justify-between items-center border-b-2 pt-2 pb-2"
+              >
+                <p className="font-bold text-lg">{addon.addons_name}</p>
+                <p className="font-normal text-lg mr-1">
+                  ₱ {addon.addons_price}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
               </div>
               <div className="w-full bg-white border-t-2 border-black absolute bottom-0 left-0 p-8 rounded-b-xl">
-                <p className="font-bold text-end text-black">Total: P93,200</p>
+                <p className="font-bold text-2xl text-end text-black">Total: {total}</p>
               </div>
             </div>
           </div>
