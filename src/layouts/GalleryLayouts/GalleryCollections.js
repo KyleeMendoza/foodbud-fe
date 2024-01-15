@@ -86,23 +86,19 @@ function GalleryCollections() {
   }, [galleryType, celebrantGender, eventType, search]);
 
   // useEffect(() => {
-  //   console.log("Event: ", eventType);
-  // }, [eventType]);
-  // useEffect(() => {
-  //   console.log("imageData: ", imagesData);
+  //   if (imagesData && imagesData.length > 0) {
+  //     console.log(convertDriveLinkToLH3(imagesData[0].image));
+  //   }
   // }, [imagesData]);
-  // useEffect(() => {
-  //   console.log("Input: ", search);
-  // }, [search]);
 
   return (
     <div className="h-[50rem]">
       <div className="flex justify-start bg-secondary500 py-10 h-full relative">
         {/* <div className="w-1/4">Happy</div> */}
-        <p className="absolute top-0 left-0">
+        {/* <p className="absolute top-0 left-0">
           NOTE: STILL IN PROGRESS, TRYING TO IMITATE FIGMA GALLERY FILTER DESIGN
           AMAP
-        </p>
+        </p> */}
         <div class="w-full flex h-full">
           {/* <GalleryViewer /> */}
           <div className="overflow-y-auto">
@@ -137,13 +133,9 @@ function GalleryCollections() {
                       sx={{ borderRadius: 2, marginBottom: 2 }}
                     />
                   ))
-                : imagesData.map((item, index) => (
+                : imagesData &&
+                  imagesData.map((item, index) => (
                     <div key={index} className="h-auto rounded-lg">
-                      {/* <img
-                        src={item}
-                        alt={`Image ${index}`}
-                        className="rounded-lg"
-                      /> */}
                       <GalleryImageModal2 item={item} />
                     </div>
                   ))}

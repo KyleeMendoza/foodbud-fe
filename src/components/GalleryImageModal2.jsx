@@ -27,16 +27,26 @@ export default function GalleryImageModal2({ item }) {
   //     console.log(item);
   //   }, []);
 
+  //img converter
+  function convertDriveLinkToLH3(link) {
+    const regex = /https:\/\/drive\.google\.com\/uc\?id=(.*)/;
+    const match = link.match(regex);
+
+    if (match && match[1]) {
+      const fileId = match[1];
+      const lh3Link = `https://lh3.google.com/u/0/d/${fileId}`;
+      return lh3Link;
+    } else {
+      console.error("Invalid Google Drive shareable link format");
+      return link;
+    }
+  }
+
   return (
     <>
-      {/* <img
-        src={item}
-        alt=""
-        className="w-full h-full rounded-lg cursor-pointer"
-        onClick={handleOpen}
-      /> */}
       <img
-        src={item.image}
+        src={convertDriveLinkToLH3(item.image)}
+        // src={item.image}
         alt={`Image ${index}`}
         className="rounded-lg"
         onClick={handleOpen}
@@ -52,7 +62,7 @@ export default function GalleryImageModal2({ item }) {
           <div className="flex gap-2">
             <div className="w-60">
               <img
-                src={item.image}
+                src={convertDriveLinkToLH3(item.image)}
                 alt={`Image ${index}`}
                 className="rounded-lg"
                 onClick={handleOpen}
