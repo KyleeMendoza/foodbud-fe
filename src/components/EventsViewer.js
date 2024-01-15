@@ -67,6 +67,7 @@ export default function EventsViewer() {
   const [addsData, setAddsData] = React.useState([]);
   const [availableTimes, setAvailableTimes] = useState([]);
   const [availableDates, setAvailableDates] = useState([]);
+  const [isEventDateInFuture, setIsEventDateInFuture] = useState(false);
 
   useEffect(() => {
     axios
@@ -250,7 +251,7 @@ export default function EventsViewer() {
       try {
         const response = await getFetchEvent(eventId);
         setFormData(response.fetchEvent);
-        // console.log(response.fetchEvent);
+        // console.log(response.fetchEvent.event_date);
       } catch (error) {
         console.error("Error:", error.message);
         window.alert("An error occurred. Please try again later.");
@@ -304,10 +305,14 @@ export default function EventsViewer() {
     fetchData();
   }, [eventId]);
 
-  // //CONSOLE CHECKER
-  // React.useEffect(() => {
-  //   console.log(formData);
-  // }, [formData]);
+  React.useEffect(() => {
+    const currentDate = new Date();
+    const eventDate = new Date(formData.event_date);
+
+    const date = eventDate > currentDate;
+
+    setIsEventDateInFuture(date);
+  }, [formData, foodFormData, meetingData]);
 
   const handleJoin = () => {
     // Redirect to the meeting link when the button is clicked
@@ -338,20 +343,16 @@ export default function EventsViewer() {
         <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
           <div className=" flex justify-between font-['Poppins']">
             <p className="text-3xl font-bold text-[#E7238B]">Event Details</p>
-            {/* <Button
-              variant="contained"
-              onClick={handleEdit}
-              style={{ backgroundColor: "#E7238B" }}
-            >
-              {editMode ? "cancel" : "edit"}
-            </Button> */}
-            <NavLink
-              to="/client/editEvent"
-              state={{ eventId }}
-              className="bg-[#E7238B] rounded-md py-2 px-4 text-white font-semibold"
-            >
-              Edit
-            </NavLink>
+            {/* {formData.event_type} */}
+            {isEventDateInFuture && (
+              <NavLink
+                to="/client/editEvent"
+                state={{ eventId }}
+                className="bg-[#E7238B] rounded-md py-2 px-4 text-white font-semibold"
+              >
+                Edit
+              </NavLink>
+            )}
           </div>
           <div className=" relative pb-20 ">
             <form className=" flex flex-col text-lg font-bold w-[50%] gap-2 ">
@@ -837,13 +838,15 @@ export default function EventsViewer() {
         <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
           <div className=" flex justify-between font-['Poppins']">
             <p className="text-3xl font-bold text-[#E7238B]">Food Tasting</p>
-            <Button
-              variant="contained"
-              onClick={handleEdit}
-              style={{ backgroundColor: "#E7238B" }}
-            >
-              {editMode ? "cancel" : "edit"}
-            </Button>
+            {isEventDateInFuture && (
+              <Button
+                variant="contained"
+                onClick={handleEdit}
+                style={{ backgroundColor: "#E7238B" }}
+              >
+                {editMode ? "cancel" : "edit"}
+              </Button>
+            )}
           </div>
           <div className=" relative pb-20 ">
             <ul className="list-disc">
@@ -1029,13 +1032,15 @@ export default function EventsViewer() {
               >
                 {editMode ? "cancel" : "edit"}
               </Button>
-              <Button
-                variant="contained"
-                onClick={handleJoin}
-                style={{ backgroundColor: "#E7238B" }}
-              >
-                Join Meeting
-              </Button>
+              {isEventDateInFuture && (
+                <Button
+                  variant="contained"
+                  onClick={handleJoin}
+                  style={{ backgroundColor: "#E7238B" }}
+                >
+                  Join Meeting
+                </Button>
+              )}
             </div>
           </div>
           <div className=" relative pb-20 ">
