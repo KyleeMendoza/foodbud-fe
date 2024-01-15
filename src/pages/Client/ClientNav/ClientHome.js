@@ -110,7 +110,7 @@ function ClientHome({ name }) {
         if (!EventID) {
           return;
         }
-        const response = await axios.get(`http://localhost:9000/api/fetch/coverage?event_id=${EventID}`);
+        const response = await axios.get(`https://3.27.163.46/api/fetch/coverage?event_id=${EventID}`);
         console.log(response.data)
         setCoverageData(response.data);
       } catch (error) {
