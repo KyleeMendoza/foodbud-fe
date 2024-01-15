@@ -80,7 +80,6 @@ function ClientProfile({ cookies }) {
           <p className="text-3xl text-secondary500 font-bold font-['Poppins'] capitalize">
             my profile
           </p>
-          <p>waiting for updater route from backend. </p>
           <div>
             <Button
               component="label"

@@ -14,8 +14,12 @@ function ClientHome({ name }) {
   const [onlineMeetingDate, setOnlineMeetingDate] = useState("");
   const [invoiceData, setInvoiceData] = React.useState({});
   const [addsData, setAddsData] = React.useState([]);
+  const [coverageData, setCoverageData] = React.useState([])
 
   useEffect(() => {
+    if (!EventID) {
+      return;
+    }
     const fetchEventDetails = async () => {
       try {
         const response = await axios.get(
@@ -39,6 +43,9 @@ function ClientHome({ name }) {
   }, [EventID]);
 
   React.useEffect(() => {
+    if (!EventID) {
+      return;
+    }
     const fetchData = async () => {
       try {
         const response = await getInvoice(EventID);
@@ -54,6 +61,9 @@ function ClientHome({ name }) {
   }, [EventID]);
 
   useEffect(() => {
+    if (!EventID) {
+      return;
+    }
     if (EventID) {
       const fetchData = async () => {
         try {
@@ -72,6 +82,9 @@ function ClientHome({ name }) {
   }, [EventID]);
 
   useEffect(() => {
+    if (!EventID) {
+      return;
+    }
     if (EventID) {
       const fetchData = async () => {
         try {
@@ -89,6 +102,24 @@ function ClientHome({ name }) {
       };
       fetchData();
     }
+  }, [EventID]);
+
+  useEffect(() => {
+    const fetchCoverage = async () => {
+      try {
+        if (!EventID) {
+          return;
+        }
+        const response = await axios.get(`https://3.27.163.46/api/fetch/coverage?event_id=${EventID}`);
+        console.log(response.data)
+        setCoverageData(response.data);
+      } catch (error) {
+        console.error(error);
+        // Handle error
+      }
+    };
+
+    fetchCoverage(); // Initial fetch when component mounts
   }, [EventID]);
 
   const eventDate = new Date(eventDetails.event_date);
@@ -215,8 +246,8 @@ function ClientHome({ name }) {
               </p>
               <p>
                 Total Headcount:{" "}
-                <span className="text-red-400">
-                  {eventDetails.hc_kids + eventDetails.hc_adults} pax{" "}
+                <span>
+                  {eventDetails.hc_kids ? `${eventDetails.hc_kids + eventDetails.hc_adults} pax` : ''}
                 </span>
               </p>
             </div>
@@ -231,11 +262,11 @@ function ClientHome({ name }) {
                   <p className="text-md capitalize text-black">
                     IMPORTANT NOTICE: <br></br><span className="font-normal">{onlineMeet.notes}</span>
                   </p>
-                  
+
                   <p className="text-md capitalize text-black">
                     {onlineMeetingDate}
                   </p>
-                  
+
                 </div>
               </div>
               <div className="flex items-center justify-center flex-1 border-t-2 border-white px-10">
@@ -249,45 +280,45 @@ function ClientHome({ name }) {
             <div className="flex gap-4">
               <div className="flex flex-col gap-2 flex-1  p-4 rounded-xl bg-white text-black font-bold">
                 <p className="text-2xl text-blue-400 font-bold">
-                  Event Details
+                  Quick Links
                 </p>
                 <div className="flex justify-between">
                   <p>Photo Coverage</p>
-                  <Button variant="contained">view</Button>
+                  {coverageData && coverageData.find(data => data.coverage_type === 'Photo Coverage') ? (
+                    <Button variant="contained" href={coverageData.find(data => data.coverage_type === 'Photo Coverage').link} target="_blank">
+                      View
+                    </Button>
+                  ) : (
+                    <Button variant="contained" disabled>
+                      View
+                    </Button>
+                  )}
                 </div>
+
                 <div className="flex justify-between">
-                  <p>Photo Coverage</p>
-                  <Button variant="contained">view</Button>
+                  <p>Video Coverage</p>
+                  {coverageData && coverageData.find(data => data.coverage_type === 'Video Coverage') ? (
+                    <Button variant="contained" href={coverageData.find(data => data.coverage_type === 'Video Coverage').link} target="_blank">
+                      View
+                    </Button>
+                  ) : (
+                    <Button variant="contained" disabled>
+                      View
+                    </Button>
+                  )}
                 </div>
+
                 <div className="flex justify-between">
-                  <p>Photo Coverage</p>
-                  <Button variant="contained">view</Button>
-                </div>
-              </div>
-              <div className="flex flex-col gap-2 flex-1  p-4 rounded-xl bg-white text-black relative">
-                <div className="h-[80%] ">
-                  <p className="text-2xl text-blue-400 font-bold">Accounts</p>
-                  <div className="flex flex-col justify-between h-[80%] font-bold">
-                    <div className="flex justify-between">
-                      <p>Total Availed</p>
-                      <p>xxxxx</p>
-                    </div>
-                    <div className="flex flex-col">
-                      <div className="flex justify-between">
-                        <p>Total Availed</p>
-                        <p>xxxxx</p>
-                      </div>
-                      <div className="flex justify-between">
-                        <p>Total Availed</p>
-                        <p>xxxxx</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="w-full bg-primary-400 absolute bottom-0 left-0 py-2">
-                  <p className="font-bold text-center text-white">
-                    Add Payment
-                  </p>
+                  <p>Photobooth</p>
+                  {coverageData && coverageData.find(data => data.coverage_type === 'Photobooth') ? (
+                    <Button variant="contained" href={coverageData.find(data => data.coverage_type === 'Photobooth').link} target="_blank">
+                      View
+                    </Button>
+                  ) : (
+                    <Button variant="contained" disabled>
+                      View
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
@@ -296,13 +327,11 @@ function ClientHome({ name }) {
                 How was the Event??
               </div>
               <div className="text-black">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
-                est sunt quas sint qui cum. Corporis eius eos mollitia
-                reiciendis.
+                Share your event experience! We want to hear it from you. Your response will greatly help us to the improvement of Food Bud!
               </div>
               <div className="bg-[#3B9BDC] w-full absolute bottom-0 right-0 p-5 rounded-b-xl">
-                <p className="font-bold text-center text-xl">
-                  Submit a Feedback
+                <p className="font-bold text-center text-xl cursor-pointer">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdh726pmU0lLqKMJBjW7X9JTc-WqU0Je50U80Aw8obBw9uitA/viewform">Submit a Feedback</a>
                 </p>
               </div>
             </div>
@@ -312,43 +341,40 @@ function ClientHome({ name }) {
               <div className="h-[80%] ">
                 <p className="text-2xl text-blue-400 font-bold">Accounts</p>
                 <div className=" p-8 flex flex-col gap-4 bg-white rounded-3xl">
-        
-          <div className=" relative pb-20 ">
 
-            <label
-              className={`flex justify-between items-center `}
-            >
-              <p className="font-bold text-lg">Reservation Fee</p>
-
-                <span className="font-normal p-1 text-lg">₱ 5000</span>
-    
-            </label>
-            <label
-              className={`flex justify-between items-center `}
-            >
-              <p className="font-bold text-lg">{invoiceData.pax_count} Pax</p>
- 
-                <span className="font-normal p-1 text-lg">
-                  ₱ {invoiceData.rate}
-                </span>
-            
-            </label>
-            {addsData.map((addon, index) => (
-              <div
-                key={index}
-                className="flex justify-between items-center border-b-2 pt-2 pb-2"
-              >
-                <p className="font-bold text-lg">{addon.addons_name}</p>
-                <p className="font-normal text-lg mr-1">
-                  ₱ {addon.addons_price}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
+                  <div className=" relative pb-20 ">
+                    {invoiceData.pax_count ? (
+                      <>
+                        <label className={`flex justify-between items-center `}>
+                          <p className="font-bold text-lg">Reservation Fee</p>
+                          <span className="font-normal p-1 text-lg">₱ 5000</span>
+                        </label>
+                        <label className={`flex justify-between items-center `}>
+                          <p className="font-bold text-lg">{invoiceData.pax_count} Pax</p>
+                          <span className="font-normal p-1 text-lg">
+                            ₱ {invoiceData.rate}
+                          </span>
+                        </label>
+                      </>
+                    ) : (
+                      <p>No invoice data available</p>
+                    )}
+                    {addsData.map((addon, index) => (
+                      <div
+                        key={index}
+                        className="flex justify-between items-center border-b-2 pt-2 pb-2"
+                      >
+                        <p className="font-bold text-lg">{addon.addons_name}</p>
+                        <p className="font-normal text-lg mr-1">
+                          ₱ {addon.addons_price}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
               <div className="w-full bg-white border-t-2 border-black absolute bottom-0 left-0 p-8 rounded-b-xl">
-                <p className="font-bold text-2xl text-end text-black">Total: {total}</p>
+                <p className="font-bold text-2xl text-end text-black">Total: {total || 0}</p>
               </div>
             </div>
           </div>
