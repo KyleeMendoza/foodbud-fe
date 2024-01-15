@@ -766,10 +766,10 @@ export default function EventsViewer() {
               admin.{" "}
             </p>
 
-            <p className="text-red text-title13 font-tbc">
+            {/* <p className="text-red text-title13 font-tbc">
               Note: This invoice is still in progress! Functionality is present
               upon adding additional services. Thank you for your understanding
-            </p>
+            </p> */}
             <br></br>
 
             <label
