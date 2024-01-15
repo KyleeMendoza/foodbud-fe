@@ -20,10 +20,6 @@ export default function GalleryListSort({
   const [openGender, setOpenGender] = React.useState(false);
   const [openToe, setOpenToe] = React.useState(false);
   const [openTheme, setOpenTheme] = React.useState(false);
-  const [openColor, setOpenColor] = React.useState(false);
-  const [openStyling, setOpenStyling] = React.useState(false);
-  const [openFood, setOpenFood] = React.useState(false);
-  const [openOthers, setOpenOthers] = React.useState(false);
 
   const handleClickPackages = () => {
     setOpenPackages(!openPackages);
@@ -36,18 +32,6 @@ export default function GalleryListSort({
   };
   const handleClickTheme = () => {
     setOpenTheme(!openTheme);
-  };
-  const handleClickColor = () => {
-    setOpenColor(!openColor);
-  };
-  const handleClickStyling = () => {
-    setOpenStyling(!openStyling);
-  };
-  const handleClickFood = () => {
-    setOpenFood(!openFood);
-  };
-  const handleClickOthers = () => {
-    setOpenOthers(!openOthers);
   };
 
   const packagesArray = [
@@ -65,11 +49,6 @@ export default function GalleryListSort({
     "Debut",
     "Corporate",
   ];
-  const themeArray = []; //"Bear", "Avengers"
-  const colorArray = []; //"Blue", "Pink"
-  const stylingArray = []; //"Styling1", "Styling2"
-  const foodArray = []; //"Meat", "Fish"
-  const othersArray = []; //"Others1", "Others2"
 
   return (
     <List
@@ -81,8 +60,7 @@ export default function GalleryListSort({
       aria-labelledby="nested-list-subheader"
       subheader={
         <ListSubheader component="div" id="nested-list-subheader">
-          Filter
-          {/* <TuneIcon /> */}
+          Filters
         </ListSubheader>
       }
     >
@@ -160,136 +138,6 @@ export default function GalleryListSort({
                   onChange={() => {
                     handleEventType(item);
                   }}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": index.toString() }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      ))}
-      <ListItemButton onClick={handleClickTheme}>
-        <ListItemIcon>
-          {/* change this icon according to the item */}
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Theme" />
-        {openTheme ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {themeArray.map((item, index) => (
-        <Collapse in={openTheme} timeout="auto" unmountOnExit key={index}>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  // checked={/* Add your checked logic here */}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": index.toString() }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      ))}
-      <ListItemButton onClick={handleClickColor}>
-        <ListItemIcon>
-          {/* change this icon according to the item */}
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Color" />
-        {openColor ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {colorArray.map((item, index) => (
-        <Collapse in={openColor} timeout="auto" unmountOnExit key={index}>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  // checked={/* Add your checked logic here */}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": index.toString() }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      ))}
-      <ListItemButton onClick={handleClickStyling}>
-        <ListItemIcon>
-          {/* change this icon according to the item */}
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Styling" />
-        {openStyling ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {stylingArray.map((item, index) => (
-        <Collapse in={openStyling} timeout="auto" unmountOnExit key={index}>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  // checked={/* Add your checked logic here */}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": index.toString() }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      ))}
-      <ListItemButton onClick={handleClickFood}>
-        <ListItemIcon>
-          {/* change this icon according to the item */}
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Food" />
-        {openFood ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {foodArray.map((item, index) => (
-        <Collapse in={openFood} timeout="auto" unmountOnExit key={index}>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  // checked={/* Add your checked logic here */}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ "aria-labelledby": index.toString() }}
-                />
-              </ListItemIcon>
-              <ListItemText primary={item} />
-            </ListItemButton>
-          </List>
-        </Collapse>
-      ))}
-      <ListItemButton onClick={handleClickOthers}>
-        <ListItemIcon>
-          {/* change this icon according to the item */}
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="Others" />
-        {openOthers ? <ExpandLess /> : <ExpandMore />}
-      </ListItemButton>
-      {othersArray.map((item, index) => (
-        <Collapse in={openOthers} timeout="auto" unmountOnExit key={index}>
-          <List component="div" disablePadding>
-            <ListItemButton sx={{ pl: 4 }}>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  // checked={/* Add your checked logic here */}
                   tabIndex={-1}
                   disableRipple
                   inputProps={{ "aria-labelledby": index.toString() }}
